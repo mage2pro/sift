@@ -27,16 +27,12 @@ As the section is absent in Magento ≤ 2.3, I duplicate its declaration here. -
 			>
 				<dfExtension>Dfe_Sift</dfExtension>
 				<fieldset_css>df-config</fieldset_css>
-				<!-- <frontend_model>Df\Config\Fieldset</frontend_model> -->
 				<group
 					id='about'
 					showInDefault='1' showInStore='1' showInWebsite='1'
 					sortOrder='1'
 					translate='label comment'
 				>
-					<frontend_model>Magento\Signifyd\Block\Adminhtml\System\Config\Fieldset\Info</frontend_model>
-					<fieldset_css>signifyd-about-header</fieldset_css>
-					<label>Protect your store from fraud with Fraud Protection by Sift</label>
 					<comment><![CDATA[Sift automatically reviews your orders for fraud,
 telling you in seconds which orders to ship, and which to reject.
 <p>Benefits:</p>
@@ -47,6 +43,30 @@ telling you in seconds which orders to ship, and which to reject.
 </ul>
 <a href='https://mage2.pro/c/extensions/sift' target='_blank'>Ask a question</a>
 <a href='https://github.com/mage2pro/sift/issues/new' target='_blank'>Report an issue</a>]]></comment>
+<!-- 2020-01-23
+The whole `sift` group is not shown for an unknown reason if the `<frontend_model>` tag is not specified -->
+					<frontend_model>Magento\Config\Block\System\Config\Form\Fieldset</frontend_model>
+					<label>Protect your store from fraud with Fraud Protection by Sift</label>
+				</group>
+				<group
+					id='config'
+					showInDefault='1' showInStore='1' showInWebsite='1'
+					sortOrder='2'
+					translate='label comment'
+				>
+					<label>Configuration</label>
+					<field
+						id='enable'
+						showInDefault='1' showInStore='1' showInWebsite='1'
+						sortOrder='1'
+						translate='label'
+						type='Df\Framework\Form\Element\Checkbox'
+					>
+						<backend_model>Df\Config\Backend\Checkbox</backend_model>
+						<comment><![CDATA[Enable the «<a href='https://mage2.pro/c/extensions/sift' target='_blank'>Sift</a>» module?]]></comment>
+						<config_path>fraud_protection/sift/enable</config_path>
+						<label>Enable?</label>
+					</field>
 				</group>
 			</group>
 		</section>
