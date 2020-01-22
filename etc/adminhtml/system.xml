@@ -67,6 +67,17 @@ The whole `sift` group is not shown for an unknown reason if the `<frontend_mode
 						<config_path>fraud_protection/sift/enable</config_path>
 						<label>Enable?</label>
 					</field>
+					<field
+						id='test'
+						showInDefault='1' showInStore='1' showInWebsite='1'
+						sortOrder='2'
+						translate='label'
+						type='Df\Framework\Form\Element\Checkbox'
+					>
+						<label>Sandbox Mode?</label>
+						<backend_model>Df\Config\Backend\Checkbox</backend_model>
+						<depends><field id='enable'>1</field></depends>
+					</field>
 				</group>
 			</group>
 		</section>
