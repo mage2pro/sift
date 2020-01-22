@@ -105,7 +105,7 @@ The whole `sift` group is not shown for an unknown reason if the `<frontend_mode
 						<comment><![CDATA[<a href='https://mage2.pro/t/6091' target='_blank'>How to get it?</a>]]></comment>
 						<depends>
 							<field id='enable'>1</field>
-							<field id='test'>1</field>
+							<field id='test'>0</field>
 						</depends>
 						<label>Production Beacon Key</label>
 					</field>
