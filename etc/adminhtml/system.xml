@@ -94,6 +94,21 @@ The whole `sift` group is not shown for an unknown reason if the `<frontend_mode
 						</depends>
 						<label>Sandbox Beacon Key</label>
 					</field>
+					<field
+						id='liveBeaconKey'
+						showInDefault='1' showInStore='1' showInWebsite='1'
+						sortOrder='4'
+						translate='label'
+						type='obscure'
+					>
+						<backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>
+						<comment><![CDATA[<a href='https://mage2.pro/t/6091' target='_blank'>How to get it?</a>]]></comment>
+						<depends>
+							<field id='enable'>1</field>
+							<field id='test'>1</field>
+						</depends>
+						<label>Production Beacon Key</label>
+					</field>
 				</group>
 			</group>
 		</section>
