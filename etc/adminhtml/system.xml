@@ -1,0 +1,34 @@
+<?xml version='1.0'?>
+<config
+	xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+	xsi:noNamespaceSchemaLocation='urn:magento:module:Df_Config:etc/system_file.xsd'
+>
+	<system>
+<!-- The «Sales» → «Fraud Protection» section has been added in Magento 2.3.0 for the `Magento_Signifyd` module:
+https://github.com/magento/magento2/blob/2.3.0/app/code/Magento/Signifyd/etc/adminhtml/system.xml#L10-L13
+https://github.com/magento/magento2/commit/2008b357
+https://devdocs.magento.com/guides/v2.3/payments-integrations/signifyd/signifyd.html
+As the section is absent in Magento ≤ 2.3, I duplicate its declaration here. -->
+		<section
+			id='fraud_protection'
+			showInDefault='1' showInStore='1' showInWebsite='1'
+			sortOrder='410'
+			translate='label'
+			type='text'
+		>
+			<label>Fraud Protection</label>
+			<resource>Magento_Sales::fraud_protection</resource>
+			<tab>sales</tab>
+			<group 
+				id='sift'
+				showInDefault='1' showInStore='1' showInWebsite='1'
+				sortOrder='9'
+				type='text'
+			>
+				<dfExtension>Dfe_Sift</dfExtension>
+				<fieldset_css>df-config</fieldset_css>
+				<frontend_model>Df\Config\Fieldset</frontend_model>
+			</group>
+		</section>
+	</system>
+</config>

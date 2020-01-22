@@ -3,7 +3,7 @@
 	,"version": "0.0.1"
 	,"description": "Sift integration with Magento 2"
 	,"type": "magento2-module"
-	,"homepage": "https://github.com/mage2pro/sift"
+	,"homepage": "https://mage2.pro/c/extensions/sift"
 	,"license": "MIT"
 	,"authors": [{
 		"name": "Dmitry Fedyuk",
