@@ -39,11 +39,14 @@ As the section is absent in Magento ≤ 2.3, I duplicate its declaration here. -
 					<label>Protect your store from fraud with Fraud Protection by Sift</label>
 					<comment><![CDATA[Sift automatically reviews your orders for fraud,
 telling you in seconds which orders to ship, and which to reject.
-<p>Benefits:<ul>
-<li>Grow your business without fear of fraud</li>
-<li>Accept more orders and maximize your revenue</li>
-<li>Automate order review and shift fraud off your plate</li></ul></p>]]></comment>
-					<more_url>https://www.signifyd.com/magento-guaranteed-fraud-protection</more_url>
+<p>Benefits:</p>
+<ul>
+	<li>Grow your business without fear of fraud</li>
+	<li>Accept more orders and maximize your revenue</li>
+	<li>Automate order review and shift fraud off your plate</li>
+</ul>
+<a href='https://mage2.pro/c/extensions/sift' target='_blank'>Ask a question</a>
+<a href='https://github.com/mage2pro/sift/issues/new' target='_blank'>Report an issue</a>]]></comment>
 				</group>
 			</group>
 		</section>
