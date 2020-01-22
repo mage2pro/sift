@@ -74,9 +74,10 @@ The whole `sift` group is not shown for an unknown reason if the `<frontend_mode
 						translate='label'
 						type='Df\Framework\Form\Element\Checkbox'
 					>
-						<label>Sandbox Mode?</label>
 						<backend_model>Df\Config\Backend\Checkbox</backend_model>
+						<comment><![CDATA[If you enable it here, then <a href='https://mage2.pro/t/6090' target='_blank'>enable it in the Sift console</a> too.]]></comment>
 						<depends><field id='enable'>1</field></depends>
+						<label>Sandbox Mode?</label>
 					</field>
 					<field
 						id='testBeaconKey'
