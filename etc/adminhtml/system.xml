@@ -81,9 +81,23 @@ The whole `sift` group is not shown for an unknown reason if the `<frontend_mode
 						<label>Sandbox Mode?</label>
 					</field>
 					<field
-						id='testFrontendKey'
+						id='testMerchantID'
 						showInDefault='1' showInStore='1' showInWebsite='1'
 						sortOrder='3'
+						translate='label'
+					>
+						<comment><![CDATA[<a href='https://mage2.pro/t/6094' target='_blank'>How to get it?</a>]]></comment>
+						<config_path>fraud_protection/sift/testMerchantID</config_path>
+						<depends>
+							<field id='enable'>1</field>
+							<field id='test'>1</field>
+						</depends>
+						<label>Sandbox Account ID</label>
+					</field>
+					<field
+						id='testFrontendKey'
+						showInDefault='1' showInStore='1' showInWebsite='1'
+						sortOrder='4'
 						translate='label'
 						type='obscure'
 					>
@@ -99,7 +113,7 @@ The whole `sift` group is not shown for an unknown reason if the `<frontend_mode
 					<field
 						id='testBackendKey'
 						showInDefault='1' showInStore='1' showInWebsite='1'
-						sortOrder='4'
+						sortOrder='5'
 						translate='label'
 						type='obscure'
 					>
@@ -113,9 +127,23 @@ The whole `sift` group is not shown for an unknown reason if the `<frontend_mode
 						<label>Sandbox REST API Key</label>
 					</field>
 					<field
+						id='liveMerchantID'
+						showInDefault='1' showInStore='1' showInWebsite='1'
+						sortOrder='3'
+						translate='label'
+					>
+						<comment><![CDATA[<a href='https://mage2.pro/t/6095' target='_blank'>How to get it?</a>]]></comment>
+						<config_path>fraud_protection/sift/liveMerchantID</config_path>
+						<depends>
+							<field id='enable'>1</field>
+							<field id='test'>0</field>
+						</depends>
+						<label>Production Account ID</label>
+					</field>
+					<field
 						id='liveFrontendKey'
 						showInDefault='1' showInStore='1' showInWebsite='1'
-						sortOrder='5'
+						sortOrder='7'
 						translate='label'
 						type='obscure'
 					>
@@ -131,7 +159,7 @@ The whole `sift` group is not shown for an unknown reason if the `<frontend_mode
 					<field
 						id='liveBackendKey'
 						showInDefault='1' showInStore='1' showInWebsite='1'
-						sortOrder='6'
+						sortOrder='8'
 						translate='label'
 						type='obscure'
 					>
