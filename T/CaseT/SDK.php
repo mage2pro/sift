@@ -2,6 +2,7 @@
 namespace Dfe\Sift\T\CaseT;
 use Dfe\Sift\Settings as S;
 use SiftClient as C;
+use SiftResponse as Res;
 // 2020-01-20 https://github.com/SiftScience/sift-php
 final class SDK extends \Dfe\Sift\T\CaseT {
 	/** 2020-01-20 */
@@ -22,7 +23,7 @@ final class SDK extends \Dfe\Sift\T\CaseT {
 			'distance_traveled' => 5.26,
 			'seller_user_email' => 'seller@gmail.com',
 			'trip_time' => 930
-		]);
-		echo df_json_encode($r);
+		]); /** @var Res $r */
+		echo df_json_prettify($r->rawResponse);
 	}
 }
