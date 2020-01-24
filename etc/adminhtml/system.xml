@@ -81,7 +81,7 @@ The whole `sift` group is not shown for an unknown reason if the `<frontend_mode
 						<label>Sandbox Mode?</label>
 					</field>
 					<field
-						id='testBeaconKey'
+						id='testFrontendKey'
 						showInDefault='1' showInStore='1' showInWebsite='1'
 						sortOrder='3'
 						translate='label'
@@ -89,7 +89,7 @@ The whole `sift` group is not shown for an unknown reason if the `<frontend_mode
 					>
 						<backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>
 						<comment><![CDATA[<a href='https://mage2.pro/t/6089' target='_blank'>How to get it?</a>]]></comment>
-						<config_path>fraud_protection/sift/testBeaconKey</config_path>
+						<config_path>fraud_protection/sift/testFrontendKey</config_path>
 						<depends>
 							<field id='enable'>1</field>
 							<field id='test'>1</field>
@@ -97,20 +97,52 @@ The whole `sift` group is not shown for an unknown reason if the `<frontend_mode
 						<label>Sandbox Beacon Key</label>
 					</field>
 					<field
-						id='liveBeaconKey'
+						id='testBackendKey'
 						showInDefault='1' showInStore='1' showInWebsite='1'
 						sortOrder='4'
 						translate='label'
 						type='obscure'
 					>
 						<backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>
+						<comment><![CDATA[<a href='https://mage2.pro/t/6092' target='_blank'>How to get it?</a>]]></comment>
+						<config_path>fraud_protection/sift/testBackendKey</config_path>
+						<depends>
+							<field id='enable'>1</field>
+							<field id='test'>1</field>
+						</depends>
+						<label>Sandbox REST API Key</label>
+					</field>
+					<field
+						id='liveFrontendKey'
+						showInDefault='1' showInStore='1' showInWebsite='1'
+						sortOrder='5'
+						translate='label'
+						type='obscure'
+					>
+						<backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>
 						<comment><![CDATA[<a href='https://mage2.pro/t/6091' target='_blank'>How to get it?</a>]]></comment>
-						<config_path>fraud_protection/sift/liveBeaconKey</config_path>
+						<config_path>fraud_protection/sift/liveFrontendKey</config_path>
 						<depends>
 							<field id='enable'>1</field>
 							<field id='test'>0</field>
 						</depends>
 						<label>Production Beacon Key</label>
+					</field>
+					<field
+						id='liveBackendKey'
+						showInDefault='1' showInStore='1' showInWebsite='1'
+						sortOrder='6'
+						translate='label'
+						type='obscure'
+					>
+						<backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>
+						<comment><![CDATA[<a href='https://mage2.pro/t/6093' target='_blank'>How to get it?</a>]]></comment>
+						<config_path>fraud_protection/sift/liveBackendKey</config_path>
+						<depends>
+							<field id='enable'>1</field>
+							<field id='test'>0</field>
+						</depends>
+						<label>Production REST API Key</label>
 					</field>
 				</group>
 			</group>

@@ -3,7 +3,13 @@ define(['df-lodash', 'Magento_Customer/js/customer-data'], function(_, cd) {retu
 	var c = cd.get('customer')();
 	var f = function() {
 		var _sift = window._sift = window._sift || [];
-		_sift.push(['_setAccount', d['beaconKey']]);
+		/**
+		 * 2020-01-25
+		 * 1) «Change the parameter to _setAccount above to your JavaScript Snippet key.»
+		 * https://sift.com/developers/docs/curl/javascript-api
+		 * 2) Despite of the `_setAccount` name, the value should be the Beacon Key, not the Account ID.
+		 */
+		_sift.push(['_setAccount', d['key']]);
 		// 2020-01-25
 		// «Set _session_id to a string that identifies a unique session ID for the visitor's current browsing session.»
 		// https://sift.com/developers/docs/curl/javascript-api
