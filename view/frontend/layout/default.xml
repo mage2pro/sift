@@ -5,7 +5,7 @@
 >
 	<body>
 		<referenceContainer name='root'>
-			<block class='Dfe\Sift\Js' ifconfig='fraud_protection/sift/enable' template='Dfe_Sift::js.phtml'/>
+			<block class='Dfe\Sift\Js' ifconfig='fraud_protection/sift/enable'/>
 		</referenceContainer>
 	</body>
 </page>
