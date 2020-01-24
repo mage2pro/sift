@@ -4,7 +4,7 @@ define(['df-lodash', 'Magento_Customer/js/customer-data'], function(_, cd) {retu
 	var f = function() {
 		var _sift = window._sift = window._sift || [];
 		_sift.push(['_setAccount', d['beaconKey']]);
-		_sift.push(['_setSessionId', 'unique_session_id']);
+		_sift.push(['_setSessionId', c.quoteId]);
 		_sift.push(['_setUserId', c.id]);
 		_sift.push(['_trackPageview']);
 		var f = function() {
@@ -14,13 +14,5 @@ define(['df-lodash', 'Magento_Customer/js/customer-data'], function(_, cd) {retu
 		};
 		window.attachEvent ? window.attachEvent('onload', f) : window.addEventListener('load', f, false);
 	};
-	if (!_.isEmpty(c)) {
-		f();
-	}
-	else {
-		cd.reload('customer').done(function() {
-			c = cd.get('customer')();
-			f();
-		});
-	}
+	!_.isEmpty(c) ? f() : cd.reload('customer').done(function() {c = cd.get('customer')(); f();});
 }});
