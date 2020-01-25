@@ -3,9 +3,8 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd"
 >
-<!-- 2020-01-24 -->
 	<type name='Magento\Customer\CustomerData\Customer'>
-		<plugin disabled='false' name='Df\Customer\Js\CustomerId'/>
-		<plugin disabled='false' name='Df\Customer\Js\QuoteId'/>
+		<plugin disabled='false' name='Df\Customer\Js\CustomerId'/> <!-- 2020-01-24 -->
+		<plugin disabled='false' name='Df\Customer\Js\SessionId'/> <!-- 2020-01-26 -->
 	</type>
 </config>

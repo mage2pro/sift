@@ -13,7 +13,7 @@ define(['df-lodash', 'Magento_Customer/js/customer-data'], function(_, cd) {retu
 		// 2020-01-25
 		// «Set _session_id to a string that identifies a unique session ID for the visitor's current browsing session.»
 		// https://sift.com/developers/docs/curl/javascript-api
-		_sift.push(['_setSessionId', c.quoteId]);
+		_sift.push(['_setSessionId', c.sessionId]);
 		// 2020-01-25
 		// «Set _user_id to a string that identifies the user, e.g. a user ID, username, or email address.
 		// (Leave user_id blank if you do not yet know the ID of the user.).
