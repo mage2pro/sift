@@ -5,6 +5,9 @@
 >
 	<type name='Magento\Customer\CustomerData\Customer'>
 		<plugin disabled='false' name='Df\Customer\Js\CustomerId'/> <!-- 2020-01-24 -->
-		<plugin disabled='false' name='Df\Customer\Js\SessionId'/> <!-- 2020-01-26 -->
+		<plugin
+			name='Dfe\Sift\Plugin\Customer\CustomerData\Customer'
+			type='Dfe\Sift\Plugin\Customer\CustomerData\Customer'
+		/>
 	</type>
 </config>
