@@ -21,7 +21,7 @@ final class Event extends \Dfe\Sift\T\CaseT {
 				 * used to tie a user's action before and after log in or account creation.»
 				 * Required if no user is provided, string.
 				 */
-				,'session_id' => df_customer_session_id()
+				,'session_id' => \Dfe\Sift\Session::get()
 				// 2020-01-25 Required, string.
 				,'type' => '$add_item_to_cart'
 				,'user_id' => df_customer_id()

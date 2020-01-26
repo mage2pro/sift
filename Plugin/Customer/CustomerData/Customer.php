@@ -12,13 +12,5 @@ final class Customer {
 	 * @param array(string => mixed) $r
 	 * @return array(string => mixed)
 	 */
-	function afterGetSectionData(Sb $sb, array $r) {
-		$k = 'siftSessionId'; /** @var string $k */
-		$m = ucfirst($k); /** @var string $m */
-		$sess = df_customer_session(); /** @var Sess $sess */
-		if (!($v = $sess->__call("get$m", []))) { /** @var string $v */
-			$sess->__call("set$m", [$v = df_uid()]);
-		}
-		return [$k => $v] + $r;
-	}
+	function afterGetSectionData(Sb $sb, array $r) {return ['siftSessionId' => \Dfe\Sift\Session::get()] + $r;}
 }
