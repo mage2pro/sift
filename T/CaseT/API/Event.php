@@ -13,18 +13,8 @@ final class Event extends \Dfe\Sift\T\CaseT {
 		$s = S::s(); /** @var S $s */
 		try {
 			$r = F::s()->post([
-				// 2020-01-25 «Your Sift REST API key». Required, string.
-				'api_key' => $s->backendKey()
-				/**
-				 * 2020-01-25
-				 * «The user's current session ID,
-				 * used to tie a user's action before and after log in or account creation.»
-				 * Required if no user is provided, string.
-				 */
-				,'session_id' => \Dfe\Sift\Session::get()
 				// 2020-01-25 Required, string.
-				,'type' => '$add_item_to_cart'
-				,'user_id' => df_customer_id()
+				'type' => '$add_item_to_cart'
 			]);
 			echo df_json_encode($r);
 		}
