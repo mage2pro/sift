@@ -50,6 +50,9 @@ final class Client extends \Df\API\Client {
 			 */
 			,'user_id' => df_customer_id()
 		] + $p;});
+		$f = function(array $p) {
+						
+		};
 		$this->addFilterReq(function(array $p) {return df_map_kr($p, function($k, $v) {return ["$$k", $v];});});
 		$this->reqJson();
 		$this->resJson();

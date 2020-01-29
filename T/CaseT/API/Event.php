@@ -13,8 +13,32 @@ final class Event extends \Dfe\Sift\T\CaseT {
 		$s = S::s(); /** @var S $s */
 		try {
 			$r = F::s()->post([
+				/**
+				 * 2020-01-26
+				 * «The user agent of the browser that is used to add the item to cart.
+				 * Represented by the `browser` object.
+				 * Use this field if the client is a browser.
+				 * Note: cannot be used in conjunction with `app`.»
+				 */
+				'browser' => ['user_agent' => df_request_ua()]
+				/**
+				 * 2020-01-26
+				 * «The product item added to cart.
+				 * Required subfields are `item_id`, `product_title`, and `price`.
+				 * The `quantity` is specified as a subfield.»
+				 */
+				,'item' => [
+					// 2020-01-29 «B004834GQO»
+					'item_id' => ''
+					// 2020-01-29 «The Slanket Blanket-Texas Tea»
+					,'product_title' => ''
+					// 2020-01-29 «39990000» => «$39.99»
+					,'price' => ''
+					// 2020-01-29 «16»
+					,'quantity' => ''
+				]
 				// 2020-01-25 Required, string.
-				'type' => '$add_item_to_cart'
+				,'type' => '$add_item_to_cart'
 			]);
 			echo df_json_encode($r);
 		}
