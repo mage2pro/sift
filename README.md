@@ -1,7 +1,8 @@
 The module integrates Magento 2 with the **[Sift](https://sift.com)** fraud detection service.
 
 ## How to install
-```
+```         
+composer config repositories.sift vcs https://github.com/dmitry-fedyuk/sift
 bin/magento maintenance:enable
 rm -rf composer.lock
 composer clear-cache
