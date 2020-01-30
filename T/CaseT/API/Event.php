@@ -19,8 +19,11 @@ final class Event extends \Dfe\Sift\T\CaseT {
 				 * Represented by the `browser` object.
 				 * Use this field if the client is a browser.
 				 * Note: cannot be used in conjunction with `app`.»
+				 * 2020-01-30
+				 * An empty value leads to the error:
+				 * «Invalid field value(s) for fields: $.$browser.$user_agent»
 				 */
-				'browser' => ['user_agent' => df_request_ua()]
+				'browser' => ['user_agent' => df_request_ua() ?: 'CLI']
 				/**
 				 * 2020-01-26
 				 * «The product item added to cart.
@@ -28,19 +31,34 @@ final class Event extends \Dfe\Sift\T\CaseT {
 				 * The `quantity` is specified as a subfield.»
 				 */
 				,'item' => [
+					// 2020-01-30 «Slanket»
+					'brand' => 'Slanket'
+					// 2020-01-30 «Blankets & Throws»
+					,'category' => 'Blankets & Throws'
+					// 2020-01-30 «Texas Tea»
+					,'color' => 'Texas Tea'
+					// 2020-01-30
+					,'currency_code' => 'USD'
 					// 2020-01-29 «B004834GQO»
-					'item_id' => ''
+					,'item_id' => 'B004834GQO'
+					// 2020-01-30 «Slanket»
+					,'manufacturer' => 'Slanket'
 					// 2020-01-29 «The Slanket Blanket-Texas Tea»
-					,'product_title' => ''
+					,'product_title' => 'The Slanket Blanket-Texas Tea'
 					// 2020-01-29 «39990000» => «$39.99»
-					,'price' => ''
+					,'price' => 39990000
 					// 2020-01-29 «16»
-					,'quantity' => ''
+					,'quantity' => 16
+					// 2020-01-30 «004834GQ»
+					,'sku' => '004834GQ'
+					,'tags' => ['Awesome', 'Wintertime specials']
+					// 2020-01-30 «6786211451001»
+					,'upc' => '6786211451001'
 				]
 				// 2020-01-25 Required, string.
 				,'type' => '$add_item_to_cart'
 			]);
-			echo df_json_encode($r);
+			echo $r->j();
 		}
 		catch (E $e) {
 			xdebug_break();
