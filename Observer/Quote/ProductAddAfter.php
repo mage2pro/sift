@@ -3,10 +3,10 @@ namespace Dfe\Sift\Observer\Quote;
 use Dfe\Sift\API\Facade\Event as F;
 use Dfe\Sift\Settings as S;
 use Exception as E;
+use Magento\Catalog\Model\Category as C;
 use Magento\Catalog\Model\Product as P;
 use Magento\Framework\Event\Observer as O;
 use Magento\Framework\Event\ObserverInterface;
-use Magento\Quote\Model\Quote as Q;
 use Magento\Quote\Model\Quote\Item as I;
 /**
  * 2020-01-31 `sales_quote_product_add_after`
@@ -29,6 +29,7 @@ final class ProductAddAfter implements ObserverInterface {
 			if ($s->enable()) {
 				/** @uses df_oqi_is_leaf() */
 				df_map(array_filter($o['items'], 'df_oqi_is_leaf'), function(I $i) { /** @var I $i */
+					$p = $i->getProduct(); /** @var P $p */
 					F::s()->post([
 						/**
 						 * 2020-01-26
@@ -48,25 +49,27 @@ final class ProductAddAfter implements ObserverInterface {
 						 */
 						,'item' => [
 							// 2020-01-30 «Slanket»
-							'brand' => 'Slanket'
+							'brand' => df_product_att_val_s($p, 'brand', null)
 							// 2020-01-30 «Blankets & Throws»
-							,'category' => 'Blankets & Throws'
+							,'category' => df_csv_pretty(df_map($p->getCategoryCollection(), function(C $c) {return
+								$c->getName()
+							;}))
 							// 2020-01-30 «Texas Tea»
-							,'color' => 'Texas Tea'
+							,'color' => df_product_att_val_s($p, 'color', null)
 							// 2020-01-30
 							,'currency_code' => df_oqi_currency_c($i)
-							// 2020-01-29 «B004834GQO»
-							,'item_id' => 'B004834GQO'
+							,'item_id' => $i['product_id'] // 2020-01-29 «B004834GQO»
 							// 2020-01-30 «Slanket»
-							,'manufacturer' => 'Slanket'
+							,'manufacturer' => df_product_att_val_s($p, 'manufacturer', null)
 							,'product_title' => $i->getName() // 2020-01-29 «The Slanket Blanket-Texas Tea»
 							,'price' => round(10**6 * df_oqi_price($i)) // 2020-01-29 «39990000» => «$39.99»
 							,'quantity' => df_oqi_qty($i) // 2020-01-29 «16»
-							// 2020-01-30 «004834GQ»
-							,'sku' => '004834GQ'
+							,'sku' => $i->getSku() // 2020-01-30 «004834GQ»
 							,'tags' => [] // 2020-01-31 Magento 2 does not have a built-in tagging module.
 							// 2020-01-30 «6786211451001»
-							,'upc' => '6786211451001'
+							// 2020-01-31
+							// It seems to mean «Universal Product Code» https://en.wikipedia.org/wiki/Universal_Product_Code
+							,'upc' => ''
 						]
 						// 2020-01-25 Required, string.
 						,'type' => '$add_item_to_cart'

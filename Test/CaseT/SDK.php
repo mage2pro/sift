@@ -1,10 +1,10 @@
 <?php
-namespace Dfe\Sift\T\CaseT;
+namespace Dfe\Sift\Test\CaseT;
 use Dfe\Sift\Settings as S;
 use SiftClient as C;
 use SiftResponse as Res;
 // 2020-01-25 https://github.com/SiftScience/sift-php
-final class SDK extends \Dfe\Sift\T\CaseT {
+final class SDK extends \Dfe\Sift\Test\CaseT {
 	/** 2020-01-25 */
 	function t00() {echo __METHOD__;}
 

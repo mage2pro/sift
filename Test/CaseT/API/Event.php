@@ -1,10 +1,10 @@
 <?php
-namespace Dfe\Sift\T\CaseT\API;
+namespace Dfe\Sift\Test\CaseT\API;
 use Dfe\Sift\API\Facade\Event as F;
 use Dfe\Sift\Settings as S;
 use Exception as E;
 // 2020-01-25 https://sift.com/developers/docs/curl/events-api
-final class Event extends \Dfe\Sift\T\CaseT {
+final class Event extends \Dfe\Sift\Test\CaseT {
 	/** 2020-01-25 */
 	function t00() {echo __METHOD__;}
 
