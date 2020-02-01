@@ -3,9 +3,17 @@
 	xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
 	xsi:noNamespaceSchemaLocation='urn:magento:framework:Event/etc/events.xsd'
 >
+<!-- 2020-02-01 `sales_order_place_after`
+@used-by \Magento\Sales\Model\Order::place():
+	$this->_eventManager->dispatch('sales_order_place_after', ['order' => $this]);
+https://github.com/magento/magento2/blob/2.0.0/app/code/Magento/Sales/Model/Order.php#L1061
+https://github.com/magento/magento2/blob/2.3.4/app/code/Magento/Sales/Model/Order.php#L1191 -->
+	<event name='sales_order_place_after'>
+		<observer instance='Dfe\Sift\Observer\Sales\OrderPlaceAfter' name='Dfe\Sift\Observer\Sales\OrderPlaceAfter'/>
+	</event>
 <!-- 2020-01-31 `sales_quote_product_add_after`
 @used-by \Magento\Quote\Model\Quote::addProduct():
-	$this->_eventManager->dispatch('sales_quote_product_add_after', ['items' => $items])
+	$this->_eventManager->dispatch('sales_quote_product_add_after', ['items' => $items]);
 https://github.com/magento/magento2/blob/2.0.0/app/code/Magento/Quote/Model/Quote.php#L1631
 https://github.com/magento/magento2/blob/2.3.3/app/code/Magento/Quote/Model/Quote.php#L1694 -->
 	<event name='sales_quote_product_add_after'>
