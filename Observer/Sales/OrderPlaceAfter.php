@@ -57,6 +57,20 @@ final class OrderPlaceAfter implements ObserverInterface {
 			// so you can record orders that are paid for using multiple payments.»
 			,'payment_methods' => []
 			// 2020-02-01
+			// 1) Array Of Promotions: https://sift.com/developers/docs/curl/events-api/complex-field-types/promotion
+			// 2) «The list of promotions that apply to this order.
+			// You can add one or more promotions when creating or updating an order.
+			// You can also separately add promotions to the account via the `$add_promotion` event.»
+			,'promotions' => []
+			// 2020-02-01 String
+			// «For marketplace businesses, this is the seller's user ID, typically a database primary key.
+			// Follow our guidelines for `$user_id values`: https://sift.com/developers/docs/curl/events-api/fields»
+			,'seller_user_id' => ''
+			// 2020-02-01 String.
+			// «Indicates the method of delivery to the user.
+			// Allowed values: `$electronic`, `$physical`».
+			,'shipping_method' => '$physical'
+			// 2020-02-01
 			// 1) Address: https://sift.com/developers/docs/curl/events-api/complex-field-types/address
 			// 2) «The shipping address as entered by the user.»
 			,'shipping_address' => []
