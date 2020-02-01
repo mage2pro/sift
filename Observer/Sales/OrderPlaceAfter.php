@@ -1,6 +1,7 @@
 <?php
 namespace Dfe\Sift\Observer\Sales;
 use Dfe\Sift\API\Facade\Event as F;
+use Dfe\Sift\Payload\Browser;
 use Dfe\Sift\Payload\OQI;
 use Magento\Framework\Event\Observer as Ob;
 use Magento\Framework\Event\ObserverInterface;
@@ -81,6 +82,6 @@ final class OrderPlaceAfter implements ObserverInterface {
 			// Note: If the user's email is also their account ID in your system,
 			// set both the `$user_id` and `$user_email` fields to their email address.»
 			,'user_email' => $o->getCustomerEmail()
-		]);
+		] + Browser::p());
 	});}
 }

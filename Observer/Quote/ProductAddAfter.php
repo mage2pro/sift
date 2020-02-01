@@ -2,6 +2,7 @@
 namespace Dfe\Sift\Observer\Quote;
 use Dfe\Sift\API\Facade\Event as F;
 use Dfe\Sift\Observer as _P;
+use Dfe\Sift\Payload\Browser;
 use Dfe\Sift\Payload\OQI;
 use Magento\Framework\Event\Observer as O;
 use Magento\Framework\Event\ObserverInterface;
@@ -27,25 +28,14 @@ final class ProductAddAfter implements ObserverInterface {
 		df_map(array_filter($o['items'], 'df_oqi_is_leaf'), function(I $i) {F::s()->post([
 			/**
 			 * 2020-01-26
-			 * «The user agent of the browser that is used to add the item to cart.
-			 * Represented by the `browser` object.
-			 * Use this field if the client is a browser.
-			 * Note: cannot be used in conjunction with `app`.»
-			 * 2020-01-30
-			 * An empty value leads to the error: «Invalid field value(s) for fields: $.$browser.$user_agent».
-			 * 2020-02-01 https://sift.com/developers/docs/curl/events-api/complex-field-types/browser
-			 */
-			'browser' => ['user_agent' => df_request_ua() ?: 'CLI']
-			/**
-			 * 2020-01-26
 			 * «The product item added to cart.
 			 * Required subfields are `item_id`, `product_title`, and `price`.
 			 * The `quantity` is specified as a subfield.»
 			 * 2020-02-01 https://sift.com/developers/docs/curl/events-api/complex-field-types/item
 			 */
-			,'item' => OQI::p($i)
+			'item' => OQI::p($i)
 			// 2020-01-25 Required, string.
 			,'type' => '$add_item_to_cart'
-		]);});
+		] + Browser::p());});
 	});}
 }
