@@ -1,8 +1,9 @@
 <?php
 namespace Dfe\Sift\Observer\Sales;
 use Dfe\Sift\API\Facade\Event as F;
-use Dfe\Sift\Payload\Browser;
-use Dfe\Sift\Payload\OQI;
+use Dfe\Sift\Payload\Address as pAddress;
+use Dfe\Sift\Payload\Browser as pBrowser;
+use Dfe\Sift\Payload\OQI as pOQI;
 use Magento\Framework\Event\Observer as Ob;
 use Magento\Framework\Event\ObserverInterface;
 use Magento\Sales\Model\Order as O;
@@ -31,7 +32,7 @@ final class OrderPlaceAfter implements ObserverInterface {
 			// 2020-02-01
 			// 1) Address: https://sift.com/developers/docs/curl/events-api/complex-field-types/address
 			// 2) «The billing address as entered by the user.»
-			,'billing_address' => []
+			,'billing_address' => pAddress::p($o->getBillingAddress())
 			// 2020-02-01 String.
 			// «ISO-4217 currency code for the amount. If your site uses alternative currencies, specify them here.»
 			,'currency_code' => $o->getOrderCurrencyCode()
@@ -48,7 +49,7 @@ final class OrderPlaceAfter implements ObserverInterface {
 			 * and other cases where users make bookings.»
 			 * 3) «Note: cannot be used in conjunction with `$bookings`.»
 			 */
-			,'items' => df_oqi_leafs($o, function(I $i) {return OQI::p($i);})
+			,'items' => df_oqi_leafs($o, function(I $i) {return pOQI::p($i);})
 			// 2020-02-01 String. «The ID for tracking this order in your system»
 			,'order_id' => $o->getIncrementId()
 			// 2020-02-01
@@ -74,7 +75,7 @@ final class OrderPlaceAfter implements ObserverInterface {
 			// 2020-02-01
 			// 1) Address: https://sift.com/developers/docs/curl/events-api/complex-field-types/address
 			// 2) «The shipping address as entered by the user.»
-			,'shipping_address' => []
+			,'shipping_address' => pAddress::p($o->getShippingAddress())
 			// 2020-01-25 Required, string.
 			,'type' => '$create_order'
 			// 2020-02-01 String.
@@ -82,6 +83,6 @@ final class OrderPlaceAfter implements ObserverInterface {
 			// Note: If the user's email is also their account ID in your system,
 			// set both the `$user_id` and `$user_email` fields to their email address.»
 			,'user_email' => $o->getCustomerEmail()
-		] + Browser::p());
+		] + pBrowser::p());
 	});}
 }

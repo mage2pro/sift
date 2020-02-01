@@ -7,7 +7,7 @@ use Magento\Sales\Model\Order\Item as OI;
 // 2020-02-01 https://sift.com/developers/docs/curl/events-api/complex-field-types/item
 final class OQI {
 	/**
-	 * 2020-01-02
+	 * 2020-02-01
 	 * @used-by \Dfe\Sift\Observer\Quote\ProductAddAfter::execute()
 	 * @used-by \Dfe\Sift\Observer\Sales\OrderPlaceAfter::execute()
 	 * @param QI|OI $i
