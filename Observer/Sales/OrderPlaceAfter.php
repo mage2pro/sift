@@ -1,9 +1,11 @@
 <?php
 namespace Dfe\Sift\Observer\Sales;
 use Dfe\Sift\API\Facade\Event as F;
+use Dfe\Sift\Payload\OQI;
 use Magento\Framework\Event\Observer as Ob;
 use Magento\Framework\Event\ObserverInterface;
 use Magento\Sales\Model\Order as O;
+use Magento\Sales\Model\Order\Item as I;
 /**
  * 2020-02-01 `sales_order_place_after`
  * @used-by \Magento\Sales\Model\Order::place():
@@ -34,7 +36,18 @@ final class OrderPlaceAfter implements ObserverInterface {
 			,'currency_code' => $o->getOrderCurrencyCode()
 			// 2020-02-01 Boolean. «Whether the user requested priority/expedited shipping on their order.»
 			,'expedited_shipping' => false
-			,'items' => []
+			/**
+			 * 2020-02-01
+			 * 1) Array of items: https://sift.com/developers/docs/curl/events-api/complex-field-types/item
+			 * 2) «The list of items ordered.
+			 * This may include physical products, gift cards, in-app purchases etc.
+			 * Travel (Flights, Hotels, Rideshare, etc) and Event Ticketing customers
+			 * should use `$bookings` instead of `$items`.
+			 * `$bookings` supports specialized fields for modeling specific to Travel, Ticketing,
+			 * and other cases where users make bookings.»
+			 * 3) «Note: cannot be used in conjunction with `$bookings`.»
+			 */
+			,'items' => df_oqi_leafs($o, function(I $i) {return OQI::p($i);})
 			// 2020-02-01 String. «The ID for tracking this order in your system»
 			,'order_id' => $o->getIncrementId()
 			// 2020-02-01

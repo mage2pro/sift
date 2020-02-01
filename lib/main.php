@@ -6,8 +6,8 @@
  * $1.23 USD = 123 cents = 1,230,000 micros.
  * For currencies without cents of fractional denominations, like the Japanese Yen, use 1 JPY = 1000000 micros.»
  * https://sift.com/developers/docs/curl/events-api/reserved-events/create-order
- * @used-by \Dfe\Sift\Observer\Quote\ProductAddAfter::execute()
  * @used-by \Dfe\Sift\Observer\Sales\OrderPlaceAfter::execute()
+ * @used-by \Dfe\Sift\Payload\OQI::p()
  * @param int|float $v
  * @return int
  */
