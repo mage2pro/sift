@@ -1,0 +1,15 @@
+cash
+check
+credit_card
+crypto_currency
+digital_wallet
+electronic_fund_transfer
+financing
+gift_card
+invoice
+in_app_purchase
+money_order
+points
+store_credit
+third_party_processor
+voucher

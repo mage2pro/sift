@@ -4,6 +4,7 @@ use Dfe\Sift\API\Facade\Event as F;
 use Dfe\Sift\Payload\Address as pAddress;
 use Dfe\Sift\Payload\Browser as pBrowser;
 use Dfe\Sift\Payload\OQI as pOQI;
+use Dfe\Sift\Payload\Payment as pPayment;
 use Magento\Framework\Event\Observer as Ob;
 use Magento\Framework\Event\ObserverInterface;
 use Magento\Sales\Model\Order as O;
@@ -53,11 +54,12 @@ final class OrderPlaceAfter implements ObserverInterface {
 			// 2020-02-01 String. «The ID for tracking this order in your system»
 			,'order_id' => $o->getIncrementId()
 			// 2020-02-01
-			// 1) Array Of Payment Methods: https://sift.com/developers/docs/curl/events-api/complex-field-types/item
+			// 1) Array Of Payment Methods:
+			// https://sift.com/developers/docs/curl/events-api/complex-field-types/payment-method
 			// 2) «The payment information associated with this order.»
 			// 3) «Note: As opposed to `$transaction`, `$create_order` takes an array of `$payment_method` objects,
 			// so you can record orders that are paid for using multiple payments.»
-			,'payment_methods' => []
+			,'payment_methods' => [pPayment::p($o->getPayment())]
 			// 2020-02-01
 			// 1) Array Of Promotions: https://sift.com/developers/docs/curl/events-api/complex-field-types/promotion
 			// 2) «The list of promotions that apply to this order.

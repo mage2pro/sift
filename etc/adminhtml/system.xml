@@ -172,6 +172,20 @@ The whole `sift` group is not shown for an unknown reason if the `<frontend_mode
 						</depends>
 						<label>Production REST API Key</label>
 					</field>
+					<field
+						dfEntity='Dfe\Sift\PM\Entity'
+						dfItemFormElement='Dfe\Sift\PM\FE'
+						id='paymentMethods'
+						showInDefault='1' showInStore='1' showInWebsite='1'
+						sortOrder='9'
+						translate='label'
+						type='Df\Framework\Form\Element\ArrayT'
+					>
+						<backend_model>Df\Config\Backend\ArrayT</backend_model>
+						<config_path>fraud_protection/sift/paymentMethods</config_path>
+						<label>Payment Methods</label>
+						<depends><field id='enable'>1</field></depends>
+					</field>
 				</group>
 			</group>
 		</section>
