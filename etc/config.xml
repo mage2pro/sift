@@ -6,7 +6,7 @@
     <default>
 		<fraud_protection>
 			<sift>
-				<paymentMethods><![CDATA[[
+				<pm><![CDATA[[
 	{"mCode": "authorizenet_directpost", "sType": "credit_card", "sGateway": "authorizenet"},
 	{"mCode": "braintree_paypal", "sType": "credit_card", "sGateway": "paypal"},
 	{"mCode": "braintree_cc_vault", "sType": "credit_card", "sGateway": "braintree"},
@@ -26,7 +26,7 @@
 	{"mCode": "cashondelivery", "sType": "cash", "sGateway": "0"},
 	{"mCode": "banktransfer", "sType": "electronic_fund_transfer", "sGateway": "0"},
 	{"mCode": "payflowpro_cc_vault", "sType": "credit_card", "sGateway": "paypal"}
-]]]></paymentMethods>
+]]]></pm>
 			</sift>
 		</fraud_protection>
     </default>

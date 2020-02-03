@@ -1,5 +1,6 @@
 <?php
 namespace Dfe\Sift;
+use Dfe\Sift\PM\Entity as PM;
 // 2020-01-23
 /** @method static Settings s() */
 final class Settings extends \Df\API\Settings {
@@ -20,6 +21,13 @@ final class Settings extends \Df\API\Settings {
 	 * @return string
 	 */
 	function frontendKey() {return $this->testableP();}
+
+	/**
+	 * 2020-02-03
+	 * @param string $id
+	 * @return PM|null
+	 */
+	function pm($id) {return $this->_a(PM::class)->get($id);}
 
 	/**
 	 * 2020-01-23

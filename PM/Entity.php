@@ -1,15 +1,30 @@
 <?php
 namespace Dfe\Sift\PM;
 // 2020-02-02
+/** @used-by \Dfe\Sift\Settings::pm() */
 final class Entity extends \Df\Config\ArrayItem {
 	/**
 	 * 2020-02-02
 	 * @override
 	 * @see \Df\Config\ArrayItem::id()
 	 * @used-by \Df\Config\A::get()
-	 * @return int
+	 * @return string
 	 */
 	function id() {return $this->v(null, self::mCode);}
+
+	/**
+	 * 2020-02-03
+	 * @used-by \Dfe\Sift\Payload\Payment::p()
+	 * @return string
+	 */
+	function sGateway() {return $this->v();}
+
+	/**
+	 * 2020-02-03
+	 * @used-by \Dfe\Sift\Payload\Payment::p()
+	 * @return string
+	 */
+	function sType() {return $this->v();}
 
 	/**
 	 * 2020-02-02     
@@ -19,6 +34,7 @@ final class Entity extends \Df\Config\ArrayItem {
 	const mCode = 'mCode';
 	/**
 	 * 2020-02-02
+	 * @used-by sGateway()
 	 * @used-by \Dfe\Sift\PM\FE::onFormInitialized()
 	 */
 	const sGateway = 'sGateway';

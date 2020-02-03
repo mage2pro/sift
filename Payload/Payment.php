@@ -1,5 +1,7 @@
 <?php
 namespace Dfe\Sift\Payload;
+use Dfe\Sift\PM\Entity as PM;
+use Dfe\Sift\Settings as S;
 use Magento\Sales\Model\Order\Payment as P;
 /**
  * 2020-02-02 https://sift.com/developers/docs/curl/events-api/complex-field-types/payment-method
@@ -14,41 +16,42 @@ final class Payment {
 	 * @param P $p
 	 * @return array(string => mixed)
 	 */
-	static function p(P $p) {return [
-		// 2020-02-02 String.
-		// «The specific gateway, company, product, etc. being used to process payment.»
-		'payment_gateway' => 'STUB'
-		// 2020-02-02 String.
-		// «The general type of payment being used.»
-		,'payment_type' => 'STUB'
-		// 2020-02-02 String.
-		// «STUB»
-		,'STUB' => 'STUB'
-		// 2020-02-02 String.
-		// «STUB»
-		,'STUB' => 'STUB'
-		// 2020-02-02 String.
-		// «STUB»
-		,'STUB' => 'STUB'
-		,'STUB' => 'STUB'
-		// 2020-02-02 String.
-		// «STUB»
-		,'STUB' => 'STUB'
-		// 2020-02-02 String.
-		// «STUB»
-		,'STUB' => 'STUB'
-		// 2020-02-02 String.
-		// «STUB»
-		,'STUB' => 'STUB'
-		,'STUB' => 'STUB'
-		// 2020-02-02 String.
-		// «STUB»
-		,'STUB' => 'STUB'
-		// 2020-02-02 String.
-		// «STUB»
-		,'STUB' => 'STUB'
-		// 2020-02-02 String.
-		// «STUB»
-		,'STUB' => 'STUB'
-	];}
+	static function p(P $p) {
+		$pm = S::s()->pm($p->getMethod()); /** @var PM|null $pm */
+		return [
+			// 2020-02-02 String. «The specific gateway, company, product, etc. being used to process payment.»
+			'payment_gateway' => !$pm ? '' : $pm->sGateway()
+			// 2020-02-02 String. «The general type of payment being used.»
+			,'payment_type' => !$pm ? '' : $pm->sType()
+			// 2020-02-02 String.
+			// «STUB»
+			,'STUB' => 'STUB'
+			// 2020-02-02 String.
+			// «STUB»
+			,'STUB' => 'STUB'
+			// 2020-02-02 String.
+			// «STUB»
+			,'STUB' => 'STUB'
+			,'STUB' => 'STUB'
+			// 2020-02-02 String.
+			// «STUB»
+			,'STUB' => 'STUB'
+			// 2020-02-02 String.
+			// «STUB»
+			,'STUB' => 'STUB'
+			// 2020-02-02 String.
+			// «STUB»
+			,'STUB' => 'STUB'
+			,'STUB' => 'STUB'
+			// 2020-02-02 String.
+			// «STUB»
+			,'STUB' => 'STUB'
+			// 2020-02-02 String.
+			// «STUB»
+			,'STUB' => 'STUB'
+			// 2020-02-02 String.
+			// «STUB»
+			,'STUB' => 'STUB'
+		];
+	}
 }

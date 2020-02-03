@@ -175,7 +175,7 @@ The whole `sift` group is not shown for an unknown reason if the `<frontend_mode
 					<field
 						dfEntity='Dfe\Sift\PM\Entity'
 						dfItemFormElement='Dfe\Sift\PM\FE'
-						id='paymentMethods'
+						id='pm'
 						showInDefault='1' showInStore='1' showInWebsite='1'
 						sortOrder='9'
 						translate='label'
