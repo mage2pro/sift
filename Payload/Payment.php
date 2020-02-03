@@ -1,5 +1,7 @@
 <?php
 namespace Dfe\Sift\Payload;
+use Dfe\Sift\Payload\Payment\BankCard as pBankCard;
+use Dfe\Sift\Payload\Payment\PayPal as pPayPal;
 use Dfe\Sift\PM\Entity as PM;
 use Dfe\Sift\Settings as S;
 use Magento\Sales\Model\Order as O;
@@ -20,36 +22,28 @@ final class Payment {
 	static function p(P $p) {
 		$pm = S::s()->pm($p->getMethod()); /** @var PM|null $pm */
 		$o = $p->getOrder(); /** @var O $o */
-		return [
+		return pBankCard::p($p) + pPayPal::p($p) + [
 			/**
 			 * 2020-02-03 String.
-			 * 1) «Response code from the AVS address verification system. Used in payments involving credit cards.»
+			 * 1) «In case of a declined payment,
+			 * response code received from the payment processor indicating the reason for the decline.»
 			 * 2) @todo There is no a generic way to extract such information from a Magento payment module.
 			 * I recommend to implement specific adapters to built-in Magento modules and most popular third-party ones:
 			 * https://github.com/dmitry-fedyuk/sift/issues/2
 			 */
-			'avs_result_code' => ''
-			/**
-			 * 2020-02-03 String.
-			 * 1) «The first six digits of the credit card number.
-			 * These numbers contain information about the card issuer, the geography and other card details.»
-			 * 2) @todo There is no a generic way to extract such information from a Magento payment module.
-			 * I recommend to implement specific adapters to built-in Magento modules and most popular third-party ones:
-			 * https://github.com/dmitry-fedyuk/sift/issues/2
-			 */
-			,'card_bin' => ''
-			/**
-			 * 2020-02-03 String.
-			 * 1) «The last four digits of the credit card number.»
-			 * 2) @todo There is no a generic way to extract such information from a Magento payment module.
-			 * I recommend to implement specific adapters to built-in Magento modules and most popular third-party ones:
-			 * https://github.com/dmitry-fedyuk/sift/issues/2
-			 */
-			,'card_last4' => ''
+			'decline_reason_code' => ''
 			// 2020-02-02 String. «The specific gateway, company, product, etc. being used to process payment.»
 			,'payment_gateway' => !$pm ? '' : $pm->sGateway()
 			// 2020-02-02 String. «The general type of payment being used.»
 			,'payment_type' => !$pm ? '' : $pm->sType()
+			/**
+			 * 2020-02-03 String.
+			 * 1) «This is the ABA routing number or SWIFT code used.»
+			 * 2) @todo There is no a generic way to extract such information from a Magento payment module.
+			 * I recommend to implement specific adapters to built-in Magento modules and most popular third-party ones:
+			 * https://github.com/dmitry-fedyuk/sift/issues/2
+			 */
+			,'routing_number' => ''
 			/**
 			 * 2020-02-03 String.
 			 * «Use `$verification_status` to indicate the payment method has been verified.
@@ -60,15 +54,6 @@ final class Payment {
 			,'verification_status' => O::STATE_CANCELED === ($st = $o->getState()) ? '$failure' : (
 				in_array($st, [O::STATE_COMPLETE, O::STATE_PROCESSING]) ? '$success' : '$pending'
 			)
-			// 2020-02-03 String.
-			// «STUB»
-			,'STUB' => 'STUB'
-			// 2020-02-03 String.
-			// «STUB»
-			,'STUB' => 'STUB'
-			// 2020-02-03 String.
-			// «STUB»
-			,'STUB' => 'STUB'
 			// 2020-02-03 String.
 			// «STUB»
 			,'STUB' => 'STUB'

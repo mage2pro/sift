@@ -8,7 +8,7 @@ final class Event extends \Dfe\Sift\Test\CaseT {
 	/** 2020-01-25 */
 	function t00() {echo __METHOD__;}
 
-	/** @test 2020-01-25 https://sift.com/developers/docs/curl/events-api/reserved-events/add-item-to-cart */
+	/** 2020-01-25 https://sift.com/developers/docs/curl/events-api/reserved-events/add-item-to-cart */
 	function t01_add_item_to_cart() {
 		$s = S::s(); /** @var S $s */
 		try {
