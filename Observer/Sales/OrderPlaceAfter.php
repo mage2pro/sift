@@ -5,6 +5,7 @@ use Dfe\Sift\Payload\Address as pAddress;
 use Dfe\Sift\Payload\Browser as pBrowser;
 use Dfe\Sift\Payload\OQI as pOQI;
 use Dfe\Sift\Payload\Payment as pPayment;
+use Dfe\Sift\Payload\Promotions as pPromotions;
 use Magento\Framework\Event\Observer as Ob;
 use Magento\Framework\Event\ObserverInterface;
 use Magento\Sales\Model\Order as O;
@@ -65,7 +66,7 @@ final class OrderPlaceAfter implements ObserverInterface {
 			// 2) «The list of promotions that apply to this order.
 			// You can add one or more promotions when creating or updating an order.
 			// You can also separately add promotions to the account via the `$add_promotion` event.»
-			,'promotions' => []
+			,'promotions' => pPromotions::p($o)
 			// 2020-02-01 String
 			// «For marketplace businesses, this is the seller's user ID, typically a database primary key.
 			// Follow our guidelines for `$user_id values`: https://sift.com/developers/docs/curl/events-api/fields»

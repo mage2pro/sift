@@ -55,18 +55,6 @@ final class Payment {
 			,'verification_status' => O::STATE_CANCELED === ($st = $o->getState()) ? '$failure' : (
 				in_array($st, [O::STATE_COMPLETE, O::STATE_PROCESSING]) ? '$success' : '$pending'
 			)
-			// 2020-02-03 String.
-			// «STUB»
-			,'STUB' => 'STUB'
-			// 2020-02-03 String.
-			// «STUB»
-			,'STUB' => 'STUB'
-			// 2020-02-03 String.
-			// «STUB»
-			,'STUB' => 'STUB'
-			// 2020-02-03 String.
-			// «STUB»
-			,'STUB' => 'STUB'
 		];
 	}
 }
