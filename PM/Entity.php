@@ -9,7 +9,7 @@ final class Entity extends \Df\Config\ArrayItem {
 	 * @used-by \Df\Config\A::get()
 	 * @return int
 	 */
-	function id() {return $this->v(self::mCode);}
+	function id() {return $this->v(null, self::mCode);}
 
 	/**
 	 * 2020-02-02     
