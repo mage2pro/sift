@@ -2,6 +2,7 @@
 namespace Dfe\Sift\Payload;
 use Dfe\Sift\Payload\Payment\BankCard as pBankCard;
 use Dfe\Sift\Payload\Payment\PayPal as pPayPal;
+use Dfe\Sift\Payload\Payment\Stripe as pStripe;
 use Dfe\Sift\PM\Entity as PM;
 use Dfe\Sift\Settings as S;
 use Magento\Sales\Model\Order as O;
@@ -22,7 +23,7 @@ final class Payment {
 	static function p(P $p) {
 		$pm = S::s()->pm($p->getMethod()); /** @var PM|null $pm */
 		$o = $p->getOrder(); /** @var O $o */
-		return pBankCard::p($p) + pPayPal::p($p) + [
+		return pBankCard::p($p) + pPayPal::p($p) + pStripe::p($p) + [
 			/**
 			 * 2020-02-03 String.
 			 * 1) «In case of a declined payment,
