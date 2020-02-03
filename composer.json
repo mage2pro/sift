@@ -1,6 +1,6 @@
 {
 	"name": "mage2pro/sift"
-	,"version": "0.0.9"
+	,"version": "0.1.0"
 	,"description": "Sift integration with Magento 2"
 	,"type": "magento2-module"
 	,"homepage": "https://mage2.pro/c/extensions/sift"
@@ -11,7 +11,7 @@
 		"homepage": "https://mage2.pro/users/dmitry_fedyuk",
 		"role": "Developer"
 	}]
-	,"require": {"mage2pro/core": ">=5.9.1", "mage2pro/phone":  ">=1.1.0"}
+	,"require": {"mage2pro/core": ">=5.9.2", "mage2pro/phone":  ">=1.1.0"}
 	,"autoload": {"files": ["registration.php"], "psr-4": {"Dfe\\Sift\\": ""}}
 	,"keywords": [
 		"eCommerce"
