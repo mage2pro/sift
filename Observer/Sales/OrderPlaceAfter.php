@@ -70,10 +70,14 @@ final class OrderPlaceAfter implements ObserverInterface {
 			// «For marketplace businesses, this is the seller's user ID, typically a database primary key.
 			// Follow our guidelines for `$user_id values`: https://sift.com/developers/docs/curl/events-api/fields»
 			,'seller_user_id' => ''
-			// 2020-02-01 String.
-			// «Indicates the method of delivery to the user.
-			// Allowed values: `$electronic`, `$physical`».
-			,'shipping_method' => '$physical'
+			 /**
+			  * 2020-02-01 «Indicates the method of delivery to the user. Allowed values: `$electronic`, `$physical`».
+			  * 2020-02-03
+			  * If an order consist of virtual products only, then it does not have a shipping address,
+			  * and @uses \Magento\Sales\Model\Order::getShippingAddress() returns null
+			  * https://github.com/mage2pro/core/blob/5.9.4/Quote/lib/oq.php#L174-L176
+			  */
+			,'shipping_method' => $o->getShippingAddress() ? '$physical' : '$electronic'
 			// 2020-02-01
 			// 1) Address: https://sift.com/developers/docs/curl/events-api/complex-field-types/address
 			// 2) «The shipping address as entered by the user.»

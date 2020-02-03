@@ -12,6 +12,10 @@ use Magento\Sales\Model\Order\Address as A;
 final class Address {
 	/**
 	 * 2020-02-01
+	 * 2020-02-03
+	 * If an order consist of virtual products only, then it does not have a shipping address,
+	 * and @uses \Magento\Sales\Model\Order::getShippingAddress() returns null
+	 * https://github.com/mage2pro/core/blob/5.9.4/Quote/lib/oq.php#L174-L176
 	 * @used-by \Dfe\Sift\Observer\Sales\OrderPlaceAfter::execute()
 	 * @param IA|A|null $a
 	 * @return array(string => mixed)
