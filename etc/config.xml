@@ -7,11 +7,25 @@
 		<fraud_protection>
 			<sift>
 				<paymentMethods><![CDATA[[
-    {
-        "mCode": "authorizenet_directpost",
-        "sType": "credit_card",
-        "sGateway": "authorizenet"
-    }
+	{"mCode": "authorizenet_directpost", "sType": "credit_card", "sGateway": "authorizenet"},
+	{"mCode": "braintree_paypal", "sType": "credit_card", "sGateway": "paypal"},
+	{"mCode": "braintree_cc_vault", "sType": "credit_card", "sGateway": "braintree"},
+	{"mCode": "braintree_paypal_vault", "sType": "credit_card", "sGateway": "paypal"},
+	{"mCode": "purchaseorder", "sType": "electronic_fund_transfer", "sGateway": "0"},
+	{"mCode": "hosted_pro", "sType": "credit_card", "sGateway": "paypal"},
+	{"mCode": "paypal_express_bml", "sType": "financing", "sGateway": "paypal_express"},
+	{"mCode": "payflow_express_bml", "sType": "financing", "sGateway": "paypal"},
+	{"mCode": "paypal_billing_agreement", "sType": "credit_card", "sGateway": "paypal"},
+	{"mCode": "paypal_express", "sType": "credit_card", "sGateway": "paypal"},
+	{"mCode": "braintree", "sType": "credit_card", "sGateway": "braintree"},
+	{"mCode": "free", "sType": "gift_card", "sGateway": "0"},
+	{"mCode": "payflow_link", "sType": "credit_card", "sGateway": "paypal"},
+	{"mCode": "payflow_advanced", "sType": "credit_card", "sGateway": "paypal"},
+	{"mCode": "payflowpro", "sType": "credit_card", "sGateway": "paypal"},
+	{"mCode": "checkmo", "sType": "check", "sGateway": "0"},
+	{"mCode": "cashondelivery", "sType": "cash", "sGateway": "0"},
+	{"mCode": "banktransfer", "sType": "electronic_fund_transfer", "sGateway": "0"},
+	{"mCode": "payflowpro_cc_vault", "sType": "credit_card", "sGateway": "paypal"}
 ]]]></paymentMethods>
 			</sift>
 		</fraud_protection>
