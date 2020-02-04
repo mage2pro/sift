@@ -57,7 +57,7 @@ final class Discount {
 			// use 1 JPY = 1000000 micros.»
 			,'minimum_purchase_amount' => 0
 			// 2020-02-04 Float. «The percentage discount. If the discount is 10% off, you would send "0.1".»
-			,'percentage_off' => 0
+			,'percentage_off' => abs($o->getDiscountAmount()) / $o->getGrandTotal()
 		]
 		// 2020-02-04 String.
 		// «When adding a promotion fails, use this to describe why it failed.
