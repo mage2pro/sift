@@ -21,7 +21,7 @@ final class Discount {
 	 * @param O $o
 	 * @return array(string => mixed)
 	 */
-	static function p(O $o) {return [
+	static function p(O $o) {return !($a = $o->getDiscountAmount()) ? [] : [
 		// 2020-02-04 String. «STUB»
 		// «The `credit_point` field type generically models monetary and non-monetary rewards
 		// (e.g. in-game currency, stored account value, MBs storage, frequent flyer miles, etc.) for a promotion.
@@ -30,14 +30,35 @@ final class Discount {
 		// https://sift.com/developers/docs/curl/events-api/complex-field-types/credit-point
 		'credit_point' => []
 		// 2020-02-04 String. «Freeform text to describe the promotion.»
-		,'description' => ''
-		// 2020-02-04 String.
-		// «The `discount` field type generically models monetary discounts that are associated with a promotion
-		// (e.g. $25 off an order of $100 or more, 10% off, etc).
-		// Most promotions likely require a `discount` object or `credit_point` object to describe them,
-		// though both can be set for a given promotion.»
-		// https://sift.com/developers/docs/curl/events-api/complex-field-types/discount
-		,'discount' => []
+		,'description' => self::desc($o)
+		/**
+		 * 2020-02-04 Discount: https://sift.com/developers/docs/curl/events-api/complex-field-types/discount
+		 * «The `discount` field type generically models monetary discounts that are associated with a promotion
+		 * (e.g. $25 off an order of $100 or more, 10% off, etc).
+		 * Most promotions likely require a `discount` object or `credit_point` object to describe them,
+		 * though both can be set for a given promotion.»
+		 */
+		,'discount' => [
+			// 2020-02-04 String.
+			// «The amount of the discount that the promotion offers in micros in the base unit of the `currency_code`.
+			// 1 cent = 10,000 micros. $1.23 USD = 123 cents = 1,230,000 micros.
+			// For currencies without cents of fractional denominations, like the Japanese Yen,
+			// use 1 JPY = 1000000 micros.»
+			'amount' => abs(sift_amt($o->getDiscountAmount()))
+			// 2020-02-04 String.
+			// «ISO-4217 currency code for the amount. e.g., USD, CAD, HKD.
+			// If your site uses alternative currencies, like bitcoin or points systems, specify that here.»
+			,'currency_code' => $o->getOrderCurrencyCode()
+			// 2020-02-04 Integer.
+			//«The minimum amount someone must spend in order for the promotion to be applied.
+			// The amount should be in micros in the base unit of the `currency_code`.
+			// 1 cent = 10,000 micros. $1.23 USD = 123 cents = 1,230,000 micros.
+			// For currencies without cents of fractional denominations, like the Japanese Yen,
+			// use 1 JPY = 1000000 micros.»
+			,'minimum_purchase_amount' => 0
+			// 2020-02-04 Float. «The percentage discount. If the discount is 10% off, you would send "0.1".»
+			,'percentage_off' => 0
+		]
 		// 2020-02-04 String.
 		// «When adding a promotion fails, use this to describe why it failed.
 		// Allowed values: `already_used`, `expired`, `invalid_code`, `not_applicable`»
@@ -45,7 +66,7 @@ final class Discount {
 		// 2020-02-04 String.
 		// «The ID within your system that you use to represent this promotion.
 		// This ID is ideally unique to the promotion across users (e.g. "BackToSchool2016").»
-		,'promotion_id' => ''
+		,'promotion_id' => self::desc($o)
 		// 2020-02-04 String.
 		// «The unique account ID of the user who referred the user to this promotion.
 		// Note: User IDs are case sensitive.»
@@ -57,4 +78,14 @@ final class Discount {
 		// May be useful in spotting potential abuse.»
 		,'status' => '$success'
 	];}
+
+	/**
+	 * 2020-02-04
+	 * @used-by p()
+	 * @param O $o
+	 * @return string
+	 */
+	private static function desc(O $o) {return dfcf(function(O $o) {return df_desc(
+		$o['coupon_rule_name'], $o->getCouponCode() ?: $o->getDiscountDescription()
+	);}, [$o]);}
 }

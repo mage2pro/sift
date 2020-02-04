@@ -8,6 +8,7 @@
  * https://sift.com/developers/docs/curl/events-api/reserved-events/create-order
  * @used-by \Dfe\Sift\Observer\Sales\OrderPlaceAfter::execute()
  * @used-by \Dfe\Sift\Payload\OQI::p()
+ * @used-by \Dfe\Sift\Payload\Promotion\Discount::p()
  * @param int|float $v
  * @return int
  */
