@@ -182,7 +182,7 @@ The whole `sift` group is not shown for an unknown reason if the `<frontend_mode
 						type='Df\Framework\Form\Element\ArrayT'
 					>
 						<backend_model>Df\Config\Backend\ArrayT</backend_model>
-						<config_path>fraud_protection/sift/paymentMethods</config_path>
+						<config_path>fraud_protection/sift/pm</config_path>
 						<label>Payment Methods</label>
 						<depends><field id='enable'>1</field></depends>
 					</field>
