@@ -13,8 +13,7 @@ final class Observer {
 	 */
 	static function f(F $f) {
 		try {
-			$s = S::s(); /** @var S $s */
-			if ($s->enable()) {
+			if (!df_is_backend() && S::s()->enable()) {
 				$f();
 			}
 		}
