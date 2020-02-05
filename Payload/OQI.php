@@ -21,9 +21,7 @@ final class OQI {
 		// 2020-02-01 String.
 		// «The category this item is listed under in your business.
 		// e.g., "kitchen appliance", "menswear > pants".»
-		,'category' => df_csv_pretty(df_map($p->getCategoryCollection(), function(C $c) {return
-			$c->getName()
-		;}))
+		,'category' => df_csv_pretty(df_category_names($p))
 		// 2020-01-30 «Texas Tea»
 		// 2020-02-01 String. «The color of the item.»
 		,'color' => df_product_att_val_s($p, 'color', null)
