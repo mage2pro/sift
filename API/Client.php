@@ -11,6 +11,8 @@ final class Client extends \Df\API\Client {
 	 */
 	protected function _construct() {
 		parent::_construct();
+		// 2020-02-05 Sift forbids empty keys.
+		$this->addFilterReq('df_clean_r'); /** @uses df_clean_r() */
 		// 2020-01-26 https://sift.com/developers/docs/curl/events-api/fields
 		$this->addFilterReq(function(array $p) {return [
 			// 2020-01-25 «Your Sift REST API key». Required, string.

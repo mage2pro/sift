@@ -15,16 +15,16 @@ final class Entity extends \Df\Config\ArrayItem {
 	/**
 	 * 2020-02-03
 	 * @used-by \Dfe\Sift\Payload\Payment::p()
-	 * @return string
+	 * @return string|null
 	 */
-	function sGateway() {return $this->v();}
+	function sGateway() {return $this->v0();}
 
 	/**
 	 * 2020-02-03
 	 * @used-by \Dfe\Sift\Payload\Payment::p()
 	 * @return string
 	 */
-	function sType() {return $this->v();}
+	function sType() {return $this->v0();}
 
 	/**
 	 * 2020-02-02     

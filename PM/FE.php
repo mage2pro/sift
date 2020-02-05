@@ -22,7 +22,7 @@ class FE extends \Df\Framework\Form\Element\Fieldset {
 		$this->select(O::mCode, 'Magento Payment Method', dfp_methods_o(), [], [self::EMPTY => 1]);
 		$this->select(O::sType, 'Sift Payment Type', df_module_enum($this, 'payment/type'), [], [self::EMPTY => 1]);
 		$this->select(
-			O::sGateway, 'Sift Payment Gateway', df_module_enum($this, 'payment/provider'), [], [self::EMPTY => 1]
+			O::sGateway, 'Sift Payment Gateway', df_module_enum($this, 'payment/provider'), [], [self::EMPTY => 'N/A']
 		);
 		df_fe_init($this, __CLASS__, [], [], 'partner');
 	}
