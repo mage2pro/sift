@@ -1,6 +1,6 @@
 {
 	"name": "mage2pro/sift"
-	,"version": "0.1.8"
+	,"version": "0.1.9"
 	,"description": "Sift integration with Magento 2"
 	,"type": "magento2-module"
 	,"homepage": "https://mage2.pro/c/extensions/sift"

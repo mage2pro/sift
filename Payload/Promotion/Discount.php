@@ -63,10 +63,14 @@ final class Discount {
 		// «When adding a promotion fails, use this to describe why it failed.
 		// Allowed values: `already_used`, `expired`, `invalid_code`, `not_applicable`»
 		,'failure_reason' => ''
-		// 2020-02-04 String.
-		// «The ID within your system that you use to represent this promotion.
-		// This ID is ideally unique to the promotion across users (e.g. "BackToSchool2016").»
-		,'promotion_id' => self::desc($o)
+		/**
+		 * 2020-02-04 String.
+		 * «This ID is ideally unique to the promotion across users (e.g. "BackToSchool2016").
+		 * The ID within your system that you use to represent this promotion.»
+		 * 2020-02-05
+		 * Sift rejects all my values (e.g. `self::desc($o)`) despite it does not state any requirements to values.
+		 */
+		,'promotion_id' => null
 		// 2020-02-04 String.
 		// «The unique account ID of the user who referred the user to this promotion.
 		// Note: User IDs are case sensitive.»
