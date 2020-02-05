@@ -13,3 +13,11 @@
  * @return int
  */
 function sift_amt($v) {return round(10**6 * $v);}
+
+/**
+ * 2020-02-05
+ * @used-by \Dfe\Sift\Payload\Payment::p()
+ * @param string|null $v
+ * @return string
+ */
+function sift_prefix($v) {return df_es(df_nts($v)) ? '' : "$$v";};

@@ -34,9 +34,9 @@ final class Payment {
 			 */
 			'decline_reason_code' => ''
 			// 2020-02-02 String. «The specific gateway, company, product, etc. being used to process payment.»
-			,'payment_gateway' => !$pm ? '' : $pm->sGateway()
+			,'payment_gateway' => !$pm ? '' : sift_prefix($pm->sGateway())
 			// 2020-02-02 String. «The general type of payment being used.»
-			,'payment_type' => !$pm ? '' : $pm->sType()
+			,'payment_type' => !$pm ? '' : sift_prefix($pm->sType())
 			/**
 			 * 2020-02-03 String.
 			 * 1) «This is the ABA routing number or SWIFT code used.»
