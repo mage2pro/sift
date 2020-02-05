@@ -13,7 +13,7 @@ final class OQI {
 	 * @param QI|OI $i
 	 * @return array(string => mixed)
 	 */
-	static function p($i) {$p = $i->getProduct(); /** @var P $p */return [
+	static function p($i) {$p = df_product($i); /** @var P $p */return [
 		// 2020-01-30 «Slanket»
 		// 2020-02-01 String. «The brand name of the item.»
 		'brand' => df_product_att_val_s($p, 'brand', null)
