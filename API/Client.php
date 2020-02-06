@@ -13,8 +13,14 @@ final class Client extends \Df\API\Client {
 		parent::_construct();
 		// 2020-02-05 Sift forbids empty keys.
 		$this->addFilterReq('df_clean_r'); /** @uses df_clean_r() */
-		// 2020-01-26 https://sift.com/developers/docs/curl/events-api/fields
-		$this->addFilterReq(function(array $p) {return [
+		/**
+		 * 2020-01-26 https://sift.com/developers/docs/curl/events-api/fields
+		 * 2020-02-06
+		 * $p should be places on the left side of the `+` expression
+		 * because @see \Dfe\Sift\Observer\Customer\RegisterSuccess::execute() provides a custom `user_id`
+		 * (@see df_customer_id() does not work correctly in this scenrio).
+		 */
+		$this->addFilterReq(function(array $p) {return $p + [
 			// 2020-01-25 «Your Sift REST API key». Required, string.
 			'api_key' => S::s()->backendKey()
 		   /**
@@ -51,7 +57,7 @@ final class Client extends \Df\API\Client {
 			 * https://sift.com/developers/docs/curl/events-api/fields
 			 */
 			,'user_id' => df_customer_id()
-		] + $p;});
+		];});
 		$this->addFilterReq(function(array $p) {return dfak_prefix($p, '$', true);});
 		$this->reqJson();
 		$this->resJson();

@@ -102,6 +102,18 @@ final class RegisterSuccess implements ObserverInterface {
 			// Note: If the user's email is also their account ID in your system,
 			// set both the `user_id` and `user_email` fields to their email address.»
 			,'user_email' => $c->getEmail()
+			/**
+			 * 2020-01-26
+			 * Required, string.
+			 * «The user’s internal account ID.
+			 * This field is required on all events performed by the user while logged in.
+			 * Users without an assigned $user_id will not show up in the console.
+			 * Note: User IDs are case sensitive.
+			 * You may need to normalize the capitalization of your user IDs.
+			 * Only the following characters may be used:a-z,A-Z,0-9,=, ., -, _, +, @, :, &, ^, %, !, $»
+			 * https://sift.com/developers/docs/curl/events-api/fields
+			 */
+			,'user_id' => $c->getId()
 		]);
 	});}
 }
