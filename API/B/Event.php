@@ -15,6 +15,7 @@ final class Event {
 	 * @used-by \Dfe\Sift\Observer\Customer\RegisterSuccess::execute()
 	 * @used-by \Dfe\Sift\Observer\Quote\ProductAddAfter::execute()
 	 * @used-by \Dfe\Sift\Observer\Sales\OrderPlaceAfter::execute()
+	 * @used-by \Dfe\Sift\Plugin\Customer\Api\AccountManagementInterface::aroundAuthenticate()
 	 * @param string $type
 	 * @param array(string => mixed) $p
 	 */
