@@ -1,8 +1,7 @@
 <?php
 namespace Dfe\Sift\Observer\Sales;
-use Dfe\Sift\API\Facade\Event as F;
+use Dfe\Sift\API\B\Event;
 use Dfe\Sift\Payload\Address as pAddress;
-use Dfe\Sift\Payload\Browser as pBrowser;
 use Dfe\Sift\Payload\OQI as pOQI;
 use Dfe\Sift\Payload\Payment as pPayment;
 use Dfe\Sift\Payload\Promotions as pPromotions;
@@ -28,7 +27,7 @@ final class OrderPlaceAfter implements ObserverInterface {
 	function execute(Ob $ob) {\Dfe\Sift\Observer::f(function() use($ob) {
 		$o = $ob['order']; /** @var O $o */
 		// 2020-02-01 https://sift.com/developers/docs/curl/events-api/reserved-events/create-content/review
-		F::s()->post([
+		Event::p('create_order', [
 			// 2020-02-01 Integer. «Total transaction amount in micros in the base unit of the `currency_code`»
 			'amount' => sift_amt($o->getGrandTotal())
 			// 2020-02-01
@@ -83,13 +82,11 @@ final class OrderPlaceAfter implements ObserverInterface {
 			// 1) Address: https://sift.com/developers/docs/curl/events-api/complex-field-types/address
 			// 2) «The shipping address as entered by the user.»
 			,'shipping_address' => pAddress::p($o->getShippingAddress())
-			// 2020-01-25 Required, string.
-			,'type' => '$create_order'
 			// 2020-02-01 String.
 			// «Email of the user creating this order.
 			// Note: If the user's email is also their account ID in your system,
 			// set both the `user_id` and `user_email` fields to their email address.»
 			,'user_email' => $o->getCustomerEmail()
-		] + pBrowser::p());
+		]);
 	});}
 }

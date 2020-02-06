@@ -1,8 +1,7 @@
 <?php
 namespace Dfe\Sift\Observer\Quote;
-use Dfe\Sift\API\Facade\Event as F;
+use Dfe\Sift\API\B\Event;
 use Dfe\Sift\Observer as _P;
-use Dfe\Sift\Payload\Browser;
 use Dfe\Sift\Payload\OQI;
 use Magento\Framework\Event\Observer as O;
 use Magento\Framework\Event\ObserverInterface;
@@ -25,7 +24,7 @@ final class ProductAddAfter implements ObserverInterface {
 	 */
 	function execute(O $o) {_P::f(function() use($o) {
 		/** @uses df_oqi_is_leaf() */
-		df_map(array_filter($o['items'], 'df_oqi_is_leaf'), function(I $i) {F::s()->post([
+		df_map(array_filter($o['items'], 'df_oqi_is_leaf'), function(I $i) {Event::p('add_item_to_cart', [
 			/**
 			 * 2020-01-26
 			 * «The product item added to cart.
@@ -34,8 +33,6 @@ final class ProductAddAfter implements ObserverInterface {
 			 * 2020-02-01 https://sift.com/developers/docs/curl/events-api/complex-field-types/item
 			 */
 			'item' => OQI::p($i)
-			// 2020-01-25 Required, string.
-			,'type' => '$add_item_to_cart'
-		] + Browser::p());});
+		]);});
 	});}
 }

@@ -1,6 +1,6 @@
 <?php
 namespace Dfe\Sift\Observer\Customer;
-use Dfe\Sift\API\Facade\Event as F;
+use Dfe\Sift\API\B\Event;
 use Dfe\Sift\Observer as _P;
 use Magento\Customer\Model\Customer as C;
 use Magento\Framework\Event\Observer as O;
@@ -26,7 +26,7 @@ final class RegisterSuccess implements ObserverInterface {
 	function execute(O $o) {_P::f(function() use($o) {
 		$c = $o['customer']; /** @var C $c */
 		// 2020-02-06 https://sift.com/developers/docs/curl/events-api/reserved-events/create-account
-		F::s()->post([
+		Event::p('create_account', [
 			// 2020-02-06 Array Of Strings.
 			// «Capture the type(s) of the account: "merchant" or "shopper", "regular" or "premium", etc.
 			// The array supports multiple types for a single account, e.g. ["merchant", "premium"].»
@@ -81,7 +81,6 @@ final class RegisterSuccess implements ObserverInterface {
 			 * Allowed values: $amazon, $facebook, $google, $linkedin, $microsoft, $other, $twitter, $yahoo».
 			 */
 			,'social_sign_on_type' => 'STUB'
-			,'type' => '$create_account' // 2020-02-06 Required, string
 			// 2020-02-06 String.
 			// «Email of the user creating this order.
 			// Note: If the user's email is also their account ID in your system,

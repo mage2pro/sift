@@ -13,8 +13,7 @@ namespace Dfe\Sift\Payload;
 final class Browser {
 	/**
 	 * 2020-02-01
-	 * @used-by \Dfe\Sift\Observer\Quote\ProductAddAfter::execute()
-	 * @used-by \Dfe\Sift\Observer\Sales\OrderPlaceAfter::execute()
+	 * @used-by \Dfe\Sift\API\B\Event::p()
 	 * @return array(string => mixed)
 	 */
 	static function p() {return ['browser' => ['user_agent' => df_request_ua() ?: 'CLI']];}
