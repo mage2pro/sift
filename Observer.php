@@ -12,11 +12,7 @@ final class Observer {
 	 * @param F $f
 	 */
 	static function f(F $f) {
-		try {
-			if (!df_is_backend() && S::s()->enable()) {
-				$f();
-			}
-		}
+		try {df_is_backend() || !S::s()->enable() || $f();}
 		catch (E $e) {df_log($e, __CLASS__);}
 	}
 }
