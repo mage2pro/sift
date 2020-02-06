@@ -11,7 +11,7 @@ use Magento\Sales\Model\Order\Payment as P;
  * 2020-02-02 https://sift.com/developers/docs/curl/events-api/complex-field-types/payment-method
  * «The payment_method field type represents information about the payment methods provided by the user.
  * The value must be a nested object with the appropriate item subfields for the given payment method.
- * Generally used with the `$create_order` or `$transaction` events.»
+ * Generally used with the `create_order` or `transaction` events.»
  */
 final class Payment {
 	/**
@@ -47,10 +47,10 @@ final class Payment {
 			,'routing_number' => ''
 			/**
 			 * 2020-02-03 String.
-			 * «Use `$verification_status` to indicate the payment method has been verified.
-			 * The value can be `$success`, `$failure` or `$pending`.
+			 * «Use `verification_status` to indicate the payment method has been verified.
+			 * The value can be `success`, `failure` or `pending`.
 			 * For instance, if you request payment method verification from a payment processor
-			 * and receive a failure set the value to `$failure`.»
+			 * and receive a failure set the value to `failure`.»
 			 */
 			,'verification_status' => O::STATE_CANCELED === ($st = $o->getState()) ? '$failure' : (
 				in_array($st, [O::STATE_COMPLETE, O::STATE_PROCESSING]) ? '$success' : '$pending'

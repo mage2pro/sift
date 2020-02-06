@@ -3,6 +3,20 @@
 	xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
 	xsi:noNamespaceSchemaLocation='urn:magento:framework:Event/etc/events.xsd'
 >
+<!-- 2020-02-06 `customer_register_success`
+@used-by \Magento\Customer\Controller\Account\CreatePost::execute():
+	$this->_eventManager->dispatch('customer_register_success', [
+		'account_controller' => $this, 'customer' => $customer
+	]);
+https://github.com/magento/magento2/blob/2.0.0/app/code/Magento/Customer/Controller/Account/CreatePost.php#L239-L242
+https://github.com/magento/magento2/blob/2.3.4/app/code/Magento/Customer/Controller/Account/CreatePost.php#L367-L371
+-->
+	<event name='customer_register_success'>
+		<observer
+			instance='Dfe\Sift\Observer\Customer\RegisterSuccess'
+			name='Dfe\Sift\Observer\Customer\RegisterSuccess'
+		/>
+	</event>
 <!-- 2020-02-01 `sales_order_place_after`
 @used-by \Magento\Sales\Model\Order::place():
 	$this->_eventManager->dispatch('sales_order_place_after', ['order' => $this]);

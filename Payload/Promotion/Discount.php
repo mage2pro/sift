@@ -9,7 +9,7 @@ use Magento\Sales\Model\Order as O;
  * which you populate with the appropriate information to describe the promotion.
  * Not all sub-fields will likely apply to a given promotion. Populate only those that apply.
  * A promotion can be added when creating or updating an account, creating or updating an order,
- * or on its own using the `$add_promotion` event.
+ * or on its own using the `add_promotion` event.
  * The promotion object supports both monetary (e.g. $25 coupon on first order)
  * and non-monetary (e.g. "1000 in game points to refer a friend").»
  * https://sift.com/developers/docs/curl/events-api/complex-field-types/promotion
@@ -77,7 +77,7 @@ final class Discount {
 		,'referrer_user_id' => ''
 		// 2020-02-04 String.
 		// «The status of the addition of promotion to an account.
-		// Best used with the `$add_promotion event.`
+		// Best used with the `add_promotion event.`
 		// This way you can pass to Sift both successful and failed attempts when using a promotion.
 		// May be useful in spotting potential abuse.»
 		,'status' => '$success'

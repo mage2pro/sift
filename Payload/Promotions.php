@@ -7,7 +7,7 @@ use Dfe\Sift\Payload\Promotion\Discount as pDiscount;
  * 1) Array Of Promotions: https://sift.com/developers/docs/curl/events-api/complex-field-types/promotion
  * 2) «The list of promotions that apply to this order.
  * You can add one or more promotions when creating or updating an order.
- * You can also separately add promotions to the account via the `$add_promotion` event.»
+ * You can also separately add promotions to the account via the `add_promotion` event.»
  * https://sift.com/developers/docs/curl/events-api/reserved-events/create-order
  * 3) «The Promotion field type generically models different kinds of promotions
  * such as referrals, coupons, free trials, etc.
@@ -15,7 +15,7 @@ use Dfe\Sift\Payload\Promotion\Discount as pDiscount;
  * which you populate with the appropriate information to describe the promotion.
  * Not all sub-fields will likely apply to a given promotion. Populate only those that apply.
  * A promotion can be added when creating or updating an account, creating or updating an order,
- * or on its own using the `$add_promotion` event.
+ * or on its own using the `add_promotion` event.
  * The promotion object supports both monetary (e.g. $25 coupon on first order)
  * and non-monetary (e.g. "1000 in game points to refer a friend").»
  * https://sift.com/developers/docs/curl/events-api/complex-field-types/promotion

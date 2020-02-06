@@ -2,7 +2,7 @@
 namespace Dfe\Sift\Payload\Payment;
 use Magento\Sales\Model\Order\Payment as P;
 // 2020-02-03
-// It handles `$paypal_*` fields of https://sift.com/developers/docs/curl/events-api/complex-field-types/payment-method
+// It handles `paypal_*` fields of https://sift.com/developers/docs/curl/events-api/complex-field-types/payment-method
 final class PayPal {
 	/**
 	 * 2020-02-03

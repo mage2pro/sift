@@ -3,7 +3,7 @@ namespace Dfe\Sift\Payload\Payment;
 use Magento\Sales\Model\Order\Payment as P;
 /**
  * 2020-02-03
- * 1) It handles `$stripe_*` fields of https://sift.com/developers/docs/curl/events-api/complex-field-types/payment-method
+ * 1) It handles `stripe_*` fields of https://sift.com/developers/docs/curl/events-api/complex-field-types/payment-method
  * 2) @todo Magento does not have a built-in Stripe module,
  * so I recommend implement specific adapters for popular third-party ones:
  * https://github.com/dmitry-fedyuk/sift/issues/2
