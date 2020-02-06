@@ -3,6 +3,19 @@
 	xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
 	xsi:noNamespaceSchemaLocation='urn:magento:framework:Event/etc/events.xsd'
 >
+<!-- 2020-02-06 `customer_login`
+1) @used-by \Magento\Customer\Model\Session::setCustomerAsLoggedIn():
+	$this->_eventManager->dispatch('customer_login', ['customer' => $customer]);
+https://github.com/magento/magento2/blob/2.0.0/app/code/Magento/Customer/Model/Session.php#L413
+https://github.com/magento/magento2/blob/2.3.4/app/code/Magento/Customer/Model/Session.php#L438
+2) @used-by \Magento\Customer\Model\Session::setCustomerDataAsLoggedIn()
+	$this->_eventManager->dispatch('customer_login', ['customer' => $customerModel]);
+https://github.com/magento/magento2/blob/2.0.0/app/code/Magento/Customer/Model/Session.php#L432
+https://github.com/magento/magento2/blob/2.3.4/app/code/Magento/Customer/Model/Session.php#L459
+-->
+	<event name='customer_login'>
+		<observer instance='Dfe\Sift\Observer\Customer\Login' name='Dfe\Sift\Observer\Customer\Login'/>
+	</event>
 <!-- 2020-02-06 `customer_register_success`
 @used-by \Magento\Customer\Controller\Account\CreatePost::execute():
 	$this->_eventManager->dispatch('customer_register_success', [

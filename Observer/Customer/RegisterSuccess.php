@@ -2,6 +2,7 @@
 namespace Dfe\Sift\Observer\Customer;
 use Dfe\Sift\API\B\Event;
 use Dfe\Sift\Observer as _P;
+use Dfe\Sift\Payload\LoginOrRegister as pLoginOrRegister;
 use Magento\Customer\Model\Customer as C;
 use Magento\Framework\Event\Observer as O;
 use Magento\Framework\Event\ObserverInterface;
@@ -27,11 +28,7 @@ final class RegisterSuccess implements ObserverInterface {
 		/** 2020-02-06 $o['customer'] is a @see \Magento\Customer\Model\Data\Customer */
 		$c = df_customer($o['customer']); /** @var C $c */
 		// 2020-02-06 https://sift.com/developers/docs/curl/events-api/reserved-events/create-account
-		Event::p('create_account', [
-			// 2020-02-06 Array Of Strings.
-			// «Capture the type(s) of the account: "merchant" or "shopper", "regular" or "premium", etc.
-			// The array supports multiple types for a single account, e.g. ["merchant", "premium"].»
-			'account_types' => [df_customer_group_name($c)]
+		Event::p('create_account', pLoginOrRegister::p($c) + [
 			/**
 			 * 2020-02-06 String.
 			 * 1) «The billing address associated with this user»
@@ -47,7 +44,7 @@ final class RegisterSuccess implements ObserverInterface {
 			 * https://github.com/magento/magento2/blob/2.3.4/app/code/Magento/Customer/Controller/Account/CreatePost.php#L352-L355
 			 * https://github.com/magento/magento2/blob/2.2.0/app/code/Magento/Customer/Controller/Account/CreatePost.php#L301-L305
 			 */
-			,'billing_address' => []
+			'billing_address' => []
 			// 2020-02-06 String. «The full name of the user»
 			,'name' => $c->getName()
 			// 2020-02-06 String.
@@ -87,31 +84,23 @@ final class RegisterSuccess implements ObserverInterface {
 			// 2) The standard Magento 2 registration form does not include an address:
 			// a customer can register his address in a separate scenario.
 			,'shipping_address' => []
-			/**
-			 * 2020-02-06 String.
-			 * 1) «If the user logged in with a social identify provider, give the name here.
-			 * Allowed values: $amazon, $facebook, $google, $linkedin, $microsoft, $other, $twitter, $yahoo».
-			 * 2) Magento 2 does not provide any built-in single sign on modules.
-			 * 3) @todo "Implement specific adapters for popular third-party single sign-on modules
-			 * to fill the `$social_sign_on_type` field of the `$create_account` event":
-			 * https://github.com/dmitry-fedyuk/sift/issues/3
-			 */
-			,'social_sign_on_type' => ''
 			// 2020-02-06 String.
 			// «Email of the user creating this order.
 			// Note: If the user's email is also their account ID in your system,
 			// set both the `user_id` and `user_email` fields to their email address.»
 			,'user_email' => $c->getEmail()
 			/**
-			 * 2020-01-26
-			 * Required, string.
-			 * «The user’s internal account ID.
+			 * 2020-02-06 Required, string.
+			 * 1) «The user’s internal account ID.
 			 * This field is required on all events performed by the user while logged in.
 			 * Users without an assigned $user_id will not show up in the console.
 			 * Note: User IDs are case sensitive.
 			 * You may need to normalize the capitalization of your user IDs.
 			 * Only the following characters may be used:a-z,A-Z,0-9,=, ., -, _, +, @, :, &, ^, %, !, $»
 			 * https://sift.com/developers/docs/curl/events-api/fields
+			 * 2) I explicitly set it here, because @see df_customer_id()
+			 * (called in @see \Dfe\Sift\API\B\Event::p())
+			 * does not work in a `customer_register_success` event handler.
 			 */
 			,'user_id' => $c->getId()
 		]);

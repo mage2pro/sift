@@ -5,7 +5,7 @@ use Magento\Customer\Model\Session as Sess;
 final class Session {
 	/**
 	 * 2020-01-26
-	 * @used-by \Dfe\Sift\API\Client::_construct()
+	 * @used-by \Dfe\Sift\API\B\Event::p()
 	 * @used-by \Dfe\Sift\Plugin\Customer\CustomerData\Customer::afterGetSectionData()
 	 * @return string
 	 */

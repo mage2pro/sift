@@ -8,7 +8,7 @@ final class Settings extends \Df\API\Settings {
 	 * 2020-01-25
 	 * Where is a «Sandbox REST API Key» located? https://mage2.pro/t/6092
 	 * Where is a «Production REST API Key» located? https://mage2.pro/t/6093
-	 * @used-by \Dfe\Sift\API\Client::_construct()
+	 * @used-by \Dfe\Sift\API\B\Event::p()
 	 * @return string
 	 */
 	function backendKey() {return $this->testableP();}

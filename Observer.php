@@ -7,6 +7,8 @@ use Exception as E;
 final class Observer {
 	/**
 	 * 2020-02-01
+	 * @used-by \Dfe\Sift\Observer\Customer\Login::execute()
+	 * @used-by \Dfe\Sift\Observer\Customer\RegisterSuccess::execute()
 	 * @used-by \Dfe\Sift\Observer\Quote\ProductAddAfter::execute()
 	 * @used-by \Dfe\Sift\Observer\Sales\OrderPlaceAfter::execute()
 	 * @param F $f
