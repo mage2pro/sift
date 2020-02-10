@@ -7,6 +7,9 @@ use Exception as E;
 final class Observer {
 	/**
 	 * 2020-02-01
+	 * 2020-02-11
+	 * Currently, the $backend argument is always `false`.
+	 * A version with a $backend = `true` case: https://github.com/dmitry-fedyuk/sift/tree/0.2.6-backend
 	 * @used-by \Dfe\Sift\API\B\Event\UpdatePassword::p()
 	 * @used-by \Dfe\Sift\Observer\Customer\Login::execute()
 	 * @used-by \Dfe\Sift\Observer\Customer\Logout::execute()
