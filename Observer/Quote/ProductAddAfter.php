@@ -13,6 +13,23 @@ use Magento\Quote\Model\Quote\Item as I;
  * https://github.com/magento/magento2/blob/2.0.0/app/code/Magento/Quote/Model/Quote.php#L1631
  * https://github.com/magento/magento2/blob/2.3.3/app/code/Magento/Quote/Model/Quote.php#L1694
  * 2020-02-01 https://sift.com/developers/docs/curl/events-api/reserved-events/add-item-to-cart
+ * 2020-02-10
+ * Magento also triggers the `sales_quote_add_item` event:
+ * @see \Magento\Quote\Model\Quote::addItem():
+ *		public function addItem(\Magento\Quote\Model\Quote\Item $item) {
+ *			$item->setQuote($this);
+ *			if (!$item->getId()) {
+ *				$this->getItemsCollection()->addItem($item);
+ *				$this->_eventManager->dispatch('sales_quote_add_item', ['quote_item' => $item]);
+ *			}
+ *			return $this;
+ *		}
+ * https://github.com/magento/magento2/blob/2.0.0/app/code/Magento/Quote/Model/Quote.php#L1527-L1542
+ * https://github.com/magento/magento2/blob/2.3.3/app/code/Magento/Quote/Model/Quote.php#L1581-L1596
+ * @see \Magento\Quote\Model\Quote::addProduct() calls `addItem()` for each quote item:
+ * e.g. if a configurable product to be added to the cart,
+ * then `addItem()` is called 2 times for the same `addProduct()`:
+ * for a configurable parent item and for a configurable child item.
  */
 final class ProductAddAfter implements ObserverInterface {
 	/**
