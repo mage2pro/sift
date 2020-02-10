@@ -12,14 +12,15 @@ final class Event {
 	 * because @see \Dfe\Sift\Observer\Customer\RegisterSuccess::execute() provides a custom `user_id`
 	 * (@see df_customer_id() does not work correctly in this scenario).
 	 * @used-by \Dfe\Sift\Observer\Customer\Login::execute()
+	 * @used-by \Dfe\Sift\Observer\Customer\Logout::execute()
 	 * @used-by \Dfe\Sift\Observer\Customer\RegisterSuccess::execute()
 	 * @used-by \Dfe\Sift\Observer\Quote\ProductAddAfter::execute()
 	 * @used-by \Dfe\Sift\Observer\Sales\OrderPlaceAfter::execute()
 	 * @used-by \Dfe\Sift\Plugin\Customer\Api\AccountManagementInterface::aroundAuthenticate()
 	 * @param string $type
-	 * @param array(string => mixed) $p
+	 * @param array(string => mixed) $p [optional]
 	 */
-	static function p($type, array $p) {F::s()->post($p + pBrowser::p() + [
+	static function p($type, array $p = []) {F::s()->post($p + pBrowser::p() + [
 		// 2020-01-25 «Your Sift REST API key». Required, string.
 		'api_key' => S::s()->backendKey()
 	   /**

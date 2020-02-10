@@ -16,6 +16,17 @@ https://github.com/magento/magento2/blob/2.3.4/app/code/Magento/Customer/Model/S
 	<event name='customer_login'>
 		<observer instance='Dfe\Sift\Observer\Customer\Login' name='Dfe\Sift\Observer\Customer\Login'/>
 	</event>
+<!-- 2020-02-10 `customer_logout`
+@used-by \Magento\Customer\Model\Session::logout():
+	if ($this->isLoggedIn()) {
+		$this->_eventManager->dispatch('customer_logout', ['customer' => $this->getCustomer()]);
+		$this->_logout();
+	}
+https://github.com/magento/magento2/blob/2.0.0/app/code/Magento/Customer/Model/Session.php#L455-L469
+https://github.com/magento/magento2/blob/2.3.4/app/code/Magento/Customer/Model/Session.php#L482-L496 -->
+	<event name='customer_logout'>
+		<observer instance='Dfe\Sift\Observer\Customer\Logout' name='Dfe\Sift\Observer\Customer\Logout'/>
+	</event>
 <!-- 2020-02-06 `customer_register_success`
 @used-by \Magento\Customer\Controller\Account\CreatePost::execute():
 	$this->_eventManager->dispatch('customer_register_success', [

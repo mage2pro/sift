@@ -3,8 +3,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd"
 >
-<!-- 2020-02-06
-2020-02-10 It handles the `login` event. -->
+<!-- 2020-02-06, 2020-02-10 It handles the `login` event. -->
 	<type name='Magento\Customer\Api\AccountManagementInterface'>
 		<plugin
 			name='Dfe\Sift\Plugin\Customer\Api\AccountManagementInterface'
@@ -12,7 +11,9 @@
 		/>
 	</type>
 	<type name='Magento\Customer\CustomerData\Customer'>
-		<plugin disabled='false' name='Df\Customer\Js\CustomerId'/> <!-- 2020-01-24 -->
+<!-- 2020-01-24, 2020-02-10 It provides the customer ID to the frontend part. -->
+		<plugin disabled='false' name='Df\Customer\Js\CustomerId'/>
+<!-- 2020-02-10 It provides `siftSessionId` to the frontend part. -->
 		<plugin
 			name='Dfe\Sift\Plugin\Customer\CustomerData\Customer'
 			type='Dfe\Sift\Plugin\Customer\CustomerData\Customer'
