@@ -1,6 +1,6 @@
 <?php
 namespace Dfe\Sift\Observer\Customer;
-use Dfe\Sift\API\B\Event;
+use Dfe\Sift\API\B\Event as B;
 use Dfe\Sift\Observer as _P;
 use Dfe\Sift\Payload\LoginOrRegister as pLoginOrRegister;
 use Magento\Customer\Model\Customer as C;
@@ -28,7 +28,7 @@ final class RegisterSuccess implements ObserverInterface {
 		/** 2020-02-06 $o['customer'] is a @see \Magento\Customer\Model\Data\Customer */
 		$c = df_customer($o['customer']); /** @var C $c */
 		// 2020-02-06 https://sift.com/developers/docs/curl/events-api/reserved-events/create-account
-		Event::p('create_account', pLoginOrRegister::p($c) + [
+		B::p('create_account', pLoginOrRegister::p($c) + [
 			/**
 			 * 2020-02-06 String.
 			 * 1) «The billing address associated with this user»
@@ -102,7 +102,7 @@ final class RegisterSuccess implements ObserverInterface {
 			 * (called in @see \Dfe\Sift\API\B\Event::p())
 			 * does not work in a `customer_register_success` event handler.
 			 */
-			,'user_id' => $c->getId()
+			,B::USER_ID => $c->getId()
 		]);
 	});}
 }

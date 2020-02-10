@@ -19,4 +19,18 @@
 			type='Dfe\Sift\Plugin\Customer\CustomerData\Customer'
 		/>
 	</type>
+<!-- 2020-02-11 It handles the `update_password` event for Magento < 2.1.0. -->
+	<type name='Magento\Customer\Model\AccountManagement'>
+		<plugin
+			name='Dfe\Sift\Plugin\Customer\Model\AccountManagement'
+			type='Dfe\Sift\Plugin\Customer\Model\AccountManagement'
+		/>
+	</type>
+<!-- 2020-02-11 It handles the `update_password` event for Magento ≥ 2.1.0. -->
+	<type name='Magento\Customer\Model\EmailNotificationInterface'>
+		<plugin
+			name='Dfe\Sift\Plugin\Customer\Model\EmailNotificationInterface'
+			type='Dfe\Sift\Plugin\Customer\Model\EmailNotificationInterface'
+		/>
+	</type>
 </config>

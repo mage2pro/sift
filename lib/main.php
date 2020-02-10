@@ -17,8 +17,8 @@ function sift_amt($v) {return round(10**6 * $v);}
 /**
  * 2020-02-05
  * @used-by \Dfe\Sift\API\B\Event::p()
+ * @used-by \Dfe\Sift\API\B\Event\UpdatePassword::p()
  * @used-by \Dfe\Sift\Observer\Customer\Login::execute()
- * @used-by \Dfe\Sift\Observer\Customer\SaveAfterDataObject::execute()
  * @used-by \Dfe\Sift\Payload\Payment::p()
  * @used-by \Dfe\Sift\Plugin\Customer\Api\AccountManagementInterface::aroundAuthenticate()
  * @param string|null $v

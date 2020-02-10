@@ -6,15 +6,23 @@ use Dfe\Sift\Settings as S;
 // 2020-02-06
 final class Event {
 	/**
+	 * 2020-02-11
+	 * @used-by p()
+	 * @used-by \Dfe\Sift\API\B\Event\UpdatePassword::p()
+	 * @used-by \Dfe\Sift\Observer\Customer\RegisterSuccess::execute()
+	 */
+	const USER_ID = 'user_id';
+
+	/**
 	 * 2020-02-06
 	 * 1) https://sift.com/developers/docs/curl/events-api/fields
 	 * 2) $p should be places on the left side of the `+` expression
 	 * because @see \Dfe\Sift\Observer\Customer\RegisterSuccess::execute() provides a custom `user_id`
 	 * (@see df_customer_id() does not work correctly in this scenario).
+	 * @used-by \Dfe\Sift\API\B\Event\UpdatePassword::p()
 	 * @used-by \Dfe\Sift\Observer\Customer\Login::execute()
 	 * @used-by \Dfe\Sift\Observer\Customer\Logout::execute()
 	 * @used-by \Dfe\Sift\Observer\Customer\RegisterSuccess::execute()
-	 * @used-by \Dfe\Sift\Observer\Customer\SaveAfterDataObject::execute()
 	 * @used-by \Dfe\Sift\Observer\Quote\ProductAddAfter::execute()
 	 * @used-by \Dfe\Sift\Observer\Quote\RemoveItem::execute()
 	 * @used-by \Dfe\Sift\Observer\Sales\OrderPlaceAfter::execute()
@@ -59,6 +67,6 @@ final class Event {
 		 * Only the following characters may be used:a-z,A-Z,0-9,=, ., -, _, +, @, :, &, ^, %, !, $»
 		 * https://sift.com/developers/docs/curl/events-api/fields
 		 */
-		,'user_id' => df_customer_id()
+		,self::USER_ID => df_customer_id()
 	]);}
 }

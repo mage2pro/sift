@@ -7,10 +7,10 @@ use Exception as E;
 final class Observer {
 	/**
 	 * 2020-02-01
+	 * @used-by \Dfe\Sift\API\B\Event\UpdatePassword::p()
 	 * @used-by \Dfe\Sift\Observer\Customer\Login::execute()
 	 * @used-by \Dfe\Sift\Observer\Customer\Logout::execute()
 	 * @used-by \Dfe\Sift\Observer\Customer\RegisterSuccess::execute()
-	 * @used-by \Dfe\Sift\Observer\Customer\SaveAfterDataObject::execute()
 	 * @used-by \Dfe\Sift\Observer\Quote\ProductAddAfter::execute()
 	 * @used-by \Dfe\Sift\Observer\Quote\RemoveItem::execute()
 	 * @used-by \Dfe\Sift\Observer\Sales\OrderPlaceAfter::execute()
