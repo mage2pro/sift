@@ -54,7 +54,7 @@ final class Event {
 		* Send as a UNIX timestamp in milliseconds as shown in the historical backfill tutorial.»
 		* https://sift.com/resources/tutorials/sending-historical-data
 		*/
-		,'time' =>  time()
+		,'time' => time()
 		,'type' => sift_prefix($type)
 		/**
 		 * 2020-01-26

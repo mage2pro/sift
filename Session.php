@@ -1,6 +1,7 @@
 <?php
 namespace Dfe\Sift;
-use Magento\Customer\Model\Session as Sess;
+use Magento\Backend\Model\Auth\Session as SessionB;
+use Magento\Customer\Model\Session as SessionC;
 // 2020-01-26
 final class Session {
 	/**
@@ -11,9 +12,9 @@ final class Session {
 	 */
 	static function get() {/** @var string $r */
 		$m = 'SiftSessionId'; /** @var string $m */
-		$sess = df_customer_session(); /** @var Sess $sess */
-		if (!($r = $sess->__call("get$m", []))) {
-			$sess->__call("set$m", [$r = df_uid()]);
+		$s = df_session(); /** @var SessionB|SessionC $s */
+		if (!($r = $s->__call("get$m", []))) {
+			$s->__call("set$m", [$r = df_uid()]);
 		}
 		return $r;
 	}

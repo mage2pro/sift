@@ -1,0 +1,24 @@
+<?xml version='1.0'?>
+<config
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd"
+>
+<!-- 2020-02-11
+1) It handles the `update_password` event for Magento < 2.1.0.
+2) It is used in the both frontend and backend areas. -->
+	<type name='Magento\Customer\Model\AccountManagement'>
+		<plugin
+			name='Dfe\Sift\Plugin\Customer\Model\AccountManagement'
+			type='Dfe\Sift\Plugin\Customer\Model\AccountManagement'
+		/>
+	</type>
+<!-- 2020-02-11
+1) It handles the `update_password` event for Magento ≥ 2.1.0.
+2) It is used in the both frontend and backend areas. -->
+	<type name='Magento\Customer\Model\EmailNotificationInterface'>
+		<plugin
+			name='Dfe\Sift\Plugin\Customer\Model\EmailNotificationInterface'
+			type='Dfe\Sift\Plugin\Customer\Model\EmailNotificationInterface'
+		/>
+	</type>
+</config>
