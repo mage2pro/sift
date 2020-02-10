@@ -9,6 +9,7 @@ final class OQI {
 	/**
 	 * 2020-02-01
 	 * @used-by \Dfe\Sift\Observer\Quote\ProductAddAfter::execute()
+	 * @used-by \Dfe\Sift\Observer\Quote\RemoveItem::execute()
 	 * @used-by \Dfe\Sift\Observer\Sales\OrderPlaceAfter::execute()
 	 * @param QI|OI $i
 	 * @return array(string => mixed)

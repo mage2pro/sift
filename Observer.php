@@ -11,6 +11,7 @@ final class Observer {
 	 * @used-by \Dfe\Sift\Observer\Customer\Logout::execute()
 	 * @used-by \Dfe\Sift\Observer\Customer\RegisterSuccess::execute()
 	 * @used-by \Dfe\Sift\Observer\Quote\ProductAddAfter::execute()
+	 * @used-by \Dfe\Sift\Observer\Quote\RemoveItem::execute()
 	 * @used-by \Dfe\Sift\Observer\Sales\OrderPlaceAfter::execute()
 	 * @used-by \Dfe\Sift\Plugin\Customer\Api\AccountManagementInterface::aroundAuthenticate()
 	 * @param F $f
