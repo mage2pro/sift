@@ -1,7 +1,6 @@
 <?php
 namespace Dfe\Sift\Plugin\Customer\CustomerData;
 use Magento\Customer\CustomerData\Customer as Sb;
-use Magento\Customer\Model\Session as Sess;
 // 2020-01-26
 final class Customer {
 	/**
