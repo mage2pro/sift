@@ -13,6 +13,34 @@ use Magento\Framework\Event\ObserverInterface;
  * 	}
  * https://github.com/magento/magento2/blob/2.0.0/app/code/Magento/Customer/Model/Session.php#L455-L469
  * https://github.com/magento/magento2/blob/2.3.4/app/code/Magento/Customer/Model/Session.php#L482-L496
+ * 
+ * 2020-02-12
+ * A response with `score_response`:
+ *	{
+ *		"status": 0,
+ *		"error_message": "OK",
+ *		"time": 1581443232,
+ *		"request": "...",
+ *		"score_response": {
+ *			"status": 0,
+ *			"error_message": "OK",
+ *			"scores": {
+ *				"payment_abuse": {
+ *					"score": 0.017345397550705105,
+ *					"reasons": [
+ *						{"name": "Estimated email domain age", "value": "2937.95 days"},
+ *						{"name": "Network", "value": "N92.243"},
+ *						{"name": "Latest order amount in USD", "value": "460.00 USD"},
+ *						{"name": "Latest status", "value": "$pending"},
+ *						{"name": "Browser/OS", "value": "WINDOWS_7-CHROME8"}
+ *					]
+ *				}
+ *			},
+ *			"user_id": "1",
+ *			"latest_labels": {},
+ *			"workflow_statuses": []
+ *		}
+ *	}
  */
 final class Logout implements ObserverInterface {
 	/**
