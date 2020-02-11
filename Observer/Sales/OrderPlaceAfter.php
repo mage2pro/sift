@@ -15,6 +15,33 @@ use Magento\Sales\Model\Order\Item as I;
  * 		$this->_eventManager->dispatch('sales_order_place_after', ['order' => $this]);
  * https://github.com/magento/magento2/blob/2.0.0/app/code/Magento/Sales/Model/Order.php#L1061
  * https://github.com/magento/magento2/blob/2.3.4/app/code/Magento/Sales/Model/Order.php#L1191
+ *
+ * 2020-02-12
+ * A response:
+ *	{
+ *		"status": 0,
+ *		"error_message": "OK",
+ *		"time": 1581446807,
+ *		"request": "...",
+ *		"score_response": {
+ *			"status": 0,
+ *			"error_message": "OK",
+ *			"scores": {
+ *				"payment_abuse": {
+ *					"score": 0.011968443718336854,
+ *					"reasons": [
+ *						{"name": "Estimated email domain age", "value": "2937.99 days"},
+ *						{"name": "Network", "value": "N92.243"},
+ *						{"name": "Latest order amount in USD", "value": "505.00 USD"},
+ *						{"name": "Browser/OS", "value": "WINDOWS_7-CHROME8"}
+ *					]
+ *				}
+ *			},
+ *			"user_id": "1",
+ *			"latest_labels": {},
+ *			"workflow_statuses": []
+ *		}
+ *	}
  */
 final class OrderPlaceAfter implements ObserverInterface {
 	/**
