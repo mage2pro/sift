@@ -24,6 +24,6 @@ class FE extends \Df\Framework\Form\Element\Fieldset {
 		$this->select(
 			O::sGateway, 'Sift Payment Gateway', df_module_enum($this, 'payment/provider'), [], [self::EMPTY => 'N/A']
 		);
-		df_fe_init($this, __CLASS__, [], [], 'partner');
+		df_fe_init($this, __CLASS__);
 	}
 }
