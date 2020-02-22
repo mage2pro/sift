@@ -13,7 +13,10 @@ bin/magento setup:di:compile
 rm -rf pub/static/*
 bin/magento setup:static-content:deploy -f en_US <additional locales>
 bin/magento maintenance:disable
-```
+``` 
+
+## How to setup
+See the [manual](manual.md).
 
 ## How to update
 ```
