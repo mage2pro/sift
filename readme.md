@@ -16,7 +16,7 @@ bin/magento maintenance:disable
 ``` 
 
 ## How to setup
-See the [manual](manual.md).
+See the [manual](manual.md#how-to-setup-the-module).
 
 ## How to update
 ```
