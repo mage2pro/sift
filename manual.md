@@ -7,7 +7,7 @@ The module's settings are located in the «**STORES**» → «**Configuration**�
 
 ## Credentials
 You need 3 Sift credentials to setup the module:
-### 1. Account ID
+### 1. Account ID[](#account-id)
 <table>
 	<thead><tr><th>Sandbox Mode</th><th>Production Mode</th></tr></thead>
 	<tbody><tr>
