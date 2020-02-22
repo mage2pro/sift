@@ -15,8 +15,8 @@ You need 3 Sift credentials to setup the module:
 	</thead>
 	<tbody>
 		<tr>
-			<td><img src='doc/sandbox--account-id'/></td>
-			<td><img src='doc/production--account-id'/></td>
+			<td><img src='doc/sandbox--account-id.png'/></td>
+			<td><img src='doc/production--account-id.png'/></td>
 		</tr>	
 	</tbody>
 </table>
