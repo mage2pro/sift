@@ -6,21 +6,29 @@ The module's settings are located in the «**STORES**» → «**Configuration**�
 </tr></table>
 
 You need 3 Sift credentials to setup the module:
-### Account ID
+### 1. Account ID
 <table>
-	<thead>
-		<tr>
-			<th>Sandbox Mode</th><th>Production Mode</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td><img src='doc/sandbox--account-id.png'/></td>
-			<td><img src='doc/production--account-id.png'/></td>
-		</tr>	
-	</tbody>
+	<thead><tr><th>Sandbox Mode</th><th>Production Mode</th></tr></thead>
+	<tbody><tr>
+		<td><img alt='Sandbox Account ID' src='doc/credentials/sandbox/account-id.png'/></td>
+		<td><img alt='Production Account ID' src='doc/credentials/production/account-id.png'/></td>
+	</tr></tbody>
 </table>
 
-### Beacon Key
+### 2. Beacon Key
+<table>
+	<thead><tr><th>Sandbox Mode</th><th>Production Mode</th></tr></thead>
+	<tbody><tr>
+		<td><img alt='Sandbox Beacon Key' src='doc/credentials/sandbox/beacon-key.png'/></td>
+		<td><img alt='Production Beacon Key' src='doc/credentials/production/beacon-key.png'/></td>
+	</tr></tbody>
+</table>
 
-### REST API Key
+### 3. REST API Key
+<table>
+	<thead><tr><th>Sandbox Mode</th><th>Production Mode</th></tr></thead>
+	<tbody><tr>
+		<td><img alt='Sandbox REST API Key' src='doc/credentials/sandbox/rest-api-key.png'/></td>
+		<td><img alt='Production REST API Key' src='doc/credentials/production/rest-api-key.png'/></td>
+	</tr></tbody>
+</table>
