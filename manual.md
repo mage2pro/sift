@@ -33,3 +33,8 @@ You need 3 Sift credentials to setup the module:
 		<td><img alt='Production REST API Key' src='doc/credentials/production/rest-api-key.png'/></td>
 	</tr></tbody>
 </table>
+
+## Payment Methods
+The module passes the chosen payment method to Sift within the [`$create_order`](https://sift.com/developers/docs/curl/events-api/reserved-events/create-order) event's payload.  
+Sift requires that [`$payment_type` and `$payment_gateway`](https://sift.com/developers/docs/curl/events-api/complex-field-types/payment-method) field values should belong to fixed sets, so you need to setup a mapping between Magento payment methods enabled in your store and allowed `$payment_type` and `$payment_gateway` values.  
+The module already maps built-in Magento payment methods to reasonable `$payment_type` and `$payment_gateway` values, so you need to setup such mapping only for third-party payment modules.  
