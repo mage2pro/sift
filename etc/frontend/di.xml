@@ -32,7 +32,7 @@ does not resets the customer's password: it just reminds it to the customer:
 		);
  https://github.com/magento/magento2/blob/2.0.0/app/code/Magento/Customer/Controller/Adminhtml/Index/ResetPassword.php#L28-L32
  https://github.com/magento/magento2/blob/2.3.4/app/code/Magento/Customer/Controller/Adminhtml/Index/ResetPassword.php#L42-L46
-4) A version with a backend handler: https://github.com/dmitry-fedyuk/sift/tree/0.2.6-backend -->
+4) A version with a backend handler: https://github.com/mage2pro/sift/tree/0.2.6-backend -->
 	<type name='Magento\Customer\Model\AccountManagement'>
 		<plugin
 			name='Dfe\Sift\Plugin\Customer\Model\AccountManagement'
@@ -52,7 +52,7 @@ does not resets the customer's password: it just reminds it to the customer:
 		);
  https://github.com/magento/magento2/blob/2.0.0/app/code/Magento/Customer/Controller/Adminhtml/Index/ResetPassword.php#L28-L32
  https://github.com/magento/magento2/blob/2.3.4/app/code/Magento/Customer/Controller/Adminhtml/Index/ResetPassword.php#L42-L46
-4) A version with a backend handler: https://github.com/dmitry-fedyuk/sift/tree/0.2.6-backend -->
+4) A version with a backend handler: https://github.com/mage2pro/sift/tree/0.2.6-backend -->
 	<type name='Magento\Customer\Model\EmailNotificationInterface'>
 		<plugin
 			name='Dfe\Sift\Plugin\Customer\Model\EmailNotificationInterface'

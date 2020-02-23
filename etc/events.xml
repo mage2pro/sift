@@ -149,7 +149,7 @@ https://github.com/magento/magento2/blob/2.3.4/app/code/Magento/Checkout/Control
 	$this->getQuote()->removeAllItems();
 https://github.com/magento/magento2/blob/2.0.0/app/code/Magento/Checkout/Model/Cart.php#L584-L594
 https://github.com/magento/magento2/blob/2.3.4/app/code/Magento/Checkout/Model/Cart.php#L602-L612
-2020-02-11 @todo "Handle the empty cart action": https://github.com/dmitry-fedyuk/sift/issues/10 -->
+2020-02-11 @todo "Handle the empty cart action": https://github.com/mage2pro/sift/issues/10 -->
 	<event name='sales_quote_remove_item'>
 		<observer instance='Dfe\Sift\Observer\Quote\RemoveItem' name='Dfe\Sift\Observer\Quote\RemoveItem'/>
 	</event>

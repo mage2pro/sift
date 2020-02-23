@@ -6,7 +6,7 @@ use Magento\Sales\Model\Order\Payment as P;
  * 1) It handles bank card fields of https://sift.com/developers/docs/curl/events-api/complex-field-types/payment-method
  * 2) @todo There is no a generic way to extract such information from a Magento payment module.
  * I recommend to implement specific adapters to built-in Magento modules and most popular third-party ones:
- * https://github.com/dmitry-fedyuk/sift/issues/2
+ * https://github.com/mage2pro/sift/issues/2
  */
 final class BankCard {
 	/**

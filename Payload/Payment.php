@@ -30,7 +30,7 @@ final class Payment {
 			 * response code received from the payment processor indicating the reason for the decline.»
 			 * 2) @todo There is no a generic way to extract such information from a Magento payment module.
 			 * I recommend to implement specific adapters to built-in Magento modules and most popular third-party ones:
-			 * https://github.com/dmitry-fedyuk/sift/issues/2
+			 * https://github.com/mage2pro/sift/issues/2
 			 */
 			'decline_reason_code' => ''
 			// 2020-02-02 String. «The specific gateway, company, product, etc. being used to process payment.»
@@ -42,7 +42,7 @@ final class Payment {
 			 * 1) «This is the ABA routing number or SWIFT code used.»
 			 * 2) @todo There is no a generic way to extract such information from a Magento payment module.
 			 * I recommend to implement specific adapters to built-in Magento modules and most popular third-party ones:
-			 * https://github.com/dmitry-fedyuk/sift/issues/2
+			 * https://github.com/mage2pro/sift/issues/2
 			 */
 			,'routing_number' => ''
 			/**

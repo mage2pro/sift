@@ -30,7 +30,7 @@ final class UpdatePassword {
 	 * https://github.com/magento/magento2/blob/2.0.0/app/code/Magento/Customer/Controller/Adminhtml/Index/ResetPassword.php#L28-L32
 	 * https://github.com/magento/magento2/blob/2.3.4/app/code/Magento/Customer/Controller/Adminhtml/Index/ResetPassword.php#L42-L46
 	 * 2) Actually, Magento 2 does not have a built-in ability to force a customer to change his password.
-	 * 3) A version with a backend handler: https://github.com/dmitry-fedyuk/sift/tree/0.2.6-backend
+	 * 3) A version with a backend handler: https://github.com/mage2pro/sift/tree/0.2.6-backend
 	 * @used-by \Dfe\Sift\Plugin\Customer\Model\AccountManagement::afterPasswordResetConfirmation()
 	 * @used-by \Dfe\Sift\Plugin\Customer\Model\EmailNotificationInterface::afterPasswordResetConfirmation()
 	 * @param ICD|CD $cd

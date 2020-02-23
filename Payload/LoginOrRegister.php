@@ -21,7 +21,7 @@ final class LoginOrRegister {
 		 * 2) Magento 2 does not provide any built-in single sign on modules.
 		 * 3) @todo "Implement specific adapters for popular third-party single sign-on modules
 		 * to fill the `$social_sign_on_type` field of the `$create_account` event":
-		 * https://github.com/dmitry-fedyuk/sift/issues/3
+		 * https://github.com/mage2pro/sift/issues/3
 		 */
 		,'social_sign_on_type' => ''
 	];}
