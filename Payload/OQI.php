@@ -19,7 +19,7 @@ final class OQI {
 		// 2020-02-01 String. «The brand name of the item.»
 		// 2020-02-22
 		// "Provide an ability to choose a custom attribute for the brand information":
-		// https://github.com/Friends-of-Commerce/Sift-PaymentProtect/issues/16
+		// https://github.com/mage2pro/sift/issues/16
 		'brand' => df_product_att_val_s($p, 'brand', null)
 		// 2020-01-30 «Blankets & Throws»
 		// 2020-02-01 String.
