@@ -1,0 +1,12 @@
+<?xml version='1.0'?>
+<config
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd"
+>
+	<router id='standard'>
+<!-- 2020-02-24 "Integrate the module with the Workflows API" https://github.com/mage2pro/sift/issues/12 -->
+		<route frontName='sift' id='Dfe_Sift'>
+			<module name='Dfe_Sift'/>
+		</route>
+	</router>
+</config>
