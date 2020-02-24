@@ -34,7 +34,7 @@ You need 4 Sift credentials to setup the module:
 	</tr></tbody>
 </table>
 
-### 3. Signature Key
+### 4. Signature Key
 The sandbox mode shares signature keys with the production mode, so turn off the «Sandbox Mode» toggle to see your signature key.
 <img alt='Signature Key' src='doc/credentials/signature-key.png'/>
 
