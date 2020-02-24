@@ -1,6 +1,6 @@
 <?php
 namespace Dfe\Sift\Controller\Index;
-use Df\Framework\W\Result\Json;
+use Df\Framework\W\Result\Text;
 /**
  * 2020-02-24
  * "Implement decision webhooks": https://github.com/mage2pro/sift/issues/12
@@ -15,16 +15,16 @@ class Index extends \Df\Framework\Action {
 	 * @used-by \Magento\Framework\App\Action\Action::dispatch():
 	 * 		$result = $this->execute();
 	 * https://github.com/magento/magento2/blob/2.2.1/lib/internal/Magento/Framework/App/Action/Action.php#L84-L125
-	 * @return Json
+	 * @return Text
 	 */
 	function execute() {
-		/** @var Json $r */
+		/** @var Text $r */
 		try {
-			$r = Json::i('OK');
+			$r = Text::i('OK');
 		}
 		catch (\Exception $e) {
 			df_response_code(500);
-			$r = Json::i(df_ets($e));
+			$r = Text::i(df_ets($e));
 			df_log($e, $this);
 			if (df_my_local()) {
 				throw $e; // 2016-03-27 It is convenient for me to the the exception on the screen.
