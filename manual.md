@@ -6,7 +6,7 @@ The module's settings are located in the «**STORES**» → «**Configuration**�
 </tr></table>
 
 ## Credentials
-You need 3 Sift credentials to setup the module:
+You need 4 Sift credentials to setup the module:
 ### 1. Account ID
 <table>
 	<thead><tr><th>Sandbox Mode</th><th>Production Mode</th></tr></thead>
@@ -33,6 +33,10 @@ You need 3 Sift credentials to setup the module:
 		<td><img alt='Production REST API Key' src='doc/credentials/production/rest-api-key.png'/></td>
 	</tr></tbody>
 </table>
+
+### 3. Signature Key
+The sandbox mode shares signature keys with the production mode, so turn off the «Sandbox Mode» toggle to see your signature key.
+<img alt='Signature Key' src='doc/credentials/signature-key.png'/>
 
 ## Payment Methods
 The module passes the chosen payment method to Sift within the [`$create_order`](https://sift.com/developers/docs/curl/events-api/reserved-events/create-order) event's payload.  
