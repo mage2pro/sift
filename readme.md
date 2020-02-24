@@ -18,7 +18,7 @@ bin/magento maintenance:disable
 ## How to setup
 See the [manual](manual.md#how-to-setup-the-module).
 
-## How to update
+## How to upgrade
 ```
 bin/magento maintenance:enable
 composer remove mage2pro/sift
