@@ -4,7 +4,7 @@
 	xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd"
 >
 	<router id='standard'>
-<!-- 2020-02-24 "Integrate the module with the Workflows API" https://github.com/mage2pro/sift/issues/12 -->
+<!-- 2020-02-24 "Implement decision webhooks" https://github.com/mage2pro/sift/issues/12 -->
 		<route frontName='sift' id='Dfe_Sift'>
 			<module name='Dfe_Sift'/>
 		</route>

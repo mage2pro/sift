@@ -52,7 +52,7 @@ final class Event extends \Df\API\Facade {
 		'return_score'
 		/**
 		 * 2020-02-12
-		 * 1) "Integrate the module with the Workflows API ": https://github.com/mage2pro/sift/issues/12
+		 * 1) "Implement decision webhooks ": https://github.com/mage2pro/sift/issues/12
 		 * 2) «If you want to receive the Workflow Decision synchronously,
 		 * you simply need to add return_workflow_status=true to the URL parameters
 		 * when you are sending Sift a Reserved or Custom event.»
