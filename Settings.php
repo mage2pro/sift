@@ -30,6 +30,13 @@ final class Settings extends \Df\API\Settings {
 	function pm($id) {return $this->_a(PM::class)->get($id);}
 
 	/**
+	 * 2020-02-24 Where is a «Signature Key» located? https://mage2.pro/t/6099
+	 * @used-by \Dfe\Sift\API\B\Event::p()
+	 * @return string
+	 */
+	function signatureKey() {return $this->p();}
+
+	/**
 	 * 2020-01-23
 	 * @override
 	 * @see \Df\Config\Settings::prefix()
