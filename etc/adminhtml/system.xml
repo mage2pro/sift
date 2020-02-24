@@ -180,7 +180,7 @@ The whole `sift` group is not shown for an unknown reason if the `<frontend_mode
 						type='obscure'
 					>
 						<backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>
-						<comment><![CDATA[<a href='https://mage2.pro/t/6093' target='_blank'>How to get it?</a>]]></comment>
+						<comment><![CDATA[<a href='https://mage2.pro/t/6099' target='_blank'>How to get it?</a>]]></comment>
 						<config_path>fraud_protection/sift/signatureKey</config_path>
 						<depends><field id='enable'>1</field></depends>
 						<label>Signature Key</label>
