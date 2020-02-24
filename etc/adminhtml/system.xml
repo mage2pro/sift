@@ -173,11 +173,24 @@ The whole `sift` group is not shown for an unknown reason if the `<frontend_mode
 						<label>Production REST API Key</label>
 					</field>
 					<field
+						id='signatureKey'
+						showInDefault='1' showInStore='1' showInWebsite='1'
+						sortOrder='9'
+						translate='label'
+						type='obscure'
+					>
+						<backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>
+						<comment><![CDATA[<a href='https://mage2.pro/t/6093' target='_blank'>How to get it?</a>]]></comment>
+						<config_path>fraud_protection/sift/signatureKey</config_path>
+						<depends><field id='enable'>1</field></depends>
+						<label>Signature Key</label>
+					</field>
+					<field
 						dfEntity='Dfe\Sift\PM\Entity'
 						dfItemFormElement='Dfe\Sift\PM\FE'
 						id='pm'
 						showInDefault='1' showInStore='1' showInWebsite='1'
-						sortOrder='9'
+						sortOrder='10'
 						translate='label'
 						type='Df\Framework\Form\Element\ArrayT'
 					>
