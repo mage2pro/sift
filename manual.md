@@ -17,17 +17,22 @@ You need **4** Sift credentials to setup the module:
 		<td><img alt='«Production Account ID in Sift' src='doc/sift/credentials/production/account-id.png'/></td>
 	</tr></tbody>
 </table>
+
 #### 2.1.2. «Account ID» in Magento
 <img alt='«Account ID» in Magento' src='doc/magento/credentials/account-id.png'/>
 
 ### 2.2. Beacon Key
+#### 2.2.1. «Beacon Key» in Sift
 <table>
 	<thead><tr><th>Sandbox Mode</th><th>Production Mode</th></tr></thead>
 	<tbody><tr>
-		<td><img alt='Sandbox Beacon Key' src='doc/sift/credentials/sandbox/beacon-key.png'/></td>
-		<td><img alt='Production Beacon Key' src='doc/sift/credentials/production/beacon-key.png'/></td>
+		<td><img alt='«Sandbox Beacon Key» in Sift' src='doc/sift/credentials/sandbox/beacon-key.png'/></td>
+		<td><img alt='«Production Beacon Key» in Sift' src='doc/sift/credentials/production/beacon-key.png'/></td>
 	</tr></tbody>
 </table>
+
+#### 2.2.2. «Beacon Key» in Magento
+<img alt='«Beacon Key» in Magento' src='doc/magento/credentials/beacon-key.png'/>
 
 ### 2.3. REST API Key
 <table>
