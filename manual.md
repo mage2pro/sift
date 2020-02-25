@@ -35,6 +35,7 @@ You need 4 Sift credentials to setup the module:
 </table>
 
 ### 4. Signature Key
+A signature key is used to [authenticate](https://sift.com/developers/docs/php/decisions-api/decision-webhooks/authentication) the [decision notifications](https://sift.com/developers/docs/php/decisions-api/decision-webhooks) received by Magento from Sift.  
 The sandbox mode shares signature keys with the production mode, so turn off the «Sandbox Mode» toggle to see your signature key.
 <img alt='Signature Key' src='doc/credentials/signature-key.png'/>
 
