@@ -31,7 +31,7 @@ final class Settings extends \Df\API\Settings {
 
 	/**
 	 * 2020-02-24 Where is a «Signature Key» located? https://mage2.pro/t/6099
-	 * @used-by \Dfe\Sift\API\B\Event::p()
+	 * @used-by \Dfe\Sift\Controller\Index\Index::checkSignature()
 	 * @return string
 	 */
 	function signatureKey() {return $this->p();}
