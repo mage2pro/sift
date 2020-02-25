@@ -21,6 +21,9 @@ class Index extends \Df\Framework\Action implements IPost {
 	function execute() {
 		/** @var Text $r */
 		try {
+			// 2020-02-25
+			// Sift does not require any specific response and even seems not checking it,
+			// so I use a response convenient for debugging.
 			$r = Text::i('OK');
 		}
 		catch (\Exception $e) {
