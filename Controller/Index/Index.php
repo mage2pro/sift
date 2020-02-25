@@ -1,12 +1,13 @@
 <?php
 namespace Dfe\Sift\Controller\Index;
 use Df\Framework\W\Result\Text;
+use Magento\Framework\App\Action\HttpPostActionInterface as IPost;
 /**
  * 2020-02-24
  * "Implement decision webhooks": https://github.com/mage2pro/sift/issues/12
  * @final Unable to use the PHP «final» keyword here because of the M2 code generation.
  */
-class Index extends \Df\Framework\Action {
+class Index extends \Df\Framework\Action implements IPost {
 	/**
 	 * 2020-02-24
 	 * @final Unable to use the PHP «final» keyword here because of the M2 code generation.
@@ -23,7 +24,7 @@ class Index extends \Df\Framework\Action {
 			$r = Text::i('OK');
 		}
 		catch (\Exception $e) {
-			df_response_code(500);
+			df_500();
 			$r = Text::i(df_ets($e));
 			df_log($e, $this);
 			if (df_my_local()) {
