@@ -35,13 +35,17 @@ You need **4** Sift credentials to setup the module:
 <img alt='«Beacon Key» in Magento' src='doc/magento/credentials/beacon-key.png'/>
 
 ### 2.3. REST API Key
+#### 2.3.1. «REST API Key» in Sift
 <table>
 	<thead><tr><th>Sandbox Mode</th><th>Production Mode</th></tr></thead>
 	<tbody><tr>
-		<td><img alt='Sandbox REST API Key' src='doc/sift/credentials/sandbox/rest-api-key.png'/></td>
-		<td><img alt='Production REST API Key' src='doc/sift/credentials/production/rest-api-key.png'/></td>
+		<td><img alt='«Sandbox REST API Key» in Sift' src='doc/sift/credentials/sandbox/rest-api-key.png'/></td>
+		<td><img alt='«Production REST API Key» in Sift' src='doc/sift/credentials/production/rest-api-key.png'/></td>
 	</tr></tbody>
 </table>
+
+#### 2.3.2. «REST API Key» in Magento
+<img alt='«REST API Key» in Magento' src='doc/magento/credentials/rest-api-key.png'/>
 
 ### 2.4. Signature Key
 A signature key is used to [authenticate](https://sift.com/developers/docs/php/decisions-api/decision-webhooks/authentication) the [decision notifications](https://sift.com/developers/docs/php/decisions-api/decision-webhooks) received by Magento from Sift.  
