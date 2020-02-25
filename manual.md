@@ -1,5 +1,5 @@
 # How to setup the module
-## Step 1. Locate the module's settings inside the Magento's backend 
+## Step 1. Locate the module settings inside the Magento backend 
 «**STORES**» → «**Configuration**» → «**SALES**» → «**Fraud Protection**» → «**Sift**»: 
 <table><tr>
 	<td><img src='doc/stores--configuration.png'/></td>
