@@ -1,13 +1,14 @@
 # How to setup the module
-The module's settings are located in the «**STORES**» → «**Configuration**» → «**SALES**» → «**Fraud Protection**» → «**Sift**» section: 
+## Step 1. Locate the module's settings inside the Magento' backend 
+«**STORES**» → «**Configuration**» → «**SALES**» → «**Fraud Protection**» → «**Sift**»: 
 <table><tr>
 	<td><img src='doc/stores--configuration.png'/></td>
 	<td><img src='doc/sales--fraud-protection--sift.png'/></td>
 </tr></table>
 
-## Credentials
+## Step 2. Place your Sift credentials to the Magento backend
 You need 4 Sift credentials to setup the module:
-### 1. Account ID
+### 2.1. Account ID
 <table>
 	<thead><tr><th>Sandbox Mode</th><th>Production Mode</th></tr></thead>
 	<tbody><tr>
@@ -16,7 +17,7 @@ You need 4 Sift credentials to setup the module:
 	</tr></tbody>
 </table>
 
-### 2. Beacon Key
+### 2.2. Beacon Key
 <table>
 	<thead><tr><th>Sandbox Mode</th><th>Production Mode</th></tr></thead>
 	<tbody><tr>
@@ -25,7 +26,7 @@ You need 4 Sift credentials to setup the module:
 	</tr></tbody>
 </table>
 
-### 3. REST API Key
+### 2.3. REST API Key
 <table>
 	<thead><tr><th>Sandbox Mode</th><th>Production Mode</th></tr></thead>
 	<tbody><tr>
@@ -34,12 +35,15 @@ You need 4 Sift credentials to setup the module:
 	</tr></tbody>
 </table>
 
-### 4. Signature Key
+### 2.4. Signature Key
 A signature key is used to [authenticate](https://sift.com/developers/docs/php/decisions-api/decision-webhooks/authentication) the [decision notifications](https://sift.com/developers/docs/php/decisions-api/decision-webhooks) received by Magento from Sift.  
 The sandbox mode shares signature keys with the production mode, so turn off the «Sandbox Mode» toggle to see your signature key.
 <img alt='Signature Key' src='doc/credentials/signature-key.png'/>
 
-## Payment Methods
+## Step 3. Set the module's webhook URL to every Sift decision in the Sift console
+...
+
+## Step 4. Setup payment methods
 The module passes the chosen payment method to Sift within the [`$create_order`](https://sift.com/developers/docs/curl/events-api/reserved-events/create-order) event's payload.  
 Sift requires that [`$payment_type` and `$payment_gateway`](https://sift.com/developers/docs/curl/events-api/complex-field-types/payment-method) field values should belong to fixed sets, so you need to setup a mapping between Magento payment methods used in your store and the allowed `$payment_type` and `$payment_gateway` values.  
 The module already maps built-in Magento payment methods to reasonable `$payment_type` and `$payment_gateway` values, so you need to setup such mapping only for third-party payment modules.  
