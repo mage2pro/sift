@@ -43,7 +43,7 @@ The sandbox mode shares signature keys with the production mode, so turn off the
 ## Step 3. Set the module's webhook URL to every Sift decision in the Sift console
 ...
 
-## Step 4. Setup payment methods
+## Step 4. Map the used Magento payment options to Sift constants
 The module passes the chosen payment method to Sift within the [`$create_order`](https://sift.com/developers/docs/curl/events-api/reserved-events/create-order) event's payload.  
 Sift requires that [`$payment_type` and `$payment_gateway`](https://sift.com/developers/docs/curl/events-api/complex-field-types/payment-method) field values should belong to fixed sets, so you need to setup a mapping between Magento payment methods used in your store and the allowed `$payment_type` and `$payment_gateway` values.  
 The module already maps built-in Magento payment methods to reasonable `$payment_type` and `$payment_gateway` values, so you need to setup such mapping only for third-party payment modules.  
