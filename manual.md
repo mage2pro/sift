@@ -2,8 +2,8 @@
 ## Step 1. Locate the module settings inside the Magento backend 
 «**STORES**» → «**Configuration**» → «**SALES**» → «**Fraud Protection**» → «**Sift**»: 
 <table><tr>
-	<td><img src='doc/magento/stores--configuration.png'/></td>
-	<td><img src='doc/magento/sales--fraud-protection--sift.png'/></td>
+	<td><img alt='«STORES» → «Configuration»' src='doc/magento/stores--configuration.png'/></td>
+	<td><img alt='«SALES» → «Fraud Protection» → «Sift»' src='doc/magento/sales--fraud-protection--sift.png'/></td>
 </tr></table>
 
 ## Step 2. Place your Sift credentials to the Magento backend
