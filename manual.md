@@ -12,8 +12,8 @@ You need **4** Sift credentials to setup the module:
 <table>
 	<thead><tr><th>Sandbox Mode</th><th>Production Mode</th></tr></thead>
 	<tbody><tr>
-		<td><img alt='Sandbox Account ID' src='doc/credentials/sandbox/account-id.png'/></td>
-		<td><img alt='Production Account ID' src='doc/credentials/production/account-id.png'/></td>
+		<td><img alt='Sandbox Account ID' src='doc/credentials/sift/sandbox/account-id.png'/></td>
+		<td><img alt='Production Account ID' src='doc/credentials/sift/production/account-id.png'/></td>
 	</tr></tbody>
 </table>
 
@@ -21,8 +21,8 @@ You need **4** Sift credentials to setup the module:
 <table>
 	<thead><tr><th>Sandbox Mode</th><th>Production Mode</th></tr></thead>
 	<tbody><tr>
-		<td><img alt='Sandbox Beacon Key' src='doc/credentials/sandbox/beacon-key.png'/></td>
-		<td><img alt='Production Beacon Key' src='doc/credentials/production/beacon-key.png'/></td>
+		<td><img alt='Sandbox Beacon Key' src='doc/credentials/sift/sandbox/beacon-key.png'/></td>
+		<td><img alt='Production Beacon Key' src='doc/credentials/sift/production/beacon-key.png'/></td>
 	</tr></tbody>
 </table>
 
@@ -30,15 +30,15 @@ You need **4** Sift credentials to setup the module:
 <table>
 	<thead><tr><th>Sandbox Mode</th><th>Production Mode</th></tr></thead>
 	<tbody><tr>
-		<td><img alt='Sandbox REST API Key' src='doc/credentials/sandbox/rest-api-key.png'/></td>
-		<td><img alt='Production REST API Key' src='doc/credentials/production/rest-api-key.png'/></td>
+		<td><img alt='Sandbox REST API Key' src='doc/credentials/sift/sandbox/rest-api-key.png'/></td>
+		<td><img alt='Production REST API Key' src='doc/credentials/sift/production/rest-api-key.png'/></td>
 	</tr></tbody>
 </table>
 
 ### 2.4. Signature Key
 A signature key is used to [authenticate](https://sift.com/developers/docs/php/decisions-api/decision-webhooks/authentication) the [decision notifications](https://sift.com/developers/docs/php/decisions-api/decision-webhooks) received by Magento from Sift.  
 The sandbox mode shares signature keys with the production mode, so turn off the «Sandbox Mode» toggle to see your signature key.
-<img alt='Signature Key' src='doc/credentials/signature-key.png'/>
+<img alt='Signature Key' src='doc/credentials/sift/signature-key.png'/>
 
 ## Step 3. Set the module's webhook URL to every Sift decision in the Sift console
 ...
