@@ -7,7 +7,7 @@
 </tr></table>
 
 ## Step 2. Place your Sift credentials to the Magento backend
-You need 4 Sift credentials to setup the module:
+You need **4** Sift credentials to setup the module:
 ### 2.1. Account ID
 <table>
 	<thead><tr><th>Sandbox Mode</th><th>Production Mode</th></tr></thead>
