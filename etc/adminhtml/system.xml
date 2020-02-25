@@ -173,14 +173,25 @@ The whole `sift` group is not shown for an unknown reason if the `<frontend_mode
 						<label>Production REST API Key</label>
 					</field>
 					<field
-						id='signatureKey'
+						id='webhook'
 						showInDefault='1' showInStore='1' showInWebsite='1'
 						sortOrder='9'
+						translate='label'
+						type='Df\Framework\Form\Element\Webhook'
+					>
+						<label>Webhook URL</label>
+						<comment><![CDATA[Set it in the «<b><a href='https://mage2.pro/t/4516' target='_blank'>Webhook URL</a></b>» field of your Sift decisions.]]></comment>
+						<depends><field id='enable'>1</field></depends>
+					</field>
+					<field
+						id='signatureKey'
+						showInDefault='1' showInStore='1' showInWebsite='1'
+						sortOrder='10'
 						translate='label'
 						type='obscure'
 					>
 						<backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>
-						<comment><![CDATA[<a href='https://mage2.pro/t/6099' target='_blank'>How to get it?</a>]]></comment>
+						<comment><![CDATA[It is used to secure the notifications received via «Webhook URL» (see above).<br/><a href='https://mage2.pro/t/6099' target='_blank'>How to get it?</a>]]></comment>
 						<config_path>fraud_protection/sift/signatureKey</config_path>
 						<depends><field id='enable'>1</field></depends>
 						<label>Signature Key</label>
@@ -190,7 +201,7 @@ The whole `sift` group is not shown for an unknown reason if the `<frontend_mode
 						dfItemFormElement='Dfe\Sift\PM\FE'
 						id='pm'
 						showInDefault='1' showInStore='1' showInWebsite='1'
-						sortOrder='10'
+						sortOrder='11'
 						translate='label'
 						type='Df\Framework\Form\Element\ArrayT'
 					>
