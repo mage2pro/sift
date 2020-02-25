@@ -12,10 +12,11 @@ You need **4** Sift credentials to setup the module:
 <table>
 	<thead><tr><th>Sandbox Mode</th><th>Production Mode</th></tr></thead>
 	<tbody><tr>
-		<td><img alt='Sandbox Account ID' src='doc/sift/credentials/sandbox/account-id.png'/></td>
-		<td><img alt='Production Account ID' src='doc/sift/credentials/production/account-id.png'/></td>
+		<td><img alt='Sandbox Account ID in Sift' src='doc/sift/credentials/sandbox/account-id.png'/></td>
+		<td><img alt='Production Account ID in Sift' src='doc/sift/credentials/production/account-id.png'/></td>
 	</tr></tbody>
 </table>
+<img alt='Account ID in Magento' src='doc/magento/credentials/account-id.png'/>
 
 ### 2.2. Beacon Key
 <table>
