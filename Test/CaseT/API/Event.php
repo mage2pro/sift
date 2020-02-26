@@ -5,7 +5,7 @@ use Dfe\Sift\Settings as S;
 use Exception as E;
 // 2020-01-25 https://sift.com/developers/docs/curl/events-api
 final class Event extends \Dfe\Sift\Test\CaseT {
-	/** 2020-01-25 */
+	/** @test 2020-01-25 */
 	function t00() {echo __METHOD__;}
 
 	/** 2020-01-25 https://sift.com/developers/docs/curl/events-api/reserved-events/add-item-to-cart */

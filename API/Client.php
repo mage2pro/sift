@@ -34,5 +34,5 @@ final class Client extends \Df\API\Client {
 	 * @used-by \Df\API\Client::url()
 	 * @return string
 	 */
-	protected function urlBase() {return 'https://api.sift.com/v205';}
+	protected function urlBase() {return 'https://api.sift.com';}
 }

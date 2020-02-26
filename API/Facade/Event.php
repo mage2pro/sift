@@ -4,7 +4,7 @@ namespace Dfe\Sift\API\Facade;
  * 2020-01-25
  * @method static Event s()
  */
-final class Event extends \Df\API\Facade {
+final class Event extends \Dfe\Sift\API\Facade {
 	/**
 	 * 2020-02-11
 	 * 2020-02-12
@@ -69,4 +69,13 @@ final class Event extends \Df\API\Facade {
 	 * and Sift will ignore the `return_score` and `return_workflow_status` parameters.
 	 */
 	], 'true')));}
+
+	/**
+	 * 2020-02-27 https://sift.com/developers/docs/curl/events-api/overview
+	 * @override
+	 * @see \Dfe\Sift\API\Facade::ver()
+	 * @used-by \Dfe\Sift\API\Facade::prefix()
+	 * @return int
+	 */
+	protected function ver() {return 205;}
 }
