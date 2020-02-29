@@ -21,9 +21,11 @@ abstract class Facade extends \Df\API\Facade implements IClientConfiguration {
 	 * @override
 	 * @see \Df\API\Facade::adjustClient()
 	 * @used-by \Df\API\Facade::p()
+	 * @used-by \Dfe\Sift\API\Facade\Account::adjustClient()
+	 * @see \Dfe\Sift\API\Facade\Account::adjustClient()
 	 * @param Client|ClientBase $c
 	 */
-	final protected function adjustClient(ClientBase $c) {$c->cfg($this);}
+	protected function adjustClient(ClientBase $c) {$c->cfg($this);}
 
 	/**
 	 * 2020-02-27

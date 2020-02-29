@@ -1,5 +1,8 @@
 <?php
 namespace Dfe\Sift\API\Facade;
+use Df\API\Client as ClientBase;
+use Dfe\Sift\API\Client;
+use Dfe\Sift\Settings as S;
 /**
  * 2020-02-27
  * 1) "Retrieve decisions configuration from Sift": https://github.com/mage2pro/sift/issues/19
@@ -15,6 +18,25 @@ final class Account extends \Dfe\Sift\API\Facade {
 	 * @return string
 	 */
 	function responseValidatorC() {return \Dfe\Sift\API\Validator\Account::class;}
+
+	/**
+	 * 2020-02-29
+	 * @override
+	 * @see \Dfe\Sift\API\Facade::adjustClient()
+	 * @used-by \Df\API\Facade::p()
+	 * @param Client|ClientBase $c
+	 */
+	protected function adjustClient(ClientBase $c) {
+		parent::adjustClient($c);
+		/**
+		 * 2020-02-29
+		 * It is undocumented, but the Decisions API uses a totally different way of authentication from the Events API.
+		 * https://github.com/SiftScience/sift-php/blob/v4.0.0/lib/SiftClient.php#L552-L554
+		 * https://github.com/SiftScience/sift-php/blob/v4.0.0/lib/SiftRequest.php#L78-L80
+		 * https://sift.com/developers/docs/curl/decisions-api/decisions-list
+		 */
+		$c->c()->setAuth(S::s()->backendKey());
+	}
 
 	/**
 	 * 2020-02-27
