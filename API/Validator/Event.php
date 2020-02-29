@@ -1,13 +1,13 @@
 <?php
-namespace Dfe\Sift\API;
+namespace Dfe\Sift\API\Validator;
 // 2020-01-25 https://sift.com/developers/docs/curl/events-api/error-codes
-final class Validator extends \Df\API\Response\Validator {
+/** @used-by \Dfe\Sift\API\Facade\Event::responseValidatorC() */
+final class Event extends \Df\API\Response\Validator {
 	/**
 	 * 2020-01-25
 	 * 2020-01-30 If the request is successful, then `error_message` is «OK».
 	 * @override
 	 * @see \Df\API\Exception::long()
-	 * @used-by valid()
 	 * @used-by \Df\API\Client::_p()
 	 * @return string|null
 	 */

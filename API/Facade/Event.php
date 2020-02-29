@@ -6,6 +6,15 @@ namespace Dfe\Sift\API\Facade;
  */
 final class Event extends \Dfe\Sift\API\Facade {
 	/**
+	 * 2020-02-29
+	 * @override
+	 * @see \Dfe\Sift\API\IClientConfiguration::responseValidatorC()
+	 * @used-by \Dfe\Sift\API\Client::responseValidatorC()
+	 * @return string
+	 */
+	function responseValidatorC() {return \Dfe\Sift\API\Validator\Event::class;}
+
+	/**
 	 * 2020-02-11
 	 * 2020-02-12
 	 * A response with `score_response`:

@@ -8,6 +8,15 @@ namespace Dfe\Sift\API\Facade;
  */
 final class Account extends \Dfe\Sift\API\Facade {
 	/**
+	 * 2020-02-29
+	 * @override
+	 * @see \Dfe\Sift\API\IClientConfiguration::responseValidatorC()
+	 * @used-by \Dfe\Sift\API\Client::responseValidatorC()
+	 * @return string
+	 */
+	function responseValidatorC() {return \Dfe\Sift\API\Validator\Account::class;}
+
+	/**
 	 * 2020-02-27
 	 * @override
 	 * @see \Df\API\Facade::path()

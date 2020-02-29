@@ -17,7 +17,7 @@ final class Decisions extends \Dfe\Sift\Test\CaseT {
 			echo B::decisions()->j();
 		}
 		catch (E $e) {
-			xdebug_break();
+			echo df_cc_n(df_ets($e), df_bt_s($e));
 		}
 	}
 }
