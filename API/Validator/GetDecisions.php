@@ -5,9 +5,9 @@ namespace Dfe\Sift\API\Validator;
  * The Decision API responds with the following (undocumented) message structure on an error:
  * 		{"description": "The credentials supplied are not valid", "error": "invalid_credentials"}
  * https://sift.com/developers/docs/curl/decisions-api
- * @used-by \Dfe\Sift\API\Facade\Account::responseValidatorC()
+ * @used-by \Dfe\Sift\API\Facade\GetDecisions::responseValidatorC()
  */
-final class Account extends \Df\API\Response\Validator {
+final class GetDecisions extends \Df\API\Response\Validator {
 	/**
 	 * 2020-02-29
 	 * @override

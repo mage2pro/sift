@@ -9,7 +9,7 @@ use Dfe\Sift\Settings as S;
  * 2) https://sift.com/developers/docs/curl/decisions-api/decisions-list
  * @method static Event s()
  */
-final class Account extends \Dfe\Sift\API\Facade {
+final class GetDecisions extends \Dfe\Sift\API\Facade {
 	/**
 	 * 2020-02-29
 	 * @override
@@ -17,7 +17,7 @@ final class Account extends \Dfe\Sift\API\Facade {
 	 * @used-by \Dfe\Sift\API\Client::responseValidatorC()
 	 * @return string
 	 */
-	function responseValidatorC() {return \Dfe\Sift\API\Validator\Account::class;}
+	function responseValidatorC() {return \Dfe\Sift\API\Validator\GetDecisions::class;}
 
 	/**
 	 * 2020-02-29
@@ -47,20 +47,22 @@ final class Account extends \Dfe\Sift\API\Facade {
 	 * @param string|null $s
 	 * @return string
 	 */
-	protected function path($id, $s) {return df_cc('?', parent::path($id, $s), http_build_query([
-	   /**
-		* 2020-02-27
-		* Optional, string.
-		* «Return only decisions applicable to the specified entity_type.
-		* Allowed values:
-		* 		CONTENT: this Decision should be applied to content.
-		* 		ORDER: this Decision should be applied to orders.
-		* 		SESSION: this Decision should be applied to sessions.
-		* 		USER: this Decision should be applied to users.
-		* »
-		*/
-		'entity_type' => 'ORDER'
-	]));}
+	protected function path($id, $s) {return df_cc('?',
+		df_cc_path($this->prefix(), 'accounts', S::s()->merchantID(), 'decisions'), http_build_query([
+		   /**
+			* 2020-02-27
+			* Optional, string.
+			* «Return only decisions applicable to the specified entity_type.
+			* Allowed values:
+			* 		`content`: this Decision should be applied to content.
+			* 		`order`: this Decision should be applied to orders.
+			* 		`session`: this Decision should be applied to sessions.
+			* 		`user`: this Decision should be applied to users.
+			* »
+			*/
+			'entity_type' => 'order'
+		])
+	);}
 
 	/**
 	 * 2020-02-27 https://sift.com/developers/docs/curl/decisions-api/decisions-list
