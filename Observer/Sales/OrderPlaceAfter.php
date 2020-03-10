@@ -114,6 +114,8 @@ final class OrderPlaceAfter implements ObserverInterface {
 			// Note: If the user's email is also their account ID in your system,
 			// set both the `user_id` and `user_email` fields to their email address.»
 			,'user_email' => $o->getCustomerEmail()
+			// When customer id is null then pass email address as a customer id
+			,'user_id' => df_customer_id() == null ? $o->getCustomerEmail() : df_customer_id()
 		]);
 	});}
 }
