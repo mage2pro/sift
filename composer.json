@@ -1,14 +1,14 @@
 {
-	"name": "mage2pro/sift"
+	"name": "friends-of-commerce/sift-paymentprotect"
 	,"version": "0.3.6"
 	,"description": "Sift integration with Magento 2"
 	,"type": "magento2-module"
-	,"homepage": "https://mage2.pro/c/extensions/sift"
+	,"homepage": "https://github.com/Friends-of-Commerce/Sift-PaymentProtect"
 	,"license": "MIT"
 	,"authors": [{
 		"name": "Dmitry Fedyuk",
 		"email": "admin@mage2.pro",
-		"homepage": "https://mage2.pro/users/dmitry_fedyuk",
+		"homepage": "https://github.com/Friends-of-Commerce/Sift-PaymentProtect",
 		"role": "Developer"
 	}]
 	,"require": {"mage2pro/core": ">=6.3.7", "mage2pro/phone":  ">=1.1.0"}
