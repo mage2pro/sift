@@ -79,7 +79,7 @@ final class OrderPlaceAfter implements ObserverInterface {
 			 */
 			,'items' => df_oqi_leafs($o, function(I $i) {return pOQI::p($i);})
 			// 2020-02-01 String. «The ID for tracking this order in your system»
-			,'order_id' => $o->getIncrementId()
+			,'order_id' => $o->getIncrementId() . '-S'
 			// 2020-02-01
 			// 1) Array Of Payment Methods:
 			// https://sift.com/developers/docs/curl/events-api/complex-field-types/payment-method
