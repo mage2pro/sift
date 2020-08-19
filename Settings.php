@@ -1,7 +1,7 @@
 <?php
 namespace Dfe\Sift;
 use Dfe\Sift\PM\Entity as PM;
-// 2020-01-23
+# 2020-01-23
 /** @method static Settings s() */
 final class Settings extends \Df\API\Settings {
 	/**

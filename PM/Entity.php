@@ -1,6 +1,6 @@
 <?php
 namespace Dfe\Sift\PM;
-// 2020-02-02
+# 2020-02-02
 /** @used-by \Dfe\Sift\Settings::pm() */
 final class Entity extends \Df\Config\ArrayItem {
 	/**

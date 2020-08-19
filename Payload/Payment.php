@@ -33,9 +33,9 @@ final class Payment {
 			 * https://github.com/mage2pro/sift/issues/2
 			 */
 			'decline_reason_code' => ''
-			// 2020-02-02 String. «The specific gateway, company, product, etc. being used to process payment.»
+			# 2020-02-02 String. «The specific gateway, company, product, etc. being used to process payment.»
 			,'payment_gateway' => !$pm ? '' : sift_prefix($pm->sGateway())
-			// 2020-02-02 String. «The general type of payment being used.»
+			# 2020-02-02 String. «The general type of payment being used.»
 			,'payment_type' => !$pm ? '' : sift_prefix($pm->sType())
 			/**
 			 * 2020-02-03 String.

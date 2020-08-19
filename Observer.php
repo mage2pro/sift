@@ -3,7 +3,7 @@ namespace Dfe\Sift;
 use Closure as F;
 use Dfe\Sift\Settings as S;
 use Exception as E;
-// 2020-02-01
+# 2020-02-01
 final class Observer {
 	/**
 	 * 2020-02-01

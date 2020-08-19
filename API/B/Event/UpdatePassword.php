@@ -4,7 +4,7 @@ use Dfe\Sift\API\B\Event as B;
 use Dfe\Sift\Observer as _P;
 use Magento\Customer\Api\Data\CustomerInterface as ICD;
 use Magento\Customer\Model\Data\Customer as CD;
-// 2020-02-11
+# 2020-02-11
 final class UpdatePassword {
 	/**
 	 * 2020-02-11

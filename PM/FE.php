@@ -18,7 +18,7 @@ class FE extends \Df\Framework\Form\Element\Fieldset {
 	 */
 	final function onFormInitialized() {
 		parent::onFormInitialized();
-		$this->addClass('dfe-sift-pm'); // 2016-07-30 This CSS class will be applied to the <fieldset> DOM node.
+		$this->addClass('dfe-sift-pm'); # 2016-07-30 This CSS class will be applied to the <fieldset> DOM node.
 		$this->select(O::mCode, 'Magento Payment Method', dfp_methods_o(), [], [self::EMPTY => 1]);
 		$this->select(O::sType, 'Sift Payment Type', df_module_enum($this, 'payment/type'), [], [self::EMPTY => 1]);
 		$this->select(

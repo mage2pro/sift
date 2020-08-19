@@ -53,18 +53,18 @@ final class OrderPlaceAfter implements ObserverInterface {
 	 */
 	function execute(Ob $ob) {\Dfe\Sift\Observer::f(function() use($ob) {
 		$o = $ob['order']; /** @var O $o */
-		// 2020-02-01 https://sift.com/developers/docs/curl/events-api/reserved-events/create-content/review
+		# 2020-02-01 https://sift.com/developers/docs/curl/events-api/reserved-events/create-content/review
 		Event::p('create_order', [
-			// 2020-02-01 Integer. «Total transaction amount in micros in the base unit of the `currency_code`»
+			# 2020-02-01 Integer. «Total transaction amount in micros in the base unit of the `currency_code`»
 			'amount' => sift_amt($o->getGrandTotal())
-			// 2020-02-01
-			// 1) Address: https://sift.com/developers/docs/curl/events-api/complex-field-types/address
-			// 2) «The billing address as entered by the user.»
+			# 2020-02-01
+			# 1) Address: https://sift.com/developers/docs/curl/events-api/complex-field-types/address
+			# 2) «The billing address as entered by the user.»
 			,'billing_address' => pAddress::p($o->getBillingAddress())
-			// 2020-02-01 String.
-			// «ISO-4217 currency code for the amount. If your site uses alternative currencies, specify them here.»
+			# 2020-02-01 String.
+			# «ISO-4217 currency code for the amount. If your site uses alternative currencies, specify them here.»
 			,'currency_code' => $o->getOrderCurrencyCode()
-			// 2020-02-01 Boolean. «Whether the user requested priority/expedited shipping on their order.»
+			# 2020-02-01 Boolean. «Whether the user requested priority/expedited shipping on their order.»
 			,'expedited_shipping' => false
 			/**
 			 * 2020-02-01
@@ -78,24 +78,24 @@ final class OrderPlaceAfter implements ObserverInterface {
 			 * 3) «Note: cannot be used in conjunction with `bookings`.»
 			 */
 			,'items' => df_oqi_leafs($o, function(I $i) {return pOQI::p($i);})
-			// 2020-02-01 String. «The ID for tracking this order in your system»
+			# 2020-02-01 String. «The ID for tracking this order in your system»
 			,'order_id' => $o->getIncrementId() . '-S'
-			// 2020-02-01
-			// 1) Array Of Payment Methods:
-			// https://sift.com/developers/docs/curl/events-api/complex-field-types/payment-method
-			// 2) «The payment information associated with this order.»
-			// 3) «Note: As opposed to `transaction`, `create_order` takes an array of `payment_method` objects,
-			// so you can record orders that are paid for using multiple payments.»
+			# 2020-02-01
+			# 1) Array Of Payment Methods:
+			# https://sift.com/developers/docs/curl/events-api/complex-field-types/payment-method
+			# 2) «The payment information associated with this order.»
+			# 3) «Note: As opposed to `transaction`, `create_order` takes an array of `payment_method` objects,
+			# so you can record orders that are paid for using multiple payments.»
 			,'payment_methods' => [pPayment::p($o->getPayment())]
-			// 2020-02-01
-			// 1) Array Of Promotions: https://sift.com/developers/docs/curl/events-api/complex-field-types/promotion
-			// 2) «The list of promotions that apply to this order.
-			// You can add one or more promotions when creating or updating an order.
-			// You can also separately add promotions to the account via the `add_promotion` event.»
+			# 2020-02-01
+			# 1) Array Of Promotions: https://sift.com/developers/docs/curl/events-api/complex-field-types/promotion
+			# 2) «The list of promotions that apply to this order.
+			# You can add one or more promotions when creating or updating an order.
+			# You can also separately add promotions to the account via the `add_promotion` event.»
 			,'promotions' => pPromotions::p($o)
-			// 2020-02-01 String
-			// «For marketplace businesses, this is the seller's user ID, typically a database primary key.
-			// Follow our guidelines for `user_id values`: https://sift.com/developers/docs/curl/events-api/fields»
+			# 2020-02-01 String
+			# «For marketplace businesses, this is the seller's user ID, typically a database primary key.
+			# Follow our guidelines for `user_id values`: https://sift.com/developers/docs/curl/events-api/fields»
 			,'seller_user_id' => ''
 			 /**
 			  * 2020-02-01 «Indicates the method of delivery to the user. Allowed values: `electronic`, `physical`».
@@ -105,16 +105,16 @@ final class OrderPlaceAfter implements ObserverInterface {
 			  * https://github.com/mage2pro/core/blob/5.9.4/Quote/lib/oq.php#L174-L176
 			  */
 			,'shipping_method' => $o->getShippingAddress() ? '$physical' : '$electronic'
-			// 2020-02-01
-			// 1) Address: https://sift.com/developers/docs/curl/events-api/complex-field-types/address
-			// 2) «The shipping address as entered by the user.»
+			# 2020-02-01
+			# 1) Address: https://sift.com/developers/docs/curl/events-api/complex-field-types/address
+			# 2) «The shipping address as entered by the user.»
 			,'shipping_address' => pAddress::p($o->getShippingAddress())
-			// 2020-02-01 String.
-			// «Email of the user creating this order.
-			// Note: If the user's email is also their account ID in your system,
-			// set both the `user_id` and `user_email` fields to their email address.»
+			# 2020-02-01 String.
+			# «Email of the user creating this order.
+			# Note: If the user's email is also their account ID in your system,
+			# set both the `user_id` and `user_email` fields to their email address.»
 			,'user_email' => $o->getCustomerEmail()
-			// When customer id is null then pass email address as a customer id
+			# When customer id is null then pass email address as a customer id
 			,'user_id' => df_customer_id() == null ? $o->getCustomerEmail() : df_customer_id()
 		]);
 	});}

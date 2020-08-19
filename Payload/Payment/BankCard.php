@@ -16,14 +16,14 @@ final class BankCard {
 	 * @return array(string => mixed)
 	 */
 	static function p(P $p) {return [
-		// 2020-02-03 String.
-		// «Response code from the AVS address verification system. Used in payments involving credit cards.»
+		# 2020-02-03 String.
+		# «Response code from the AVS address verification system. Used in payments involving credit cards.»
 		'avs_result_code' => ''
-		// 2020-02-03 String.
-		// «The first six digits of the credit card number.
-		// These numbers contain information about the card issuer, the geography and other card details.»
+		# 2020-02-03 String.
+		# «The first six digits of the credit card number.
+		# These numbers contain information about the card issuer, the geography and other card details.»
 		,'card_bin' => ''
-		// 2020-02-03 String. «The last four digits of the credit card number.»
+		# 2020-02-03 String. «The last four digits of the credit card number.»
 		,'card_last4' => ''
 	];}
 }

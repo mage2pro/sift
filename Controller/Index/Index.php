@@ -30,9 +30,9 @@ class Index extends \Df\Framework\Action implements IPost {
 		try {
 			$this->checkSignature();
 			$d = df_request_body_json(); /** @var array(string => mixed) $d */
-			// 2020-02-25
-			// Sift does not require any specific response and even seems not checking it,
-			// so I use a response convenient for debugging.
+			# 2020-02-25
+			# Sift does not require any specific response and even seems not checking it,
+			# so I use a response convenient for debugging.
 			$r = Text::i('OK');
 		}
 		catch (\Exception $e) {
@@ -40,7 +40,7 @@ class Index extends \Df\Framework\Action implements IPost {
 			$r = Text::i(df_ets($e));
 			df_log($e, $this);
 			if (df_my_local()) {
-				throw $e; // 2016-03-27 It is convenient for me to the the exception on the screen.
+				throw $e; # 2016-03-27 It is convenient for me to the the exception on the screen.
 			}
 		}
 		return $r;
@@ -51,10 +51,10 @@ class Index extends \Df\Framework\Action implements IPost {
 	 * @used-by execute()
 	 */
 	private function checkSignature() {
-		// 2020-02-25
-		// 1) A signature looks like «sha1=c85f8e483b5343ae073b88d4311252b77bdc8ecd»
-		// 2) @todo "Provide an ability to set different Sift credentials for each Magento store
-		// inside a single Magento installation": https://github.com/mage2pro/sift/issues/17
+		# 2020-02-25
+		# 1) A signature looks like «sha1=c85f8e483b5343ae073b88d4311252b77bdc8ecd»
+		# 2) @todo "Provide an ability to set different Sift credentials for each Magento store
+		# inside a single Magento installation": https://github.com/mage2pro/sift/issues/17
 		$h = 'X-Sift-Science-Signature'; /** @const string $h */
 		$setting = '«Signature Key»'; /** @const string $setting */
 		if (!($s1 = df_request_header($h))) { /** @var string $s1 */

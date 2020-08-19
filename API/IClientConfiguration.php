@@ -1,6 +1,6 @@
 <?php
 namespace Dfe\Sift\API;
-// 2020-02-29
+# 2020-02-29
 /** @see \Dfe\Sift\API\Facade */
 interface IClientConfiguration {
 	/**

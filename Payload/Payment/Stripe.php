@@ -16,17 +16,17 @@ final class Stripe {
 	 * @return array(string => mixed)
 	 */
 	static function p(P $p) {return [
-		// 2020-02-03 String. «Address line 1 verification result returned by Stripe.»
+		# 2020-02-03 String. «Address line 1 verification result returned by Stripe.»
 		'stripe_address_line1_check' => ''
-		// 2020-02-03 String. «Address line 2 verification result returned by Stripe.»
+		# 2020-02-03 String. «Address line 2 verification result returned by Stripe.»
 		,'stripe_address_line2_check' => ''
-		// 2020-02-03 String. «Address zip code verification result returned by Stripe.»
+		# 2020-02-03 String. «Address zip code verification result returned by Stripe.»
 		,'stripe_address_zip_check' => ''
-		// 2020-02-03 String. «Card brand returned by Stripe.»
+		# 2020-02-03 String. «Card brand returned by Stripe.»
 		,'stripe_brand' => ''			
-		// 2020-02-03 String. «CVC verification result returned by Stripe.»
+		# 2020-02-03 String. «CVC verification result returned by Stripe.»
 		,'stripe_cvc_check' => ''
-		// 2020-02-03 String. «Funding source returned by Stripe.»
+		# 2020-02-03 String. «Funding source returned by Stripe.»
 		,'stripe_funding' => ''
 	];}
 }

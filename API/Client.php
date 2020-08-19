@@ -1,6 +1,6 @@
 <?php
 namespace Dfe\Sift\API;
-// 2020-01-25 https://sift.com/developers/docs/curl
+# 2020-01-25 https://sift.com/developers/docs/curl
 final class Client extends \Df\API\Client {
 	/**
 	 * 2019-04-24
@@ -19,7 +19,7 @@ final class Client extends \Df\API\Client {
 	 */
 	protected function _construct() {
 		parent::_construct();
-		// 2020-02-05 Sift forbids empty keys.
+		# 2020-02-05 Sift forbids empty keys.
 		$this->addFilterReq('df_clean_r'); /** @uses df_clean_r() */;
 		$this->addFilterReq(function(array $p) {return dfak_prefix($p, '$', true);});
 		$this->reqJson();

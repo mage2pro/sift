@@ -2,7 +2,7 @@
 namespace Dfe\Sift;
 use Magento\Backend\Model\Auth\Session as SessionB;
 use Magento\Customer\Model\Session as SessionC;
-// 2020-01-26
+# 2020-01-26
 final class Session {
 	/**
 	 * 2020-01-26

@@ -5,7 +5,7 @@ use Dfe\Sift\Observer as _P;
 use Magento\Customer\Api\AccountManagementInterface as Sb;
 use Magento\Framework\Exception\EmailNotConfirmedException as NotConfirmed;
 use Magento\Framework\Exception\State\UserLockedException as Locked;
-// 2020-02-06
+# 2020-02-06
 final class AccountManagementInterface {
 	/**
 	 * 2020-02-06
@@ -20,7 +20,7 @@ final class AccountManagementInterface {
 	function aroundAuthenticate(Sb $sb, \Closure $f, $u, $p) {
 		try {return $f($u, $p);}
 		catch (\Exception $e) {_P::f(function() use($e, $u) {
-			// 2020-02-06 https://sift.com/developers/docs/curl/events-api/reserved-events/login
+			# 2020-02-06 https://sift.com/developers/docs/curl/events-api/reserved-events/login
 			Event::p('login', [
 				/**
 				 * 2020-02-06
@@ -35,9 +35,9 @@ final class AccountManagementInterface {
 				'failure_reason' => sift_prefix(
 					$e instanceof Locked || $e instanceof NotConfirmed ? 'account_suspended' : 'wrong_password'
 				)
-				// 2020-02-06
-				// «Use `login_status` to represent the success or failure of the login attempt»
-				// Allowed values: `$success`, `$failure`.
+				# 2020-02-06
+				# «Use `login_status` to represent the success or failure of the login attempt»
+				# Allowed values: `$success`, `$failure`.
 				,'login_status' => sift_prefix('failure')
 				/**
 				 * 2020-02-06 String.
@@ -49,7 +49,7 @@ final class AccountManagementInterface {
 				 * https://github.com/mage2pro/sift/issues/3
 				 */
 				,'social_sign_on_type' => ''
-				,'username' => $u // 2020-02-06 String. «The username entered at the login prompt»
+				,'username' => $u # 2020-02-06 String. «The username entered at the login prompt»
 			]);
 		}); throw $e;}
 	}

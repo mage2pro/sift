@@ -3,7 +3,7 @@ namespace Dfe\Sift\API\B;
 use Dfe\Sift\API\Facade\Event as F;
 use Dfe\Sift\Payload\Browser as pBrowser;
 use Dfe\Sift\Settings as S;
-// 2020-02-06
+# 2020-02-06
 final class Event {
 	/**
 	 * 2020-02-11
@@ -31,7 +31,7 @@ final class Event {
 	 * @param array(string => mixed) $p [optional]
 	 */
 	static function p($type, array $p = []) {F::s()->post($p + pBrowser::p() + [
-		// 2020-01-25 «Your Sift REST API key». Required, string.
+		# 2020-01-25 «Your Sift REST API key». Required, string.
 		'api_key' => S::s()->backendKey()
 	   /**
 		* 2020-01-26

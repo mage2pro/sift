@@ -1,7 +1,7 @@
 <?php
 namespace Dfe\Sift\Plugin\Customer\CustomerData;
 use Magento\Customer\CustomerData\Customer as Sb;
-// 2020-01-26
+# 2020-01-26
 final class Customer {
 	/**
 	 * 2020-01-26

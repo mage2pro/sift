@@ -27,7 +27,7 @@ final class RegisterSuccess implements ObserverInterface {
 	function execute(O $o) {_P::f(function() use($o) {
 		/** 2020-02-06 $o['customer'] is a @see \Magento\Customer\Model\Data\Customer */
 		$c = df_customer($o['customer']); /** @var C $c */
-		// 2020-02-06 https://sift.com/developers/docs/curl/events-api/reserved-events/create-account
+		# 2020-02-06 https://sift.com/developers/docs/curl/events-api/reserved-events/create-account
 		B::p('create_account', pLoginOrRegister::p($c) + [
 			/**
 			 * 2020-02-06 String.
@@ -45,49 +45,49 @@ final class RegisterSuccess implements ObserverInterface {
 			 * https://github.com/magento/magento2/blob/2.2.0/app/code/Magento/Customer/Controller/Account/CreatePost.php#L301-L305
 			 */
 			'billing_address' => []
-			// 2020-02-06 String. «The full name of the user»
+			# 2020-02-06 String. «The full name of the user»
 			,'name' => $c->getName()
-			// 2020-02-06 String.
-			// 1) «The payment method(s) associated with this account»
-			// https://sift.com/developers/docs/curl/events-api/complex-field-types/payment-method
-			// 2) The standard Magento 2 registration flow does not associate the customer with payment methods.
+			# 2020-02-06 String.
+			# 1) «The payment method(s) associated with this account»
+			# https://sift.com/developers/docs/curl/events-api/complex-field-types/payment-method
+			# 2) The standard Magento 2 registration flow does not associate the customer with payment methods.
 			,'payment_methods' => []
-			// 2020-02-06
-			// 1) «The primary phone number of the user associated with this account.
-			// Provide the phone number as a string starting with the country code.
-			// Use E.164 format or send in the standard national format of number's origin.
-			// For example: "+14155556041" or "1-415-555-6041" for a U.S. number.
-			// If you collect other phone numbers for the account,
-			// provide them as additional custom fields, e.g `work_phone`»
-			// 2) The standard Magento 2 registration form does not include a phone number:
-			// a customer can register his phone number in a separate scenario on an address form.
+			# 2020-02-06
+			# 1) «The primary phone number of the user associated with this account.
+			# Provide the phone number as a string starting with the country code.
+			# Use E.164 format or send in the standard national format of number's origin.
+			# For example: "+14155556041" or "1-415-555-6041" for a U.S. number.
+			# If you collect other phone numbers for the account,
+			# provide them as additional custom fields, e.g `work_phone`»
+			# 2) The standard Magento 2 registration form does not include a phone number:
+			# a customer can register his phone number in a separate scenario on an address form.
 			,'phone' => ''
-			// 2020-02-06 String.
-			// «The list of promotions that apply to this account.
-			// You can add one or more promotions when creating or updating the account.
-			// It is particularly useful to add the promotion with this event
-			// if the account is receiving some referral incentive.
-			// You can also separately add promotions to the account via the `add_promotion` event.»
-			// https://sift.com/developers/docs/curl/events-api/complex-field-types/promotion
-			// 2) The standard Magento 2 registration flow does not associate the customer with any promotions.
+			# 2020-02-06 String.
+			# «The list of promotions that apply to this account.
+			# You can add one or more promotions when creating or updating the account.
+			# It is particularly useful to add the promotion with this event
+			# if the account is receiving some referral incentive.
+			# You can also separately add promotions to the account via the `add_promotion` event.»
+			# https://sift.com/developers/docs/curl/events-api/complex-field-types/promotion
+			# 2) The standard Magento 2 registration flow does not associate the customer with any promotions.
 			,'promotions' => []
-			// 2020-02-06 String.
-			// «The ID of the user that referred the current user to your business.
-			// This field is required for detecting referral fraud.
-			// Note: User IDs are case sensitive.
-			// You may need to normalize the capitalization of your user IDs.
-			// Follow our guidelines for `user_id` values.»
+			# 2020-02-06 String.
+			# «The ID of the user that referred the current user to your business.
+			# This field is required for detecting referral fraud.
+			# Note: User IDs are case sensitive.
+			# You may need to normalize the capitalization of your user IDs.
+			# Follow our guidelines for `user_id` values.»
 			,'referrer_user_id' => ''
-			// 2020-02-06 String.
-			// 1) «The shipping address associated with this user»
-			// https://sift.com/developers/docs/curl/events-api/complex-field-types/address
-			// 2) The standard Magento 2 registration form does not include an address:
-			// a customer can register his address in a separate scenario.
+			# 2020-02-06 String.
+			# 1) «The shipping address associated with this user»
+			# https://sift.com/developers/docs/curl/events-api/complex-field-types/address
+			# 2) The standard Magento 2 registration form does not include an address:
+			# a customer can register his address in a separate scenario.
 			,'shipping_address' => []
-			// 2020-02-06 String.
-			// «Email of the user creating this order.
-			// Note: If the user's email is also their account ID in your system,
-			// set both the `user_id` and `user_email` fields to their email address.»
+			# 2020-02-06 String.
+			# «Email of the user creating this order.
+			# Note: If the user's email is also their account ID in your system,
+			# set both the `user_id` and `user_email` fields to their email address.»
 			,'user_email' => $c->getEmail()
 			/**
 			 * 2020-02-06 Required, string.

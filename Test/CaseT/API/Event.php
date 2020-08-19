@@ -3,7 +3,7 @@ namespace Dfe\Sift\Test\CaseT\API;
 use Dfe\Sift\API\Facade\Event as F;
 use Dfe\Sift\Settings as S;
 use Exception as E;
-// 2020-01-25 https://sift.com/developers/docs/curl/events-api
+# 2020-01-25 https://sift.com/developers/docs/curl/events-api
 final class Event extends \Dfe\Sift\Test\CaseT {
 	/** @test 2020-01-25 */
 	function t00() {echo __METHOD__;}
@@ -31,31 +31,31 @@ final class Event extends \Dfe\Sift\Test\CaseT {
 				 * The `quantity` is specified as a subfield.»
 				 */
 				,'item' => [
-					// 2020-01-30 «Slanket»
+					# 2020-01-30 «Slanket»
 					'brand' => 'Slanket'
-					// 2020-01-30 «Blankets & Throws»
+					# 2020-01-30 «Blankets & Throws»
 					,'category' => 'Blankets & Throws'
-					// 2020-01-30 «Texas Tea»
+					# 2020-01-30 «Texas Tea»
 					,'color' => 'Texas Tea'
-					// 2020-01-30
+					# 2020-01-30
 					,'currency_code' => 'USD'
-					// 2020-01-29 «B004834GQO»
+					# 2020-01-29 «B004834GQO»
 					,'item_id' => 'B004834GQO'
-					// 2020-01-30 «Slanket»
+					# 2020-01-30 «Slanket»
 					,'manufacturer' => 'Slanket'
-					// 2020-01-29 «The Slanket Blanket-Texas Tea»
+					# 2020-01-29 «The Slanket Blanket-Texas Tea»
 					,'product_title' => 'The Slanket Blanket-Texas Tea'
-					// 2020-01-29 «39990000» => «$39.99»
+					# 2020-01-29 «39990000» => «$39.99»
 					,'price' => 39990000
-					// 2020-01-29 «16»
+					# 2020-01-29 «16»
 					,'quantity' => 16
-					// 2020-01-30 «004834GQ»
+					# 2020-01-30 «004834GQ»
 					,'sku' => '004834GQ'
 					,'tags' => ['Awesome', 'Wintertime specials']
-					// 2020-01-30 «6786211451001»
+					# 2020-01-30 «6786211451001»
 					,'upc' => '6786211451001'
 				]
-				// 2020-01-25 Required, string.
+				# 2020-01-25 Required, string.
 				,'type' => '$add_item_to_cart'
 			]);
 			echo $r->j();

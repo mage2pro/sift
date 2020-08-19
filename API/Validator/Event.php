@@ -1,6 +1,6 @@
 <?php
 namespace Dfe\Sift\API\Validator;
-// 2020-01-25 https://sift.com/developers/docs/curl/events-api/error-codes
+# 2020-01-25 https://sift.com/developers/docs/curl/events-api/error-codes
 /** @used-by \Dfe\Sift\API\Facade\Event::responseValidatorC() */
 final class Event extends \Df\API\Response\Validator {
 	/**

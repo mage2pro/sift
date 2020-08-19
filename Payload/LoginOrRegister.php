@@ -10,9 +10,9 @@ final class LoginOrRegister {
 	 * @return array(string => mixed)
 	 */
 	static function p(C $c) {return [
-		// 2020-02-06 Array Of Strings.
-		// «Capture the type(s) of the account: "merchant" or "shopper", "regular" or "premium", etc.
-		// The array supports multiple types for a single account, e.g. ["merchant", "premium"].»
+		# 2020-02-06 Array Of Strings.
+		# «Capture the type(s) of the account: "merchant" or "shopper", "regular" or "premium", etc.
+		# The array supports multiple types for a single account, e.g. ["merchant", "premium"].»
 		'account_types' => [df_customer_group_name($c)]
 		/**
 		 * 2020-02-06 String.
