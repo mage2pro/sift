@@ -1,6 +1,14 @@
-The module integrates Magento 2 with the **[Sift](https://sift.com)** fraud detection service.
+The module integrates Magento 2 with the **[Sift](https://sift.com)** fraud detection service.  
+The module is **free** and **open source**.
 
 ## How to install
+[Hire me in Upwork](https://www.upwork.com/fl/mage2pro), and I will: 
+- install and configure the module properly on your website
+- answer your questions
+- solve compatiblity problems with third-party checkout, shipping, marketing modules
+- implement new features you need 
+
+### 2. Self-installation
 ```         
 bin/magento maintenance:enable
 rm -f composer.lock
