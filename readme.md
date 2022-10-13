@@ -3,7 +3,7 @@ The module integrates Magento 2 with the **[Sift](https://sift.com)** fraud dete
 ## How to install
 ```         
 bin/magento maintenance:enable
-rm -r composer.lock
+rm -f composer.lock
 composer clear-cache
 composer require mage2pro/sift:*
 bin/magento setup:upgrade
@@ -22,7 +22,7 @@ See the [manual](manual.md#how-to-setup-the-module).
 ```
 bin/magento maintenance:enable
 composer remove mage2pro/sift
-rm -r composer.lock
+rm -f composer.lock
 composer clear-cache
 composer require mage2pro/sift:*
 bin/magento setup:upgrade
