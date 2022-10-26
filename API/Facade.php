@@ -25,7 +25,7 @@ abstract class Facade extends \Df\API\Facade implements IClientConfiguration {
 	 * @see \Dfe\Sift\API\Facade\GetDecisions::adjustClient()
 	 * @param Client|ClientBase $c
 	 */
-	protected function adjustClient(ClientBase $c) {$c->cfg($this);}
+	protected function adjustClient(ClientBase $c):void {$c->cfg($this);}
 
 	/**
 	 * 2020-02-27
@@ -33,7 +33,6 @@ abstract class Facade extends \Df\API\Facade implements IClientConfiguration {
 	 * @see \Df\API\Facade::prefix()
 	 * @used-by \Df\API\Facade::path()
 	 * @used-by \Dfe\Sift\API\Facade\GetDecisions::path()
-	 * @return string
 	 */
-	final protected function prefix() {return "v{$this->ver()}";}
+	final protected function prefix():string {return "v{$this->ver()}";}
 }

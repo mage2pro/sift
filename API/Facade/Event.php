@@ -48,9 +48,8 @@ final class Event extends \Dfe\Sift\API\Facade {
 	 * @used-by \Df\API\Facade::p()
 	 * @param int|string|null $id
 	 * @param string|null $s
-	 * @return string
 	 */
-	protected function path($id, $s) {return df_cc('?', parent::path($id, $s), http_build_query(array_fill_keys([
+	protected function path($id, $s):string {return df_cc('?', parent::path($id, $s), http_build_query(array_fill_keys([
 		/**
 		 * 2020-02-11
 		 * 1) "Integrate the module with the Score API": https://github.com/mage2pro/sift/issues/11

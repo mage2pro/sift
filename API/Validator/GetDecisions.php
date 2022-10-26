@@ -13,9 +13,8 @@ final class GetDecisions extends \Df\API\Response\Validator {
 	 * @override
 	 * @see \Df\API\Exception::long()
 	 * @used-by \Df\API\Client::_p()
-	 * @return string|null
 	 */
-	function long() {return $this->r('description');}
+	function long():string {return df_nts($this->r('description'));}
 
 	/**
 	 * 2020-02-29
@@ -23,9 +22,8 @@ final class GetDecisions extends \Df\API\Response\Validator {
 	 * @see \Df\API\Exception::short()
 	 * @used-by valid()
 	 * @used-by \Df\API\Client::_p()
-	 * @return string|null
 	 */
-	function short() {return $this->r('error');}
+	function short():string {return df_nts($this->r('error'));}
 
 	/**
 	 * 2020-02-29

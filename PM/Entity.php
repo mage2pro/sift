@@ -8,9 +8,8 @@ final class Entity extends \Df\Config\ArrayItem {
 	 * @override
 	 * @see \Df\Config\ArrayItem::id()
 	 * @used-by \Df\Config\A::get()
-	 * @return string
 	 */
-	function id() {return $this->v(null, self::mCode);}
+	function id():string {return $this->v(null, self::mCode);}
 
 	/**
 	 * 2020-02-03

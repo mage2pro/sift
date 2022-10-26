@@ -42,7 +42,6 @@ final class Settings extends \Df\API\Settings {
 	 * @override
 	 * @see \Df\Config\Settings::prefix()
 	 * @used-by \Df\Config\Settings::v()
-	 * @return string
 	 */
-	protected function prefix() {return 'fraud_protection/sift';}
+	protected function prefix():string {return 'fraud_protection/sift';}
 }

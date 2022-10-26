@@ -3,11 +3,11 @@ namespace Dfe\Sift\API;
 # 2020-01-25 https://sift.com/developers/docs/curl
 final class Client extends \Df\API\Client {
 	/**
-	 * 2019-04-24
+	 * 2020-01-25
 	 * @used-by responseValidatorC()
 	 * @used-by \Dfe\Sift\API\Facade::adjustClient()
 	 * @param bool|null|string $v [optional]
-	 * @return $this|IClientConfiguration
+	 * @return self|IClientConfiguration
 	 */
 	function cfg($v = DF_N) {return df_prop($this, $v);}
 
@@ -31,9 +31,8 @@ final class Client extends \Df\API\Client {
 	 * @override
 	 * @see \Df\API\Client::responseValidatorC()
 	 * @used-by \Df\API\Client::_p()
-	 * @return string
 	 */
-	protected function responseValidatorC() {return $this->cfg()->responseValidatorC();}
+	protected function responseValidatorC():string {return $this->cfg()->responseValidatorC();}
 
 	/**
 	 * 2020-01-25
@@ -41,7 +40,6 @@ final class Client extends \Df\API\Client {
 	 * @see \Df\API\Client::urlBase()
 	 * @used-by \Df\API\Client::__construct()
 	 * @used-by \Df\API\Client::url()
-	 * @return string
 	 */
-	protected function urlBase() {return 'https://api.sift.com';}
+	protected function urlBase():string {return 'https://api.sift.com';}
 }

@@ -9,16 +9,14 @@ final class Event extends \Df\API\Response\Validator {
 	 * @override
 	 * @see \Df\API\Exception::long()
 	 * @used-by \Df\API\Client::_p()
-	 * @return string|null
 	 */
-	function long() {return $this->r('error_message');}
+	function long():string {return df_nts($this->r('error_message'));}
 
 	/**
 	 * 2020-01-25 «Any non-zero status indicates an error»
 	 * @override
 	 * @see \Df\API\Response\Validator::valid()
 	 * @used-by \Df\API\Client::_p()
-	 * @return bool
 	 */
-	function valid() {return !$this->r('status');}
+	function valid():bool {return !$this->r('status');}
 }
