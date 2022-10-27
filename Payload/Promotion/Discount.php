@@ -85,7 +85,7 @@ final class Discount {
 
 	/**
 	 * 2020-02-04
-	 * @used-by p()
+	 * @used-by self::p()
 	 * @param O $o
 	 * @return string
 	 */

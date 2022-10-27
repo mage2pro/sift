@@ -27,13 +27,13 @@ final class Entity extends \Df\Config\ArrayItem {
 
 	/**
 	 * 2020-02-02     
-	 * @used-by id()
+	 * @used-by self::id()
 	 * @used-by \Dfe\Sift\PM\FE::onFormInitialized()
 	 */
 	const mCode = 'mCode';
 	/**
 	 * 2020-02-02
-	 * @used-by sGateway()
+	 * @used-by self::sGateway()
 	 * @used-by \Dfe\Sift\PM\FE::onFormInitialized()
 	 */
 	const sGateway = 'sGateway';

@@ -39,7 +39,7 @@ final class UpdatePassword {
 
 	/**
 	 * 2020-02-11
-	 * @used-by reset()
+	 * @used-by self::reset()
 	 * @used-by \Dfe\Sift\Observer\Customer\SaveAfterDataObject::execute()
 	 * @param string $rs
 	 * @param string $st

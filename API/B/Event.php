@@ -7,7 +7,7 @@ use Dfe\Sift\Settings as S;
 final class Event {
 	/**
 	 * 2020-02-11
-	 * @used-by p()
+	 * @used-by self::p()
 	 * @used-by \Dfe\Sift\API\B\Event\UpdatePassword::p()
 	 * @used-by \Dfe\Sift\Observer\Customer\RegisterSuccess::execute()
 	 */

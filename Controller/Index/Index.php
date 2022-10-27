@@ -48,7 +48,7 @@ class Index extends \Df\Framework\Action implements IPost {
 
 	/**
 	 * 2020-02-25 https://sift.com/developers/docs/php/decisions-api/decision-webhooks/authentication
-	 * @used-by execute()
+	 * @used-by self::execute()
 	 */
 	private function checkSignature() {
 		# 2020-02-25

@@ -9,7 +9,7 @@ use Df\API\Client as ClientBase;
 abstract class Facade extends \Df\API\Facade implements IClientConfiguration {
 	/**
 	 * 2020-02-27
-	 * @used-by prefix()
+	 * @used-by self::prefix()
 	 * @see \Dfe\Sift\API\Facade\GetDecisions::ver()
 	 * @see \Dfe\Sift\API\Facade\Event::ver()
 	 * @return int

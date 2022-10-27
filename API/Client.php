@@ -4,7 +4,7 @@ namespace Dfe\Sift\API;
 final class Client extends \Df\API\Client {
 	/**
 	 * 2020-01-25
-	 * @used-by responseValidatorC()
+	 * @used-by self::responseValidatorC()
 	 * @used-by \Dfe\Sift\API\Facade::adjustClient()
 	 * @param bool|null|string $v [optional]
 	 * @return self|IClientConfiguration
