@@ -14,7 +14,7 @@ final class BankCard {
 	 * @used-by \Dfe\Sift\Payload\Payment::p()
 	 * @return array(string => mixed)
 	 */
-	static function p(P $p) {return [
+	static function p(P $p):array {return [
 		# 2020-02-03 String.
 		# «Response code from the AVS address verification system. Used in payments involving credit cards.»
 		'avs_result_code' => ''
