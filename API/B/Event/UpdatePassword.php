@@ -43,7 +43,7 @@ final class UpdatePassword {
 	 * @used-by \Dfe\Sift\Observer\Customer\SaveAfterDataObject::execute()
 	 * @param ICD|CD $cd|null [optional]
 	 */
-	static function p(string $rs, string $st, ICD $cd = null) {_P::f(function() use($rs, $st, $cd) {B::p('update_password', [
+	static function p(string $rs, string $st, ICD $cd = null):void {_P::f(function() use($rs, $st, $cd) {B::p('update_password', [
 		/**
 		 * 2020-02-10 Required, string.
 		 * «The reason the password was updated or an update was attempted.
