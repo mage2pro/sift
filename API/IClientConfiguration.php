@@ -8,7 +8,6 @@ interface IClientConfiguration {
 	 * @see \Dfe\Sift\API\Facade\GetDecisions::responseValidatorC()
 	 * @see \Dfe\Sift\API\Facade\Event::responseValidatorC()
 	 * @used-by \Dfe\Sift\API\Client::responseValidatorC()
-	 * @return string
 	 */
-	function responseValidatorC();
+	function responseValidatorC():string;
 }
