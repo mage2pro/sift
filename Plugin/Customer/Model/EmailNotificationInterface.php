@@ -2,7 +2,6 @@
 namespace Dfe\Sift\Plugin\Customer\Model;
 use Dfe\Sift\API\B\Event\UpdatePassword as B;
 use Magento\Customer\Api\Data\CustomerInterface as ICD;
-use Magento\Customer\Model\Data\Customer as CD;
 use Magento\Customer\Model\EmailNotification as Sb;
 /**
  * 2020-02-10
