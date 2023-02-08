@@ -28,5 +28,5 @@ final class GetDecisions {
 	 * @param string $type
 	 * @return Op
 	 */
-	static function decisions($type = null) {return F::s()->get(null);}
+	static function decisions($type = null):Op {return F::s()->get(null);}
 }
