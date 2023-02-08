@@ -10,9 +10,8 @@ final class Settings extends \Df\API\Settings {
 	 * Where is a «Production REST API Key» located? https://mage2.pro/t/6093
 	 * @used-by \Dfe\Sift\API\B\Event::p()
 	 * @used-by \Dfe\Sift\API\Facade\GetDecisions::adjustClient()
-	 * @return string
 	 */
-	function backendKey() {return $this->testableP();}
+	function backendKey():string {return $this->testableP();}
 
 	/**
 	 * 2020-01-24
