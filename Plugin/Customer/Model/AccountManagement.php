@@ -19,5 +19,5 @@ final class AccountManagement {
 	 * https://github.com/magento/magento2/blob/2.3.4/app/code/Magento/Customer/Model/AccountManagement.php#L1493-L1520
 	 * @param ICD|CD $cd
 	 */
-	function beforePasswordResetConfirmation(Sb $sb, ICD $cd) {B::reset($cd);}
+	function beforePasswordResetConfirmation(Sb $sb, ICD $cd):void {B::reset($cd);}
 }
