@@ -27,10 +27,9 @@ final class Event {
 	 * @used-by \Dfe\Sift\Observer\Quote\RemoveItem::execute()
 	 * @used-by \Dfe\Sift\Observer\Sales\OrderPlaceAfter::execute()
 	 * @used-by \Dfe\Sift\Plugin\Customer\Api\AccountManagementInterface::aroundAuthenticate()
-	 * @param string $type
 	 * @param array(string => mixed) $p [optional]
 	 */
-	static function p($type, array $p = []) {F::s()->post($p + pBrowser::p() + [
+	static function p(string $type, array $p = []) {F::s()->post($p + pBrowser::p() + [
 		# 2020-01-25 «Your Sift REST API key». Required, string.
 		'api_key' => S::s()->backendKey()
 	   /**
