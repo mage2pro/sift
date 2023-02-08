@@ -7,7 +7,6 @@ final class PayPal {
 	/**
 	 * 2020-02-03
 	 * @used-by \Dfe\Sift\Payload\Payment::p()
-	 * @param P $p
 	 * @return array(string => mixed)
 	 */
 	static function p(P $p) {return array_map('df_nts', dfp_iia($p,
