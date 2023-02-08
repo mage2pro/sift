@@ -49,7 +49,6 @@ final class OrderPlaceAfter implements ObserverInterface {
 	 * @override
 	 * @see ObserverInterface::execute()
 	 * @used-by \Magento\Framework\Event\Invoker\InvokerDefault::_callObserverMethod()
-	 * @param Ob $ob
 	 */
 	function execute(Ob $ob) {\Dfe\Sift\Observer::f(function() use($ob) {
 		$o = $ob['order']; /** @var O $o */
