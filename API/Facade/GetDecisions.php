@@ -69,7 +69,6 @@ final class GetDecisions extends \Dfe\Sift\API\Facade {
 	 * @override
 	 * @see \Dfe\Sift\API\Facade::ver()
 	 * @used-by \Dfe\Sift\API\Facade::prefix()
-	 * @return int
 	 */
-	protected function ver() {return 3;}
+	protected function ver():int {return 3;}
 }
