@@ -14,7 +14,7 @@ final class AccountManagementInterface {
 	 */
 	function aroundAuthenticate(Sb $sb, \Closure $f, string $u, string $p):string {
 		try {return $f($u, $p);}
-		catch (\Exception $e) {_P::f(function() use($e, $u) {
+		catch (\Exception $e) {_P::f(function() use($e, $u):void {
 			# 2020-02-06 https://sift.com/developers/docs/curl/events-api/reserved-events/login
 			Event::p('login', [
 				/**
