@@ -22,7 +22,6 @@ final class RegisterSuccess implements ObserverInterface {
 	 * @override
 	 * @see ObserverInterface::execute()
 	 * @used-by \Magento\Framework\Event\Invoker\InvokerDefault::_callObserverMethod()
-	 * @param O $o
 	 */
 	function execute(O $o) {_P::f(function() use($o) {
 		/** 2020-02-06 $o['customer'] is a @see \Magento\Customer\Model\Data\Customer */
