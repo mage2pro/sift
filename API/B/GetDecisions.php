@@ -25,8 +25,7 @@ final class GetDecisions {
 	 * 		`session`: This entity is a session.
 	 * 		`user`: This entity is a user.»
 	 * https://sift.com/developers/docs/curl/decisions-api/decision-webhooks/message-body
-	 * @param string $type
 	 * @return Op
 	 */
-	static function decisions($type = null):Op {return F::s()->get(null);}
+	static function decisions(string $type = ''):Op {return F::s()->get(null);}
 }
