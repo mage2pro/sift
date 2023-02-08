@@ -6,7 +6,6 @@ final class LoginOrRegister {
 	 * 2020-02-06
 	 * @used-by \Dfe\Sift\Observer\Customer\Login::execute()
 	 * @used-by \Dfe\Sift\Observer\Customer\RegisterSuccess::execute()
-	 * @param C $c
 	 * @return array(string => mixed)
 	 */
 	static function p(C $c) {return [
