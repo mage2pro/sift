@@ -38,7 +38,7 @@ final class ProductAddAfter implements ObserverInterface {
 	 * @see ObserverInterface::execute()
 	 * @used-by \Magento\Framework\Event\Invoker\InvokerDefault::_callObserverMethod()
 	 */
-	function execute(O $o) {_P::f(function() use($o) {
+	function execute(O $o):void {_P::f(function() use($o) {
 		/** @uses df_oqi_is_leaf() */
 		df_map(array_filter($o['items'], 'df_oqi_is_leaf'), function(I $i) {Event::p('add_item_to_cart', [
 			/**
