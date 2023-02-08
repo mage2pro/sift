@@ -50,7 +50,7 @@ final class OrderPlaceAfter implements ObserverInterface {
 	 * @see ObserverInterface::execute()
 	 * @used-by \Magento\Framework\Event\Invoker\InvokerDefault::_callObserverMethod()
 	 */
-	function execute(Ob $ob):void {\Dfe\Sift\Observer::f(function() use($ob) {
+	function execute(Ob $ob):void {\Dfe\Sift\Observer::f(function() use($ob):void {
 		$o = $ob['order']; /** @var O $o */
 		# 2020-02-01 https://sift.com/developers/docs/curl/events-api/reserved-events/create-content/review
 		Event::p('create_order', [
