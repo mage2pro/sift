@@ -35,7 +35,7 @@ final class UpdatePassword {
 	 * @used-by \Dfe\Sift\Plugin\Customer\Model\EmailNotificationInterface::afterPasswordResetConfirmation()
 	 * @param ICD|CD $cd
 	 */
-	static function reset(ICD $cd) {self::p('forgot_password', 'pending', $cd);}
+	static function reset(ICD $cd):void {self::p('forgot_password', 'pending', $cd);}
 
 	/**
 	 * 2020-02-11
