@@ -12,7 +12,7 @@ final class Decisions extends \Dfe\Sift\Test\CaseT {
 	function t00() {echo __METHOD__;}
 
 	/**
-	 * @test 2020-02-27
+	 * 2020-02-27
 	 * 2020-02-29
 	 * A response:
 	 *	{
@@ -55,13 +55,14 @@ final class Decisions extends \Dfe\Sift\Test\CaseT {
 	 *		"schema": "decision_public.json",
 	 *		"total_results": 3
 	 *	}
+	 * @test
 	 */
 	function t01() {
 		try {
 			echo B::decisions()->j();
 		}
 		catch (E $e) {
-			echo df_cc_n(df_ets($e), df_bt_s($e));
+			echo df_cc_n(df_xts($e), df_bt_s($e));
 		}
 	}
 }

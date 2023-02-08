@@ -37,7 +37,7 @@ class Index extends \Df\Framework\Action implements IPost {
 		}
 		catch (\Exception $e) {
 			df_500();
-			$r = Text::i(df_ets($e));
+			$r = Text::i(df_xts($e));
 			df_log($e, $this);
 			if (df_my_local()) {
 				throw $e; # 2016-03-27 It is convenient for me to the the exception on the screen.

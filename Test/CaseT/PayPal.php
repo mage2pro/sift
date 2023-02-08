@@ -2,7 +2,7 @@
 namespace Dfe\Sift\Test\CaseT;
 use Magento\Sales\Model\Order\Payment as P;
 final class PayPal extends \Dfe\Sift\Test\CaseT {
-	/** @test 2020-02-03 */
+	/** 2020-02-03 @test */
 	function t00() {echo __METHOD__;}
 
 	/** 2020-02-03 */
