@@ -10,5 +10,5 @@ final class Customer {
 	 * @param array(string => mixed) $r
 	 * @return array(string => mixed)
 	 */
-	function afterGetSectionData(Sb $sb, array $r) {return ['siftSessionId' => \Dfe\Sift\Session::get()] + $r;}
+	function afterGetSectionData(Sb $sb, array $r):array {return ['siftSessionId' => \Dfe\Sift\Session::get()] + $r;}
 }
