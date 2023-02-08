@@ -10,9 +10,8 @@ final class Event extends \Dfe\Sift\API\Facade {
 	 * @override
 	 * @see \Dfe\Sift\API\IClientConfiguration::responseValidatorC()
 	 * @used-by \Dfe\Sift\API\Client::responseValidatorC()
-	 * @return string
 	 */
-	function responseValidatorC() {return \Dfe\Sift\API\Validator\Event::class;}
+	function responseValidatorC():string {return \Dfe\Sift\API\Validator\Event::class;}
 
 	/**
 	 * 2020-02-11
