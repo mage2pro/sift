@@ -45,7 +45,7 @@ final class UpdatePassword {
 	 * @param string $st
 	 * @param ICD|CD $cd|null [optional]
 	 */
-	static function p($rs, $st, ICD $cd = null) {_P::f(function() use($rs, $st, $cd) {B::p('update_password', [
+	static function p(string $rs, $st, ICD $cd = null) {_P::f(function() use($rs, $st, $cd) {B::p('update_password', [
 		/**
 		 * 2020-02-10 Required, string.
 		 * «The reason the password was updated or an update was attempted.
