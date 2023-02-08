@@ -22,5 +22,5 @@ final class SaveAfterDataObject implements ObserverInterface {
 	 * @see ObserverInterface::execute()
 	 * @used-by \Magento\Framework\Event\Invoker\InvokerDefault::_callObserverMethod()
 	 */
-	function execute(O $o) {!df_request('change_password') || B::p(B::R__USER_UPDATE, B::S__SUCCESS);}
+	function execute(O $o):void {!df_request('change_password') || B::p(B::R__USER_UPDATE, B::S__SUCCESS);}
 }
