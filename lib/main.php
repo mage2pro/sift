@@ -12,7 +12,7 @@
  * @param int|float $v
  * @return int
  */
-function sift_amt($v) {return round(10**6 * $v);}
+function sift_amt($v):int {return round(10**6 * $v);}
 
 /**
  * 2020-02-05
