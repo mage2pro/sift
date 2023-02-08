@@ -23,7 +23,6 @@ final class GetDecisions extends \Dfe\Sift\API\Facade {
 	 * @override
 	 * @see \Dfe\Sift\API\Facade::adjustClient()
 	 * @used-by \Df\API\Facade::p()
-	 * @param Client|ClientBase $c
 	 */
 	protected function adjustClient(ClientBase $c):void {
 		parent::adjustClient($c);
