@@ -19,7 +19,7 @@ final class Payment {
 	 * @used-by \Dfe\Sift\Observer\Sales\OrderPlaceAfter::execute()
 	 * @return array(string => mixed)
 	 */
-	static function p(P $p) {
+	static function p(P $p):array {
 		$pm = S::s()->pm($p->getMethod()); /** @var PM|null $pm */
 		$o = $p->getOrder(); /** @var O $o */
 		return pBankCard::p($p) + pPayPal::p($p) + pStripe::p($p) + [
