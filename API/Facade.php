@@ -12,9 +12,8 @@ abstract class Facade extends \Df\API\Facade implements IClientConfiguration {
 	 * @used-by self::prefix()
 	 * @see \Dfe\Sift\API\Facade\GetDecisions::ver()
 	 * @see \Dfe\Sift\API\Facade\Event::ver()
-	 * @return int
 	 */
-	abstract protected function ver();
+	abstract protected function ver():int;
 
 	/**
 	 * 2020-02-29
