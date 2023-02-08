@@ -37,7 +37,6 @@ final class ProductAddAfter implements ObserverInterface {
 	 * @override
 	 * @see ObserverInterface::execute()
 	 * @used-by \Magento\Framework\Event\Invoker\InvokerDefault::_callObserverMethod()
-	 * @param O $o
 	 */
 	function execute(O $o) {_P::f(function() use($o) {
 		/** @uses df_oqi_is_leaf() */
