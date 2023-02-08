@@ -15,9 +15,8 @@ final class GetDecisions extends \Dfe\Sift\API\Facade {
 	 * @override
 	 * @see \Dfe\Sift\API\IClientConfiguration::responseValidatorC()
 	 * @used-by \Dfe\Sift\API\Client::responseValidatorC()
-	 * @return string
 	 */
-	function responseValidatorC() {return \Dfe\Sift\API\Validator\GetDecisions::class;}
+	function responseValidatorC():string {return \Dfe\Sift\API\Validator\GetDecisions::class;}
 
 	/**
 	 * 2020-02-29
