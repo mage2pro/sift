@@ -3,10 +3,10 @@ namespace Dfe\Sift\Test\CaseT;
 use Magento\Sales\Model\Order\Payment as P;
 final class PayPal extends \Dfe\Sift\Test\CaseT {
 	/** 2020-02-03 @test */
-	function t00() {echo __METHOD__;}
+	function t00():void {echo __METHOD__;}
 
 	/** 2020-02-03 */
-	function t01() {
+	function t01():void {
 		$p = dfp(10); /** @var P $p */
 		print_r(dfp_iia($p));
 		echo df_json_encode(array_map('df_nts', dfp_iia($p,
