@@ -10,7 +10,6 @@
  * @used-by \Dfe\Sift\Payload\OQI::p()
  * @used-by \Dfe\Sift\Payload\Promotion\Discount::p()
  * @param int|float $v
- * @return int
  */
 function sift_amt($v):int {return round(10**6 * $v);}
 
