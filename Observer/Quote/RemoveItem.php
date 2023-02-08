@@ -65,7 +65,6 @@ final class RemoveItem implements ObserverInterface {
 	 * @override
 	 * @see ObserverInterface::execute()
 	 * @used-by \Magento\Framework\Event\Invoker\InvokerDefault::_callObserverMethod()
-	 * @param O $o
 	 */
 	function execute(O $o) {_P::f(function() use($o) {Event::p('remove_item_from_cart', [
 		'item' => OQI::p($o['quote_item'])
