@@ -20,7 +20,7 @@ final class Discount {
 	 * @used-by \Dfe\Sift\Payload\Promotions::p()
 	 * @return array(string => mixed)
 	 */
-	static function p(O $o) {return !($a = $o->getDiscountAmount()) ? [] : [
+	static function p(O $o):array {return !($a = $o->getDiscountAmount()) ? [] : [
 		# 2020-02-04 String. «STUB»
 		# «The `credit_point` field type generically models monetary and non-monetary rewards
 		# (e.g. in-game currency, stored account value, MBs storage, frequent flyer miles, etc.) for a promotion.
