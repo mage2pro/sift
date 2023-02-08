@@ -23,10 +23,9 @@ final class Settings extends \Df\API\Settings {
 
 	/**
 	 * 2020-02-03
-	 * @param string $id
 	 * @return PM|null
 	 */
-	function pm($id) {return $this->_a(PM::class)->get($id);}
+	function pm(string $id) {return $this->_a(PM::class)->get($id);}
 
 	/**
 	 * 2020-02-24 Where is a «Signature Key» located? https://mage2.pro/t/6099
