@@ -17,7 +17,6 @@ final class Payment {
 	/**
 	 * 2020-02-01
 	 * @used-by \Dfe\Sift\Observer\Sales\OrderPlaceAfter::execute()
-	 * @param P $p
 	 * @return array(string => mixed)
 	 */
 	static function p(P $p) {
