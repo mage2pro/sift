@@ -8,7 +8,7 @@ final class LoginOrRegister {
 	 * @used-by \Dfe\Sift\Observer\Customer\RegisterSuccess::execute()
 	 * @return array(string => mixed)
 	 */
-	static function p(C $c) {return [
+	static function p(C $c):array {return [
 		# 2020-02-06 Array Of Strings.
 		# «Capture the type(s) of the account: "merchant" or "shopper", "regular" or "premium", etc.
 		# The array supports multiple types for a single account, e.g. ["merchant", "premium"].»
