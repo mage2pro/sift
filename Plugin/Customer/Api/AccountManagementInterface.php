@@ -11,11 +11,9 @@ final class AccountManagementInterface {
 	 * 2020-02-06
 	 * @see \Magento\Customer\Api\AccountManagementInterface::authenticate()
 	 * @see \Magento\Customer\Model\AccountManagement::authenticate()
-	 * @param string $u
-	 * @param string $p
 	 * @return string
 	 */
-	function aroundAuthenticate(Sb $sb, \Closure $f, $u, $p) {
+	function aroundAuthenticate(Sb $sb, \Closure $f, string $u, string $p) {
 		try {return $f($u, $p);}
 		catch (\Exception $e) {_P::f(function() use($e, $u) {
 			# 2020-02-06 https://sift.com/developers/docs/curl/events-api/reserved-events/login
