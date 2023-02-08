@@ -85,7 +85,6 @@ final class Discount {
 	/**
 	 * 2020-02-04
 	 * @used-by self::p()
-	 * @param O $o
 	 * @return string
 	 */
 	private static function desc(O $o) {return dfcf(function(O $o) {return df_desc(
