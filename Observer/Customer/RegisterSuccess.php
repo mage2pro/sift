@@ -23,7 +23,7 @@ final class RegisterSuccess implements ObserverInterface {
 	 * @see ObserverInterface::execute()
 	 * @used-by \Magento\Framework\Event\Invoker\InvokerDefault::_callObserverMethod()
 	 */
-	function execute(O $o) {_P::f(function() use($o) {
+	function execute(O $o):void {_P::f(function() use($o) {
 		/** 2020-02-06 $o['customer'] is a @see \Magento\Customer\Model\Data\Customer */
 		$c = df_customer($o['customer']); /** @var C $c */
 		# 2020-02-06 https://sift.com/developers/docs/curl/events-api/reserved-events/create-account
