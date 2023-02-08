@@ -18,9 +18,8 @@ final class Observer {
 	 * @used-by \Dfe\Sift\Observer\Quote\RemoveItem::execute()
 	 * @used-by \Dfe\Sift\Observer\Sales\OrderPlaceAfter::execute()
 	 * @used-by \Dfe\Sift\Plugin\Customer\Api\AccountManagementInterface::aroundAuthenticate()
-	 * @param bool $backend [optional]
 	 */
-	static function f(F $f, $backend = false) {
+	static function f(F $f, bool $backend = false) {
 		try {$backend xor df_is_backend() or !S::s()->enable() or $f();}
 		catch (E $e) {df_log($e, __CLASS__);}
 	}
