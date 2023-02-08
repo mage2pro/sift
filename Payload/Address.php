@@ -20,7 +20,7 @@ final class Address {
 	 * @param IA|A|null $a
 	 * @return array(string => mixed)
 	 */
-	static function p(IA $a = null) {return !$a ? [] : [
+	static function p(IA $a = null):array {return !$a ? [] : [
 		# 2020-02-01 String. «Address first line, e.g., "2100 Main Street".»
 		'address_1' => $a->getStreetLine(1)
 		# 2020-02-01 String. «Address second line, e.g., "Apt 3B".»
