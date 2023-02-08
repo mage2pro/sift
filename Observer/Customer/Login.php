@@ -24,7 +24,6 @@ final class Login implements ObserverInterface {
 	 * @override
 	 * @see ObserverInterface::execute()
 	 * @used-by \Magento\Framework\Event\Invoker\InvokerDefault::_callObserverMethod()
-	 * @param O $o
 	 */
 	function execute(O $o) {_P::f(function() use($o) {
 		$c = $o['customer']; /** @var C $c */
