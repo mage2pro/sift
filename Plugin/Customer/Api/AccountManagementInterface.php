@@ -11,7 +11,6 @@ final class AccountManagementInterface {
 	 * 2020-02-06
 	 * @see \Magento\Customer\Api\AccountManagementInterface::authenticate()
 	 * @see \Magento\Customer\Model\AccountManagement::authenticate()
-	 * @param Sb $sb
 	 * @param \Closure $f
 	 * @param string $u
 	 * @param string $p
