@@ -6,10 +6,10 @@ use Exception as E;
 # 2020-01-25 https://sift.com/developers/docs/curl/events-api
 final class Event extends \Dfe\Sift\Test\CaseT {
 	/** 2020-01-25 @test */
-	function t00() {echo __METHOD__;}
+	function t00():void {echo __METHOD__;}
 
 	/** 2020-01-25 https://sift.com/developers/docs/curl/events-api/reserved-events/add-item-to-cart */
-	function t01_add_item_to_cart() {
+	function t01_add_item_to_cart():void {
 		$s = S::s(); /** @var S $s */
 		try {
 			$r = F::s()->post([
