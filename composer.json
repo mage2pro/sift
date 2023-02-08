@@ -1,6 +1,6 @@
 {
 	"name": "friends-of-commerce/sift-paymentprotect"
-	,"version": "0.3.6"
+	,"version": "0.4.0"
 	,"description": "Sift integration with Magento 2"
 	,"type": "magento2-module"
 	,"homepage": "https://github.com/Friends-of-Commerce/Sift-PaymentProtect"
