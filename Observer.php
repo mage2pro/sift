@@ -19,7 +19,7 @@ final class Observer {
 	 * @used-by \Dfe\Sift\Observer\Sales\OrderPlaceAfter::execute()
 	 * @used-by \Dfe\Sift\Plugin\Customer\Api\AccountManagementInterface::aroundAuthenticate()
 	 */
-	static function f(F $f, bool $backend = false) {
+	static function f(F $f, bool $backend = false):void {
 		try {$backend xor df_is_backend() or !S::s()->enable() or $f();}
 		catch (E $e) {df_log($e, __CLASS__);}
 	}
