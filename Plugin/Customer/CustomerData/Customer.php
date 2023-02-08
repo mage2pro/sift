@@ -7,7 +7,6 @@ final class Customer {
 	 * 2020-01-26
 	 * I do not use @see df_customer_session_id() because it is regenerated in many cases (e.g., on login or signup).
 	 * @see \Magento\Customer\CustomerData\Customer::getSectionData()
-	 * @param Sb $sb
 	 * @param array(string => mixed) $r
 	 * @return array(string => mixed)
 	 */
