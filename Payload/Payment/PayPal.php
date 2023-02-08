@@ -9,7 +9,7 @@ final class PayPal {
 	 * @used-by \Dfe\Sift\Payload\Payment::p()
 	 * @return array(string => mixed)
 	 */
-	static function p(P $p) {return array_map('df_nts', dfp_iia($p,
+	static function p(P $p):array {return array_map('df_nts', dfp_iia($p,
 		/**
 		 * 2020-02-03 String. «Payer address status returned by Paypal.»
 		 * @see \Magento\Paypal\Model\Info::PAYPAL_ADDRESS_STATUS
