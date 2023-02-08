@@ -40,7 +40,7 @@ final class ProductAddAfter implements ObserverInterface {
 	 */
 	function execute(O $o):void {_P::f(function() use($o):void {
 		/** @uses df_oqi_is_leaf() */
-		df_map(array_filter($o['items'], 'df_oqi_is_leaf'), function(I $i) {Event::p('add_item_to_cart', [
+		df_map(array_filter($o['items'], 'df_oqi_is_leaf'), function(I $i):void {Event::p('add_item_to_cart', [
 			/**
 			 * 2020-01-26
 			 * «The product item added to cart.
