@@ -18,7 +18,6 @@ final class Discount {
 	/**
 	 * 2020-02-03
 	 * @used-by \Dfe\Sift\Payload\Promotions::p()
-	 * @param O $o
 	 * @return array(string => mixed)
 	 */
 	static function p(O $o) {return !($a = $o->getDiscountAmount()) ? [] : [
