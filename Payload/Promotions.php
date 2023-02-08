@@ -26,5 +26,5 @@ final class Promotions {
 	 * @used-by \Dfe\Sift\Observer\Sales\OrderPlaceAfter::execute()
 	 * @return array(string => mixed)
 	 */
-	static function p(O $o) {return df_clean([pDiscount::p($o)]);}
+	static function p(O $o):array {return df_clean([pDiscount::p($o)]);}
 }
