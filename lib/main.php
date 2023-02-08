@@ -21,6 +21,5 @@ function sift_amt($v):int {return round(10**6 * $v);}
  * @used-by \Dfe\Sift\Payload\Payment::p()
  * @used-by \Dfe\Sift\Plugin\Customer\Api\AccountManagementInterface::aroundAuthenticate()
  * @param string|null $v
- * @return string
  */
-function sift_prefix($v) {return df_es(df_nts($v)) ? '' : "$$v";};
+function sift_prefix($v):string {return df_es(df_nts($v)) ? '' : "$$v";};
