@@ -14,7 +14,7 @@ final class Stripe {
 	 * @used-by \Dfe\Sift\Payload\Payment::p()
 	 * @return array(string => mixed)
 	 */
-	static function p(P $p) {return [
+	static function p(P $p):array {return [
 		# 2020-02-03 String. «Address line 1 verification result returned by Stripe.»
 		'stripe_address_line1_check' => ''
 		# 2020-02-03 String. «Address line 2 verification result returned by Stripe.»
