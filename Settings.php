@@ -18,9 +18,8 @@ final class Settings extends \Df\API\Settings {
 	 * Where is a «Sandbox Beacon Key» located? https://mage2.pro/t/6089
 	 * Where is a «Production Beacon Key» located? https://mage2.pro/t/6091
 	 * @used-by \Dfe\Sift\Js::_toHtml()
-	 * @return string
 	 */
-	function frontendKey() {return $this->testableP();}
+	function frontendKey():string {return $this->testableP();}
 
 	/**
 	 * 2020-02-03
