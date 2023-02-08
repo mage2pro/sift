@@ -18,7 +18,6 @@ final class Observer {
 	 * @used-by \Dfe\Sift\Observer\Quote\RemoveItem::execute()
 	 * @used-by \Dfe\Sift\Observer\Sales\OrderPlaceAfter::execute()
 	 * @used-by \Dfe\Sift\Plugin\Customer\Api\AccountManagementInterface::aroundAuthenticate()
-	 * @param F $f 
 	 * @param bool $backend [optional]
 	 */
 	static function f(F $f, $backend = false) {
