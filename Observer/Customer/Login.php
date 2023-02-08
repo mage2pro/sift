@@ -25,7 +25,7 @@ final class Login implements ObserverInterface {
 	 * @see ObserverInterface::execute()
 	 * @used-by \Magento\Framework\Event\Invoker\InvokerDefault::_callObserverMethod()
 	 */
-	function execute(O $o) {_P::f(function() use($o) {
+	function execute(O $o):void {_P::f(function() use($o) {
 		$c = $o['customer']; /** @var C $c */
 		# 2020-02-06 https://sift.com/developers/docs/curl/events-api/reserved-events/login
 		Event::p('login', pLoginOrRegister::p($c) + [
