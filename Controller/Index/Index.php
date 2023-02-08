@@ -49,7 +49,7 @@ class Index extends \Df\Framework\Action implements IPost {
 	 * 2020-02-25 https://sift.com/developers/docs/php/decisions-api/decision-webhooks/authentication
 	 * @used-by self::execute()
 	 */
-	private function checkSignature() {
+	private function checkSignature():void {
 		# 2020-02-25
 		# 1) A signature looks like «sha1=c85f8e483b5343ae073b88d4311252b77bdc8ecd»
 		# 2) @todo "Provide an ability to set different Sift credentials for each Magento store
