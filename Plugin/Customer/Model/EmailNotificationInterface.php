@@ -22,7 +22,6 @@ final class EmailNotificationInterface {
 	 * @see \Magento\Customer\Model\EmailNotificationInterface::passwordResetConfirmation()
 	 * https://github.com/magento/magento2/blob/2.1.0/app/code/Magento/Customer/Model/EmailNotificationInterface.php#L55-L61
 	 * https://github.com/magento/magento2/blob/2.3.4/app/code/Magento/Customer/Model/EmailNotificationInterface.php#L61-L68
-	 * @param Sb $sb 
 	 * @param ICD|CD $cd
 	 */
 	function beforePasswordResetConfirmation(Sb $sb, ICD $cd) {B::reset($cd);}
