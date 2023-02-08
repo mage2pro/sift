@@ -12,7 +12,6 @@ final class Stripe {
 	/**
 	 * 2020-02-03
 	 * @used-by \Dfe\Sift\Payload\Payment::p()
-	 * @param P $p
 	 * @return array(string => mixed)
 	 */
 	static function p(P $p) {return [
