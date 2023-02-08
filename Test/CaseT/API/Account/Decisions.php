@@ -9,7 +9,7 @@ use Exception as E;
  */
 final class Decisions extends \Dfe\Sift\Test\CaseT {
 	/** 2020-02-27 */
-	function t00() {echo __METHOD__;}
+	function t00():void {echo __METHOD__;}
 
 	/**
 	 * 2020-02-27
@@ -57,7 +57,7 @@ final class Decisions extends \Dfe\Sift\Test\CaseT {
 	 *	}
 	 * @test
 	 */
-	function t01() {
+	function t01():void {
 		try {
 			echo B::decisions()->j();
 		}
