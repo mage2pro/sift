@@ -16,5 +16,5 @@ final class Browser {
 	 * @used-by \Dfe\Sift\API\B\Event::p()
 	 * @return array(string => mixed)
 	 */
-	static function p() {return ['browser' => ['user_agent' => df_request_ua() ?: 'CLI']];}
+	static function p():array {return ['browser' => ['user_agent' => df_request_ua() ?: 'CLI']];}
 }
