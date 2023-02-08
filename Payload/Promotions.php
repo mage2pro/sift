@@ -24,7 +24,6 @@ final class Promotions {
 	/**
 	 * 2020-02-04
 	 * @used-by \Dfe\Sift\Observer\Sales\OrderPlaceAfter::execute()
-	 * @param O $o
 	 * @return array(string => mixed)
 	 */
 	static function p(O $o) {return df_clean([pDiscount::p($o)]);}
