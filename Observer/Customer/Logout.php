@@ -49,5 +49,5 @@ final class Logout implements ObserverInterface {
 	 * @see ObserverInterface::execute()
 	 * @used-by \Magento\Framework\Event\Invoker\InvokerDefault::_callObserverMethod()
 	 */
-	function execute(O $o) {_P::f(function() {Event::p('logout');});}
+	function execute(O $o):void {_P::f(function() {Event::p('logout');});}
 }
