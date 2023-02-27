@@ -41,11 +41,9 @@ final class GetDecisions extends \Dfe\Sift\API\Facade {
 	 * @override
 	 * @see \Df\API\Facade::path()
 	 * @used-by \Df\API\Facade::p()
-	 * @param int|string|null $id
-	 * @param string|null $s
 	 * @return string
 	 */
-	protected function path($id, $s) {return df_cc('?',
+	protected function path(string $id, string $s = ''):string {return df_cc('?',
 		df_cc_path($this->prefix(), 'accounts', S::s()->merchantID(), 'decisions'), http_build_query([
 		   /**
 			* 2020-02-27
