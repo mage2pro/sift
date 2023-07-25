@@ -21,6 +21,6 @@ final class Observer {
 	 */
 	static function f(F $f, bool $backend = false):void {
 		try {$backend xor df_is_backend() or !S::s()->enable() or $f();}
-		catch (E $e) {df_log($e, __CLASS__);}
+		catch (E $e) {df_log($e);}
 	}
 }
