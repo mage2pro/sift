@@ -14,7 +14,8 @@ final class AccountManagementInterface {
 	 */
 	function aroundAuthenticate(Sb $sb, \Closure $f, string $u, string $p):string {
 		try {return $f($u, $p);}
-		catch (\Exception $e) {_P::f(function() use($e, $u):void {
+		# 2023-08-03 "Treat `\Throwable` similar to `\Exception`": https://github.com/mage2pro/core/issues/311
+		catch (\Throwable $t) {_P::f(function() use($t, $u):void {
 			# 2020-02-06 https://sift.com/developers/docs/curl/events-api/reserved-events/login
 			Event::p('login', [
 				/**
@@ -28,7 +29,7 @@ final class AccountManagementInterface {
 				 * »
 				 */
 				'failure_reason' => sift_prefix(
-					$e instanceof Locked || $e instanceof NotConfirmed ? 'account_suspended' : 'wrong_password'
+					$t instanceof Locked || $t instanceof NotConfirmed ? 'account_suspended' : 'wrong_password'
 				)
 				# 2020-02-06
 				# «Use `login_status` to represent the success or failure of the login attempt»
@@ -46,6 +47,6 @@ final class AccountManagementInterface {
 				,'social_sign_on_type' => ''
 				,'username' => $u # 2020-02-06 String. «The username entered at the login prompt»
 			]);
-		}); throw $e;}
+		}); throw $t;}
 	}
 }

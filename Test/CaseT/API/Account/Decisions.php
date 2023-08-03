@@ -1,7 +1,6 @@
 <?php
 namespace Dfe\Sift\Test\CaseT\API\Account;
 use Dfe\Sift\API\B\GetDecisions as B;
-use Exception as E;
 /**
  * 2020-02-27
  * 1) "Retrieve decisions configuration from Sift": https://github.com/mage2pro/sift/issues/19
@@ -61,8 +60,8 @@ final class Decisions extends \Dfe\Sift\Test\CaseT {
 		try {
 			echo B::decisions()->j();
 		}
-		catch (E $e) {
-			echo df_cc_n(df_xts($e), df_bt_s($e));
+		catch (\Throwable $t) {
+			echo df_cc_n(df_xts($t), df_bt_s($t));
 		}
 	}
 }

@@ -34,12 +34,13 @@ class Index extends \Df\Framework\Action implements IPost {
 			# so I use a response convenient for debugging.
 			$r = Text::i('OK');
 		}
-		catch (\Exception $e) {
+		# 2023-08-03 "Treat `\Throwable` similar to `\Exception`": https://github.com/mage2pro/core/issues/311
+		catch (\Throwable $t) {
 			df_500();
-			$r = Text::i(df_xts($e));
-			df_log($e);
+			$r = Text::i(df_xts($t));
+			df_log($t);
 			if (df_my_local()) {
-				throw $e; # 2020-03-27 It is convenient for me to see the exception on the screen.
+				throw $t; # 2020-03-27 It is convenient for me to see the exception on the screen.
 			}
 		}
 		return $r;

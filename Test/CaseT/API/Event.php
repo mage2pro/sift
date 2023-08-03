@@ -2,7 +2,6 @@
 namespace Dfe\Sift\Test\CaseT\API;
 use Dfe\Sift\API\Facade\Event as F;
 use Dfe\Sift\Settings as S;
-use Exception as E;
 # 2020-01-25 https://sift.com/developers/docs/curl/events-api
 final class Event extends \Dfe\Sift\Test\CaseT {
 	/** 2020-01-25 @test */
@@ -60,7 +59,8 @@ final class Event extends \Dfe\Sift\Test\CaseT {
 			]);
 			echo $r->j();
 		}
-		catch (E $e) {
+		# 2023-08-03 "Treat `\Throwable` similar to `\Exception`": https://github.com/mage2pro/core/issues/311
+		catch (\Throwable $t) {
 			xdebug_break();
 		}
 	}

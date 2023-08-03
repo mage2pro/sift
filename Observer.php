@@ -1,8 +1,7 @@
 <?php
 namespace Dfe\Sift;
-use Closure as F;
 use Dfe\Sift\Settings as S;
-use Exception as E;
+use \Closure as F;
 # 2020-02-01
 final class Observer {
 	/**
@@ -21,6 +20,7 @@ final class Observer {
 	 */
 	static function f(F $f, bool $backend = false):void {
 		try {$backend xor df_is_backend() or !S::s()->enable() or $f();}
-		catch (E $e) {df_log($e);}
+		# 2023-08-03 "Treat `\Throwable` similar to `\Exception`": https://github.com/mage2pro/core/issues/311
+		catch (\Throwable $t) {df_log($t);}
 	}
 }
