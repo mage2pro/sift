@@ -1,6 +1,5 @@
 <?php
 namespace Dfe\Sift\Payload;
-use Magento\Catalog\Model\Category as C;
 use Magento\Catalog\Model\Product as P;
 use Magento\Quote\Model\Quote\Item as QI;
 use Magento\Sales\Model\Order\Item as OI;
@@ -20,7 +19,7 @@ final class OQI {
 		# 2020-02-22
 		# "Provide an ability to choose a custom attribute for the brand information":
 		# https://github.com/mage2pro/sift/issues/16
-		'brand' => df_product_att_val_s($p, 'brand', null)
+		'brand' => df_product_att_val($p, 'brand')
 		# 2020-01-30 «Blankets & Throws»
 		# 2020-02-01 String.
 		# «The category this item is listed under in your business.
@@ -28,7 +27,7 @@ final class OQI {
 		,'category' => df_csv_pretty(df_category_names($p))
 		# 2020-01-30 «Texas Tea»
 		# 2020-02-01 String. «The color of the item.»
-		,'color' => df_product_att_val_s($p, 'color', null)
+		,'color' => df_product_att_val($p, 'color')
 		# 2020-02-01 String. «ISO-4217 currency code for the price».
 		,'currency_code' => df_oqi_currency_c($i)
 		# 2020-02-01 Integer.
@@ -42,7 +41,7 @@ final class OQI {
 		,'item_id' => $i['product_id']
 		# 2020-01-30 «Slanket»
 		# 2020-02-01 String. «Name of the item's manufacturer.»
-		,'manufacturer' => df_product_att_val_s($p, 'manufacturer', null)
+		,'manufacturer' => df_product_att_val($p, 'manufacturer')
 		# 2020-01-29 «The Slanket Blanket-Texas Tea»
 		# 2020-02-01 String.
 		# «The item's name, e.g., "Men's Running Springblade Drive Shoes, US10"»
@@ -56,7 +55,7 @@ final class OQI {
 		# 2020-02-01 Integer. «Quantity of the item»
 		,'quantity' => df_oqi_qty($i)
 		# 2020-02-01 String. «The size of the item.»
-		,'size' => df_product_att_val_s($p, 'size', null)
+		,'size' => df_product_att_val($p, 'size')
 		# 2020-01-30 «004834GQ»
 		# 2020-02-01 String. «If the item has a Stock-keeping Unit ID (SKU), provide it here.»
 		,'sku' => $i->getSku()
