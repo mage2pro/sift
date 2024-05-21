@@ -11,7 +11,7 @@ final class GetDecisions extends \Df\API\Response\Validator {
 	/**
 	 * 2020-02-29
 	 * @override
-	 * @see \Df\API\Exception::long()
+	 * @see \Df\API\Response\Validator::long()
 	 * @used-by \Df\API\Client::_p()
 	 * @used-by \Df\API\Exception::message()
 	 */

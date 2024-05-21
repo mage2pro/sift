@@ -7,7 +7,7 @@ final class Event extends \Df\API\Response\Validator {
 	 * 2020-01-25
 	 * 2020-01-30 If the request is successful, then `error_message` is «OK».
 	 * @override
-	 * @see \Df\API\Exception::long()
+	 * @see \Df\API\Response\Validator::long()
 	 * @used-by \Df\API\Client::_p()
 	 * @used-by \Df\API\Exception::message()
 	 */
