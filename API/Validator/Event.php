@@ -9,6 +9,7 @@ final class Event extends \Df\API\Response\Validator {
 	 * @override
 	 * @see \Df\API\Exception::long()
 	 * @used-by \Df\API\Client::_p()
+	 * @used-by \Df\API\Exception::message()
 	 */
 	function long():string {return df_nts($this->r('error_message'));}
 
