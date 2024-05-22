@@ -13,7 +13,6 @@ final class GetDecisions extends \Df\API\Response\Validator {
 	 * @override
 	 * @see \Df\API\Response\Validator::long()
 	 * @used-by \Df\API\Client::_p()
-	 * @used-by \Df\API\Exception::message()
 	 */
 	function long():string {return df_nts($this->r('description'));}
 
@@ -23,6 +22,7 @@ final class GetDecisions extends \Df\API\Response\Validator {
 	 * @see \Df\API\Exception::short()
 	 * @used-by self::valid()
 	 * @used-by \Df\API\Client::_p()
+	 * @used-by \Df\API\Exception::message()
 	 */
 	function short():string {return df_nts($this->r('error'));}
 
