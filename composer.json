@@ -8,7 +8,7 @@
 	,"authors": [{
 		"name": "Dmitrii Fediuk",
 		"email": "admin@mage2.pro",
-		"homepage": "https://www.upwork.com/fl/mage2pro",
+		"homepage": "https://github.com/dmitrii-fediuk",
 		"role": "Developer"
 	}]
 	,"require": {"mage2pro/core": ">=10.9.6", "mage2pro/phone":  ">=1.1.0"}
